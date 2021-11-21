@@ -1,11 +1,11 @@
-#ifndef PROJECT_PLAIN_H
-#define PROJECT_PLAIN_H
+#ifndef PROJECT_PLANE_H
+#define PROJECT_PLANE_H
 
 #include <string>
 #include <list>
 #include "Flight.h"
 
-class Plain {
+class Plane {
 
 private:
     std::string const licensePlate;
@@ -19,7 +19,7 @@ public:
      * @param capacity Capacidade do avião (constante)
      * @param flights Voos do avião
      */
-    Plain(std::string licensePlate, int capacity, std::list<Flight> flights);
+    Plane(std::string licensePlate, int capacity, std::list<Flight> flights);
 
     /** Devolve a matrícula do avião
      *

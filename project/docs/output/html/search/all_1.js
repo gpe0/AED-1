@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getcapacity_0',['getCapacity',['../class_plain.html#aaae2e699bd0e66bd4128c581af9bba3e',1,'Plain']]],
-  ['getflights_1',['getFlights',['../class_plain.html#afdb426c40bda0343c2d2efb304c5bfa6',1,'Plain']]],
-  ['getlicenseplate_2',['getLicensePlate',['../class_plain.html#a7d0000118384f165229a6713190dee97',1,'Plain']]]
+  ['getcapacity_0',['getCapacity',['../class_plane.html#a7f2b8e19f1d0482d6b6fa5fe7b071c56',1,'Plane']]],
+  ['getflights_1',['getFlights',['../class_plane.html#a023ce7e294c818ec073ccad62c8b6716',1,'Plane']]],
+  ['getlicenseplate_2',['getLicensePlate',['../class_plane.html#af48ba9e4cdfb101414cb93c1fcf356cf',1,'Plane']]]
 ];

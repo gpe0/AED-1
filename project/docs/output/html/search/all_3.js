@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setflights_0',['setFlights',['../class_plain.html#ac5e9ee5a0f65af571d7580f2d5c0321d',1,'Plain']]]
+  ['setflights_0',['setFlights',['../class_plane.html#a6d17985852ea57c61a1cd4330ef11ec7',1,'Plane']]]
 ];

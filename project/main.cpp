@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Flight.h"
-#include "Plain.h"
+#include "Plane.h"
 using namespace std;
 
 int main() {
