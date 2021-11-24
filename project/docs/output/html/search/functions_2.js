@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['setflights_0',['setFlights',['../class_plane.html#a6d17985852ea57c61a1cd4330ef11ec7',1,'Plane']]]
+  ['person_0',['Person',['../class_person.html#a0397c6f89fafc12e738923f612bc41a3',1,'Person::Person()'],['../class_person.html#a31113fb0a49d119ce5333eddcf9c10e9',1,'Person::Person(std::string name, int age, char sex)']]],
+  ['plane_1',['Plane',['../class_plane.html#ac836d2e7c8669389d8f6c7c228233a5f',1,'Plane']]]
 ];

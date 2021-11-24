@@ -9,8 +9,5 @@ using namespace std;
 
 int main() {
 
-    Worker w("Rei", 20, 'M');
-    cout << w.getName() << endl;
-
     return 0;
 }

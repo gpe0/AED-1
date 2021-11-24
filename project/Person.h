@@ -12,8 +12,8 @@ protected:
 public:
     /**Inicializa uma pessoa "Indefinida"
      *terá como valores:
-     * name - "undefined"
-     * age - 0
+     * name - "undefined";
+     * age - 0;
      * sex - 'U'
      */
     Person();

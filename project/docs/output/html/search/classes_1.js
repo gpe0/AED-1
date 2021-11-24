@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plane_0',['Plane',['../class_plane.html',1,'']]]
+  ['flight_0',['Flight',['../class_flight.html',1,'']]]
 ];
