@@ -2,10 +2,12 @@
 #define PROJECT_FLIGHT_H
 
 #include <string>
+#include "Date.h"
 
 class Flight {
+private:
     int num;
-    std::string date;
+    Date date;
     float duration;
     std::string origin;
     std::string destination;

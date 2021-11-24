@@ -13,7 +13,7 @@ private:
     std::list<Flight> flights;
 
 public:
-    /** Inicializa um avião, com uma matrícula e capacidades constantes e uma lista de voos
+    /** Inicializa um avião
      *
      * @param licensePlate Matrícula do avião (constante)
      * @param capacity Capacidade do avião (constante)
