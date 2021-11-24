@@ -30,19 +30,19 @@ public:
      *
      * @return nome da pessoa
      */
-    std::string getName();
+    std::string getName() const;
 
     /**Devolve a idade da pessoa
      *
      * @return idade da pessoa
      */
-    int getAge();
+    int getAge() const;
 
     /**Devolve o sexo da pessoa
      *
      * @return sexo da pessoa
      */
-    char getSex();
+    char getSex() const;
 
     /**Atribui um nome à pessoa
      *

@@ -12,15 +12,15 @@ Person::Person(std::string name, int age, char sex) {
     this->sex = sex;
 }
 
-std::string Person::getName() {
+std::string Person::getName() const{
     return name;
 }
 
-int Person::getAge() {
+int Person::getAge() const{
     return age;
 }
 
-char Person::getSex() {
+char Person::getSex() const{
     return sex;
 }
 

@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "dfgpsw",
+  0: "adfgpsw",
   1: "dfpsw",
-  2: "dgps"
+  2: "adgps"
 };
 
 var indexSectionNames =
