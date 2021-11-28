@@ -17,8 +17,7 @@ private:
     std::queue<Service> finishedServices;
 
 public:
-    /**
-     * Inicializa um avião (a fila dos serviços já realizados começa vazia)
+    /** Inicializa um avião (a fila dos serviços já realizados começa vazia)
      *
      * @param licensePlate Matrícula do avião (constante)
      * @param capacity Capacidade do avião (constante)

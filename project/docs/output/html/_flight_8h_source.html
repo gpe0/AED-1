@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED: D:/PROJECTS/AED-1/project/Flight.h Source File</title>
+<title>AED: C:/Users/Utilizador/Documents/GitHub/AED-1/project/Flight.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">D:/PROJECTS/AED-1/project/Flight.h</div></div>
+  <div class="headertitle"><div class="title">C:/Users/Utilizador/Documents/GitHub/AED-1/project/Flight.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PROJECT_FLIGHT_H</span></div>
@@ -79,12 +79,46 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">float</span> duration;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::string origin;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::string destination;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_flight.html#a88cb2ffd5f287c6deadeaefe2e87ace1">Flight</a>(<span class="keywordtype">int</span> num, <a class="code hl_class" href="class_date.html">Date</a> date, <span class="keywordtype">float</span> duration, std::string origin, std::string destination);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_flight.html#a0108d9bd179385c6ae5fd55081bec64e">getNum</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="class_date.html">Date</a> <a class="code hl_function" href="class_flight.html#a0742a26fdc41cec3bfba087f2158e975">getDate</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_flight.html#a79fbcf4827984d09f08d849506df2260">getDuration</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string <a class="code hl_function" href="class_flight.html#a9c0d727ed31c3a263f2b7f68cefbe4cc">getOrigin</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::string <a class="code hl_function" href="class_flight.html#ab6325b31b95c9b7c4d0c4a3be756f7c5">getDestination</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a2e8a66323dfc8a0371e538cad22ff051">setNum</a>(<span class="keywordtype">int</span> num);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a36bb609ba99ef7b93bd7951461d6b2d3">setDate</a>(<a class="code hl_class" href="class_date.html">Date</a> date);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">setDuration</a>(<span class="keywordtype">float</span> duration);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">setOrigin</a>(std::string origin);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">setDestination</a>(std::string destination);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:6</div></div>
 <div class="ttc" id="aclass_flight_html"><div class="ttname"><a href="class_flight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:7</div></div>
+<div class="ttc" id="aclass_flight_html_a0108d9bd179385c6ae5fd55081bec64e"><div class="ttname"><a href="class_flight.html#a0108d9bd179385c6ae5fd55081bec64e">Flight::getNum</a></div><div class="ttdeci">int getNum()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:11</div></div>
+<div class="ttc" id="aclass_flight_html_a0742a26fdc41cec3bfba087f2158e975"><div class="ttname"><a href="class_flight.html#a0742a26fdc41cec3bfba087f2158e975">Flight::getDate</a></div><div class="ttdeci">Date getDate()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:15</div></div>
+<div class="ttc" id="aclass_flight_html_a2e8a66323dfc8a0371e538cad22ff051"><div class="ttname"><a href="class_flight.html#a2e8a66323dfc8a0371e538cad22ff051">Flight::setNum</a></div><div class="ttdeci">void setNum(int num)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:31</div></div>
+<div class="ttc" id="aclass_flight_html_a36bb609ba99ef7b93bd7951461d6b2d3"><div class="ttname"><a href="class_flight.html#a36bb609ba99ef7b93bd7951461d6b2d3">Flight::setDate</a></div><div class="ttdeci">void setDate(Date date)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:35</div></div>
+<div class="ttc" id="aclass_flight_html_a656113fdd0fa99e0a58752b3d66ad08d"><div class="ttname"><a href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">Flight::setDestination</a></div><div class="ttdeci">void setDestination(std::string destination)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:47</div></div>
+<div class="ttc" id="aclass_flight_html_a79fbcf4827984d09f08d849506df2260"><div class="ttname"><a href="class_flight.html#a79fbcf4827984d09f08d849506df2260">Flight::getDuration</a></div><div class="ttdeci">float getDuration()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:19</div></div>
+<div class="ttc" id="aclass_flight_html_a88cb2ffd5f287c6deadeaefe2e87ace1"><div class="ttname"><a href="class_flight.html#a88cb2ffd5f287c6deadeaefe2e87ace1">Flight::Flight</a></div><div class="ttdeci">Flight(int num, Date date, float duration, std::string origin, std::string destination)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:3</div></div>
+<div class="ttc" id="aclass_flight_html_a9c0d727ed31c3a263f2b7f68cefbe4cc"><div class="ttname"><a href="class_flight.html#a9c0d727ed31c3a263f2b7f68cefbe4cc">Flight::getOrigin</a></div><div class="ttdeci">std::string getOrigin()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:23</div></div>
+<div class="ttc" id="aclass_flight_html_a9f3a6e14b259929d45f97296b0b7f5fb"><div class="ttname"><a href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">Flight::setDuration</a></div><div class="ttdeci">void setDuration(float duration)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:39</div></div>
+<div class="ttc" id="aclass_flight_html_aa6fe2e359d3e72c70d807c4e5a710661"><div class="ttname"><a href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">Flight::setOrigin</a></div><div class="ttdeci">void setOrigin(std::string origin)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:43</div></div>
+<div class="ttc" id="aclass_flight_html_ab6325b31b95c9b7c4d0c4a3be756f7c5"><div class="ttname"><a href="class_flight.html#ab6325b31b95c9b7c4d0c4a3be756f7c5">Flight::getDestination</a></div><div class="ttdeci">std::string getDestination()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

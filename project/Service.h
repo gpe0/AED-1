@@ -11,7 +11,6 @@ private:
     Date date;
     Worker worker;
 
-
 };
 
 

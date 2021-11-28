@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['person_0',['Person',['../class_person.html',1,'']]],
-  ['plane_1',['Plane',['../class_plane.html',1,'']]]
+  ['passenger_0',['Passenger',['../class_passenger.html',1,'']]],
+  ['person_1',['Person',['../class_person.html',1,'']]],
+  ['plane_2',['Plane',['../class_plane.html',1,'']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['setage_0',['setAge',['../class_person.html#ac8ade54c27a0657c987c395ff04a9d46',1,'Person']]],
-  ['setflights_1',['setFlights',['../class_plane.html#a6d17985852ea57c61a1cd4330ef11ec7',1,'Plane']]],
-  ['setname_2',['setName',['../class_person.html#ad6e438f456d3ae6f5b477931c0a6aeba',1,'Person']]],
-  ['setsex_3',['setSex',['../class_person.html#aa8c70c136001ef24d5cb7ae4819485b5',1,'Person']]]
+  ['passenger_0',['Passenger',['../class_passenger.html#ab5c74148a854548a0809f6aef55cd3d0',1,'Passenger']]],
+  ['person_1',['Person',['../class_person.html#a0397c6f89fafc12e738923f612bc41a3',1,'Person::Person()'],['../class_person.html#a31113fb0a49d119ce5333eddcf9c10e9',1,'Person::Person(std::string name, int age, char sex)']]],
+  ['plane_2',['Plane',['../class_plane.html#a08441a38dbcbba0fcea8c487db55179e',1,'Plane']]]
 ];

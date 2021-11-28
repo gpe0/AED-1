@@ -20,9 +20,9 @@ public:
 
     /**Inicializa uma pessoa
      *
-     * @param name nome
-     * @param age idade
-     * @param sex sexo
+     * @param name nome da pessoa
+     * @param age idade da pessoa
+     * @param sex sexo da pessoa ('M', 'F' ou 'U')
      */
     Person(std::string name, int age, char sex);
 

@@ -10,6 +10,12 @@ private:
     int year;
 
 public:
+
+    /** Inicializa a data do dia atual
+     *
+     */
+    Date();
+
     /** Inicializa uma data
      *
      * @param day dia
