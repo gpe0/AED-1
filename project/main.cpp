@@ -5,6 +5,7 @@
 #include "Date.h"
 #include "Person.h"
 #include "Worker.h"
+#include "Passenger.h"
 
 
 using namespace std;
@@ -19,21 +20,27 @@ int main() {
     Flight f2(2, d2, 2, "Lisboa", "Madrid");
     Flight f3(3, d3, 3.5, "Madrid", "Amesterdão");
 
+    Passenger p1("Goncalo", 19, 'M');
+
     list<Flight> flights;
 
     flights.push_back(f1);
     flights.push_back(f2);
     flights.push_back(f3);
 
+
     Plane plane("A101", 300, flights);
 
-    cout << plane.getLicensePlate() << endl;
+
+    cout << p1.acquireTicket(1, plane, false) << endl;
+
+    cout << plane.getLicensePlate() << endl << endl;
+
+
 
     for (Flight x: plane.getFlights()) {
-        cout << x.getOrigin() << endl;
+        cout << x.getAvailableSeats() << endl;
     }
-
-    cout << plane.getServices().empty() << endl;
 
 
     return 0;

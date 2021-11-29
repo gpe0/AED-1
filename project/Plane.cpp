@@ -4,6 +4,10 @@ Plane::Plane(std::string licensePlate, int capacity, std::list<Flight> flights, 
     this->flights = flights;
     this->services = services;
     finishedServices = std::queue<Service>();
+
+    for (Flight &flight : this->flights) {
+        flight.setAvailableSeats(capacity);
+    }
 }
 
 

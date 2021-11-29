@@ -6,10 +6,15 @@ Flight::Flight(int num, Date date, float duration, std::string origin, std::stri
     this->duration = duration;
     this->origin = origin;
     this->destination = destination;
+    availableSeats = -1;
 }
 
 int Flight::getNum() {
     return num;
+}
+
+int Flight::getAvailableSeats() {
+    return availableSeats;
 }
 
 Date Flight::getDate() {
@@ -30,6 +35,10 @@ std::string Flight::getDestination() {
 
 void Flight::setNum(int num) {
     this->num = num;
+}
+
+void Flight::setAvailableSeats(int availableSeat) {
+    this->availableSeats = availableSeat;
 }
 
 void Flight::setDate(Date date) {

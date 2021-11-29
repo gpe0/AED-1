@@ -7,14 +7,15 @@
 class Flight {
 private:
     int num;
+    int availableSeats;
     Date date;
     float duration;
     std::string origin;
     std::string destination;
 
 public:
-    /** Inicializa um voo
-     *
+    /** Inicializa um voo (O número de lugares começará igual a '-1' e será alterado para o número
+     * da capacidade do avião do qual faz parte (quando for atribuído a um))
      * @param num número de voo
      * @param date data do voo
      * @param duration duração do voo (em horas)
@@ -28,6 +29,12 @@ public:
      * @return número do voo
      */
     int getNum();
+
+    /** Devolve o número de lugares disponíveis
+     *
+     * @return lugares disponíveis
+     */
+    int getAvailableSeats();
 
     /** Devolve a data do voo
      *
@@ -58,6 +65,12 @@ public:
      * @param num número do voo
      */
     void setNum(int num);
+
+    /** Atribui um número de lugares disponíveis ao voo
+     *
+     * @param avaibleSeat número de lugares disponíveis
+     */
+    void setAvailableSeats(int availableSeats);
 
     /** Atribui uma data ao voo
      *
