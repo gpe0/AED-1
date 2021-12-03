@@ -14,85 +14,86 @@ private:
     std::string destination;
 
 public:
-    /** Inicializa um voo (O número de lugares começará igual a '-1' e será alterado para o número
-     * da capacidade do avião do qual faz parte (quando for atribuído a um))
-     * @param num número de voo
-     * @param date data do voo
-     * @param duration duração do voo (em horas)
-     * @param origin origem do voo
-     * @param destination destino do voo
+    /** Initializes a flight (the number of seats will start at '-1' and then be altered to
+     * the capacity of the plane the flight is attributed to)
+     * @param num flight number
+     * @param date flight date
+     * @param duration flight duration in hours
+     * @param origin flight origin
+     * @param destination flight destination
      */
     Flight(int num, Date date, float duration, std::string origin, std::string destination);
 
-    /** Devolve o número do voo
+    /** Returns the flight number
      *
-     * @return número do voo
+     * @return flight number
      */
     int getNum();
 
-    /** Devolve o número de lugares disponíveis
+    /** Returns the number os still available seats
      *
-     * @return lugares disponíveis
+     * @return available seats
      */
     int getAvailableSeats();
 
-    /** Devolve a data do voo
+    /** Returns the flight date
      *
-     * @return data do voo
+     * @return flight date
      */
     Date getDate();
 
-    /** Devolve a duração do voo (em horas)
+    /** Returns the flight duration in hours
      *
-     * @return duração do voo (em horas)
+     * @return flight duration in hours
      */
     float getDuration();
 
-    /** Devolve a origem do voo
+    /** Returns the flight origin
      *
-     * @return origem do voo
+     * @return flight origin
      */
     std::string getOrigin();
 
-    /** Devolve o destino do voo
+    /** Returns the flight destination
      *
-     * @return destino do voo
+     * @return flight destination
      */
     std::string getDestination();
 
-    /** Atribui um número ao voo
+    /** Sets a flight number
      *
-     * @param num número do voo
+     * @param num flight number
      */
     void setNum(int num);
 
-    /** Atribui um número de lugares disponíveis ao voo
+    /** Sets the number of available seats
+     * Possibility of implementing num++
      *
-     * @param avaibleSeat número de lugares disponíveis
+     * @param avaibleSeat number of available seats
      */
     void setAvailableSeats(int availableSeats);
 
-    /** Atribui uma data ao voo
+    /** Sets a flight date
      *
-     * @param date data do voo
+     * @param date flight date
      */
     void setDate(Date date);
 
-    /** Atribui uma duração ao voo (em horas)
+    /** Sets a flight duration in hours
      *
-     * @param duration duração do voo (em horas)
+     * @param duration flight duration in hours
      */
     void setDuration(float duration);
 
-    /** Atribui uma origem ao voo
+    /** Sets a flight origin
      *
-     * @param origin origem do voo
+     * @param origin flight origin
      */
     void setOrigin(std::string origin);
 
-    /** Atribui um destino ao voo
+    /** Sets a flight destination
      *
-     * @param destination destino do voo
+     * @param destination flight destination
      */
     void setDestination(std::string destination);
 };

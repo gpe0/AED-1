@@ -17,53 +17,54 @@ private:
     std::queue<Service> finishedServices;
 
 public:
-    /** Inicializa um avião (a fila dos serviços já realizados começa vazia), e associa o número de lugares disponíveis aos voos
+    /** Initializes a plane (already finished services queue starts empty), and associates the number of empty seats to the flights
+     *(validation and testing not implemented yet)
      *
-     * @param licensePlate Matrícula do avião (constante)
-     * @param capacity Capacidade do avião (constante)
-     * @param flights Voos do avião
-     * @param services Serviços a realizar no avião (poderá não ser indicada, sendo o seu valor default uma fila vazia)
+     * @param licensePlate Plane's license plate (constant)
+     * @param capacity Plane's passenger capacity (constant)
+     * @param flights Plane's flights
+     * @param services Services to do in a plane (doesn't need to be provided, its default value is an empty queue)
      */
     Plane(std::string licensePlate, int capacity, std::list<Flight> flights, std::queue<Service> services = std::queue<Service>());
 
-    /** Devolve a matrícula do avião
+    /** Returns the plane's license plate
      *
-     * @return matrícula
+     * @return license plate
      */
     std::string getLicensePlate() const;
 
-    /** Devolve a capacidade do avião
+    /** Returns the plane's passenger capacity
      *
-     * @return capacidade
+     * @return capacity
      */
     int getCapacity() const;
 
-    /** Devolve a lista de voos do avião
+    /** Returns the plane's flight list
      *
-     * @return lista de voos
+     * @return flight list
      */
     std::list<Flight> getFlights() const;
 
-    /**Devolve a fila de serviços por realizar
+    /**Returns the queue of services yet to be completed
      *
-     * @return fila de serviços a realizar
+     * @return not yet completed services queue
      */
     std::queue<Service> getServices() const;
 
-    /**Devolve a fila de serviços já realizados
+    /**Returns a queue with already finished services
      *
-     * @return fila de serviços já realizados
+     * @return finished services queue
      */
     std::queue<Service> getFinishedServices() const;
-    /** Atribui uma lista de voos ao avião
+    /** Sets a flight list for the plane
      *
-     * @param flights lista de voos
+     * @param flights flight list
      */
     void setFlights(std::list<Flight> flights);
 
-    /**Adiciona a fila de serviços (por realizar) um novo serviço
+    /**Adds to the file queue (still not completed) a new service
      *
-     * @param service serviço
+     * @param service service
      */
     void addService(Service service);
 

@@ -8,11 +8,12 @@
 class Passenger : public Person {
 
 public:
-    /** Inicializa um passageiro (que é uma pessoa)
+    /** Initializes a passenger (who is a person)
+     * (validation and testing not implemented yet)
      *
-     * @param name nome do passageiro
-     * @param age  idade do passageiro
-     * @param sex  sexo do passageiro ('M', 'F' ou 'U')
+     * @param name passenger name
+     * @param age  passenger age
+     * @param sex  passenger sex ('M', 'F' or 'U')
      */
     Passenger(std::string name, int age, char sex) : Person(name, age, sex) {};
 

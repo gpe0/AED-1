@@ -77,6 +77,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a88cb2ffd5f287c6deadeaefe2e87ace1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0108d9bd179385c6ae5fd55081bec64e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a0108d9bd179385c6ae5fd55081bec64e">getNum</a> ()</td></tr>
 <tr class="separator:a0108d9bd179385c6ae5fd55081bec64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed62c92fe6633e2a19b8fd0e209f77d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a6ed62c92fe6633e2a19b8fd0e209f77d">getAvailableSeats</a> ()</td></tr>
+<tr class="separator:a6ed62c92fe6633e2a19b8fd0e209f77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0742a26fdc41cec3bfba087f2158e975"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a0742a26fdc41cec3bfba087f2158e975">getDate</a> ()</td></tr>
 <tr class="separator:a0742a26fdc41cec3bfba087f2158e975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79fbcf4827984d09f08d849506df2260"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a79fbcf4827984d09f08d849506df2260">getDuration</a> ()</td></tr>
@@ -87,6 +89,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab6325b31b95c9b7c4d0c4a3be756f7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e8a66323dfc8a0371e538cad22ff051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a2e8a66323dfc8a0371e538cad22ff051">setNum</a> (int num)</td></tr>
 <tr class="separator:a2e8a66323dfc8a0371e538cad22ff051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e1f2f1fe493821d4919e3c856442ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a88e1f2f1fe493821d4919e3c856442ac">setAvailableSeats</a> (int availableSeats)</td></tr>
+<tr class="separator:a88e1f2f1fe493821d4919e3c856442ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36bb609ba99ef7b93bd7951461d6b2d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a36bb609ba99ef7b93bd7951461d6b2d3">setDate</a> (<a class="el" href="class_date.html">Date</a> date)</td></tr>
 <tr class="separator:a36bb609ba99ef7b93bd7951461d6b2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f3a6e14b259929d45f97296b0b7f5fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">setDuration</a> (float duration)</td></tr>
@@ -101,6 +105,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a49438c62fe32547dfdeeda08cb27e468"><td class="memItemLeft" align="right" valign="top"><a id="a49438c62fe32547dfdeeda08cb27e468" name="a49438c62fe32547dfdeeda08cb27e468"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>num</b></td></tr>
 <tr class="separator:a49438c62fe32547dfdeeda08cb27e468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e751dd947c0d42c1ab6265784c51529"><td class="memItemLeft" align="right" valign="top"><a id="a5e751dd947c0d42c1ab6265784c51529" name="a5e751dd947c0d42c1ab6265784c51529"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>availableSeats</b></td></tr>
+<tr class="separator:a5e751dd947c0d42c1ab6265784c51529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac079c017976a3444d12598e4e92d1252"><td class="memItemLeft" align="right" valign="top"><a id="ac079c017976a3444d12598e4e92d1252" name="ac079c017976a3444d12598e4e92d1252"></a>
 <a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>date</b></td></tr>
 <tr class="separator:ac079c017976a3444d12598e4e92d1252"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,14 +165,13 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Inicializa um voo</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >Initializes a flight (the number of seats will start at '-1' and then be altered to the capacity of the plane the flight is attributed to) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num</td><td>número de voo </td></tr>
-    <tr><td class="paramname">date</td><td>data do voo </td></tr>
-    <tr><td class="paramname">duration</td><td>duração do voo (em horas) </td></tr>
-    <tr><td class="paramname">origin</td><td>origem do voo </td></tr>
-    <tr><td class="paramname">destination</td><td>destino do voo </td></tr>
+    <tr><td class="paramname">num</td><td>flight number </td></tr>
+    <tr><td class="paramname">date</td><td>flight date </td></tr>
+    <tr><td class="paramname">duration</td><td>flight duration in hours </td></tr>
+    <tr><td class="paramname">origin</td><td>flight origin </td></tr>
+    <tr><td class="paramname">destination</td><td>flight destination </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,6 +179,25 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6ed62c92fe6633e2a19b8fd0e209f77d" name="a6ed62c92fe6633e2a19b8fd0e209f77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed62c92fe6633e2a19b8fd0e209f77d">&#9670;&nbsp;</a></span>getAvailableSeats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Flight::getAvailableSeats </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the number os still available seats</p>
+<dl class="section return"><dt>Returns</dt><dd>available seats </dd></dl>
+
+</div>
+</div>
 <a id="a0742a26fdc41cec3bfba087f2158e975" name="a0742a26fdc41cec3bfba087f2158e975"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0742a26fdc41cec3bfba087f2158e975">&#9670;&nbsp;</a></span>getDate()</h2>
 
@@ -187,8 +212,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a data do voo</p>
-<dl class="section return"><dt>Returns</dt><dd>data do voo </dd></dl>
+<p >Returns the flight date</p>
+<dl class="section return"><dt>Returns</dt><dd>flight date </dd></dl>
 
 </div>
 </div>
@@ -206,8 +231,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve o destino do voo</p>
-<dl class="section return"><dt>Returns</dt><dd>destino do voo </dd></dl>
+<p >Returns the flight destination</p>
+<dl class="section return"><dt>Returns</dt><dd>flight destination </dd></dl>
 
 </div>
 </div>
@@ -225,8 +250,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a duração do voo (em horas)</p>
-<dl class="section return"><dt>Returns</dt><dd>duração do voo (em horas) </dd></dl>
+<p >Returns the flight duration in hours</p>
+<dl class="section return"><dt>Returns</dt><dd>flight duration in hours </dd></dl>
 
 </div>
 </div>
@@ -244,8 +269,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve o número do voo</p>
-<dl class="section return"><dt>Returns</dt><dd>número do voo </dd></dl>
+<p >Returns the flight number</p>
+<dl class="section return"><dt>Returns</dt><dd>flight number </dd></dl>
 
 </div>
 </div>
@@ -263,8 +288,33 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a origem do voo</p>
-<dl class="section return"><dt>Returns</dt><dd>origem do voo </dd></dl>
+<p >Returns the flight origin</p>
+<dl class="section return"><dt>Returns</dt><dd>flight origin </dd></dl>
+
+</div>
+</div>
+<a id="a88e1f2f1fe493821d4919e3c856442ac" name="a88e1f2f1fe493821d4919e3c856442ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88e1f2f1fe493821d4919e3c856442ac">&#9670;&nbsp;</a></span>setAvailableSeats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Flight::setAvailableSeats </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>availableSeats</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Sets the number of available seats Possibility of implementing num++</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avaibleSeat</td><td>number of available seats </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -283,10 +333,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui uma data ao voo</p>
+<p >Sets a flight date</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date</td><td>data do voo </td></tr>
+    <tr><td class="paramname">date</td><td>flight date </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,10 +358,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui um destino ao voo</p>
+<p >Sets a flight destination</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">destination</td><td>destino do voo </td></tr>
+    <tr><td class="paramname">destination</td><td>flight destination </td></tr>
   </table>
   </dd>
 </dl>
@@ -333,10 +383,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui uma duração ao voo (em horas)</p>
+<p >Sets a flight duration in hours</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">duration</td><td>duração do voo (em horas) </td></tr>
+    <tr><td class="paramname">duration</td><td>flight duration in hours </td></tr>
   </table>
   </dd>
 </dl>
@@ -358,10 +408,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui um número ao voo</p>
+<p >Sets a flight number</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num</td><td>número do voo </td></tr>
+    <tr><td class="paramname">num</td><td>flight number </td></tr>
   </table>
   </dd>
 </dl>
@@ -383,10 +433,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui uma origem ao voo</p>
+<p >Sets a flight origin</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">origin</td><td>origem do voo </td></tr>
+    <tr><td class="paramname">origin</td><td>flight origin </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,8 +444,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>destination</b
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Utilizador/Documents/GitHub/AED-1/project/<a class="el" href="_flight_8h_source.html">Flight.h</a></li>
-<li>C:/Users/Utilizador/Documents/GitHub/AED-1/project/Flight.cpp</li>
+<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/<a class="el" href="_flight_8h_source.html">Flight.h</a></li>
+<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/Flight.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

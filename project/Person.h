@@ -10,55 +10,56 @@ protected:
     char sex;
 
 public:
-    /**Inicializa uma pessoa "Indefinida"
-     *terá como valores:
+    /**Initializes uma pessoa "Undefined"
+     *will have as values:
      * name - "undefined";
      * age - 0;
      * sex - 'U'
      */
     Person();
 
-    /**Inicializa uma pessoa
+    /**Initializes a person
+     * (validation and testing not implemented yet)
      *
-     * @param name nome da pessoa
-     * @param age idade da pessoa
-     * @param sex sexo da pessoa ('M', 'F' ou 'U')
+     * @param name person's name
+     * @param age person's age
+     * @param sex person's sex ('M', 'F' or 'U')
      */
     Person(std::string name, int age, char sex);
 
-    /**Devolve o nome da pessoa
+    /**Returns the person's name
      *
-     * @return nome da pessoa
+     * @return person's name
      */
     std::string getName() const;
 
-    /**Devolve a idade da pessoa
+    /**Returns the person's age
      *
-     * @return idade da pessoa
+     * @return person's age
      */
     int getAge() const;
 
-    /**Devolve o sexo da pessoa
+    /**Returns the person's sex
      *
-     * @return sexo da pessoa
+     * @return person's sex
      */
     char getSex() const;
 
-    /**Atribui um nome à pessoa
+    /**Sets the person's name
      *
-     * @param name nome
+     * @param name person's name
      */
     void setName(std::string name);
 
-    /**Atribui uma idade à pessoa
+    /**Sets the person's age
      *
-     * @param age idade
+     * @param age person's age
      */
     void setAge(int age);
 
-    /**Atribui um sexo à pessoa
+    /**Sets a sex for the person
      *
-     * @param sex sexo
+     * @param sex person's sex
      */
     void setSex(char sex);
 };

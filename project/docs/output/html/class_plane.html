@@ -146,13 +146,13 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Inicializa um avião (a fila dos serviços já realizados começa vazia)</p>
+<p >Initializes a plane (already finished services queue starts empty), and associates the number of empty seats to the flights (validation and testing not implemented yet)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">licensePlate</td><td>Matrícula do avião (constante) </td></tr>
-    <tr><td class="paramname">capacity</td><td>Capacidade do avião (constante) </td></tr>
-    <tr><td class="paramname">flights</td><td>Voos do avião </td></tr>
-    <tr><td class="paramname">services</td><td>Serviços a realizar no avião (poderá não ser indicada, sendo o seu valor default uma fila vazia) </td></tr>
+    <tr><td class="paramname">licensePlate</td><td><a class="el" href="class_plane.html">Plane</a>'s license plate (constant) </td></tr>
+    <tr><td class="paramname">capacity</td><td><a class="el" href="class_plane.html">Plane</a>'s passenger capacity (constant) </td></tr>
+    <tr><td class="paramname">flights</td><td><a class="el" href="class_plane.html">Plane</a>'s flights </td></tr>
+    <tr><td class="paramname">services</td><td>Services to do in a plane (doesn't need to be provided, its default value is an empty queue) </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,10 +175,10 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Adiciona a fila de serviços (por realizar) um novo serviço</p>
+<p >Adds to the file queue (still not completed) a new service</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">service</td><td>serviço </td></tr>
+    <tr><td class="paramname">service</td><td>service </td></tr>
   </table>
   </dd>
 </dl>
@@ -199,8 +199,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a capacidade do avião</p>
-<dl class="section return"><dt>Returns</dt><dd>capacidade </dd></dl>
+<p >Returns the plane's passenger capacity</p>
+<dl class="section return"><dt>Returns</dt><dd>capacity </dd></dl>
 
 </div>
 </div>
@@ -218,8 +218,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a fila de serviços já realizados</p>
-<dl class="section return"><dt>Returns</dt><dd>fila de serviços já realizados </dd></dl>
+<p >Returns a queue with already finished services</p>
+<dl class="section return"><dt>Returns</dt><dd>finished services queue </dd></dl>
 
 </div>
 </div>
@@ -237,8 +237,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a lista de voos do avião</p>
-<dl class="section return"><dt>Returns</dt><dd>lista de voos </dd></dl>
+<p >Returns the plane's flight list</p>
+<dl class="section return"><dt>Returns</dt><dd>flight list </dd></dl>
 
 </div>
 </div>
@@ -256,8 +256,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a matrícula do avião</p>
-<dl class="section return"><dt>Returns</dt><dd>matrícula </dd></dl>
+<p >Returns the plane's license plate</p>
+<dl class="section return"><dt>Returns</dt><dd>license plate </dd></dl>
 
 </div>
 </div>
@@ -275,8 +275,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Devolve a fila de serviços por realizar</p>
-<dl class="section return"><dt>Returns</dt><dd>fila de serviços a realizar </dd></dl>
+<p >Returns the queue of services yet to be completed</p>
+<dl class="section return"><dt>Returns</dt><dd>not yet completed services queue </dd></dl>
 
 </div>
 </div>
@@ -295,10 +295,10 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Atribui uma lista de voos ao avião</p>
+<p >Sets a flight list for the plane</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flights</td><td>lista de voos </td></tr>
+    <tr><td class="paramname">flights</td><td>flight list </td></tr>
   </table>
   </dd>
 </dl>
@@ -306,8 +306,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Utilizador/Documents/GitHub/AED-1/project/<a class="el" href="_plane_8h_source.html">Plane.h</a></li>
-<li>C:/Users/Utilizador/Documents/GitHub/AED-1/project/Plane.cpp</li>
+<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/<a class="el" href="_plane_8h_source.html">Plane.h</a></li>
+<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/Plane.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
