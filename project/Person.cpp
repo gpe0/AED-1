@@ -1,30 +1,47 @@
 #include "Person.h"
 
+using namespace std;
+
 Person::Person() {
     name = "undefined";
     age = 0;
     sex = 'U';
 }
 
-Person::Person(std::string name, int age, char sex) {
+Person::Person(string name, int age, char sex){
+    validPerson = true;
     this->name = name;
     this->age = age;
     this->sex = sex;
+    name(name), age(age), sex(sex);
+    if (age <= 0 || age > 120 || sex != 'M' || sex != 'F' || sex != 'U') {
+        validPerson == false;
+    }
 }
 
-std::string Person::getName() const{
+bool Person::isValid() {
+    return validPerson;
+}
+
+string Person::getName() const{
+    if (not validPerson)
+        throw (runtime_error("Invalid Person"));
     return name;
 }
 
 int Person::getAge() const{
+    if (not validPerson)
+        throw (runtime_error("Invalid Person"));
     return age;
 }
 
 char Person::getSex() const{
+    if (not validPerson)
+        throw (runtime_error("Invalid Person"));
     return sex;
 }
 
-void Person::setName(std::string name) {
+void Person::setName(string name) {
     this->name = name;
 }
 
