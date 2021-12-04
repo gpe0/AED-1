@@ -5,9 +5,10 @@
 
 class Person {
 protected:
-    std::string name;
+    const std::string name;
     int age;
-    char sex;
+    const char sex;
+    bool validPerson;
 
 public:
     /**Initializes uma pessoa "Undefined"
