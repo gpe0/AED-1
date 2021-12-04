@@ -2,12 +2,14 @@
 #define PROJECT_DATE_H
 
 #include <iostream>
+#include <vector>
 
 class Date {
 private:
-    int day;
-    int month;
-    int year;
+    const int DAY;
+    const int MONTH;
+    const int YEAR;
+    bool validDate;
 
 public:
 
@@ -25,7 +27,17 @@ public:
      */
     Date(int day, int month, int year);
 
-    friend std::ostream& operator<<(std::ostream& os, const Date& date);
+    bool isValid();
+    int getDay();
+    int getMonth();
+    int getYear();
+
+    friend std::ostream& operator<<(std::ostream& os, Date& date);
+
+    static std::vector<int>& getCurrentDate();
+    static bool isLeapYear(int year);
+
+
 };
 
 
