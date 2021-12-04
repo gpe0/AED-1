@@ -32,6 +32,14 @@ public:
      *
      * @return person's name
      */
+    
+    bool isValid();
+    
+    /**Returns if the person's data is valid
+    *
+    * @return bool
+    */
+    
     std::string getName() const;
 
     /**Returns the person's age
