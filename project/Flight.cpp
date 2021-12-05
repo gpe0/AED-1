@@ -1,8 +1,7 @@
 #include "Flight.h"
 
-Flight::Flight(int num, Date date, float duration, std::string origin, std::string destination) {
+Flight::Flight(int num, Date date, float duration, std::string origin, std::string destination) : date(date) {
     this->num = num;
-    this->date = date;
     this->duration = duration;
     this->origin = origin;
     this->destination = destination;
@@ -40,10 +39,11 @@ void Flight::setNum(int num) {
 void Flight::setAvailableSeats(int availableSeat) {
     this->availableSeats = availableSeat;
 }
-
-void Flight::setDate(Date date) {
-    this->date = date;
+/*
+void Flight::setDate(Date date){
+    date = new Date();
 }
+ */
 
 void Flight::setDuration(float duration) {
     this->duration = duration;

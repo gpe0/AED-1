@@ -14,7 +14,7 @@ public:
     int getHours();
     int getMin();
     int getSecs();
-    friend Duration& operator+(const Duration &right);
+    Duration operator+(Duration const &right);
 };
 
 

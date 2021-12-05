@@ -5,9 +5,9 @@
 
 class Person {
 protected:
-    const std::string name;
+    std::string name;
     int age;
-    const char sex;
+    char sex;
     bool validPerson;
 
 public:

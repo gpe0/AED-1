@@ -34,7 +34,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, Date& date);
 
-    static std::vector<int>& getCurrentDate();
+    static std::vector<int> getCurrentDate();
     static bool isLeapYear(int year);
 
 

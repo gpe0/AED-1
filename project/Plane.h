@@ -60,7 +60,7 @@ public:
      *
      * @param flights flight list
      */
-    void setFlights(std::list<Flight> flights);
+   /* void setFlights(std::list<Flight> flights); */
 
     /**Adds to the file queue (still not completed) a new service
      *

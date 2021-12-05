@@ -1,19 +1,16 @@
+#include <stdexcept>
 #include "Person.h"
 
 using namespace std;
 
-Person::Person() {
-    name = "undefined";
+Person::Person() : name("undefined"), sex('U'){
     age = 0;
-    sex = 'U';
+    validPerson = false;
 }
 
-Person::Person(string name, int age, char sex){
+Person::Person(string name, int age, char sex) : name(name), sex(sex){
     validPerson = true;
-    this->name = name;
     this->age = age;
-    this->sex = sex;
-    name(name), age(age), sex(sex);
     if (age <= 0 || age > 120 || sex != 'M' || sex != 'F' || sex != 'U') {
         validPerson == false;
     }
@@ -52,3 +49,4 @@ void Person::setAge(int age) {
 void Person::setSex(char sex) {
     this->sex = sex;
 }
+

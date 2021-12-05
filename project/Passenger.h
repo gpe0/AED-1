@@ -25,7 +25,7 @@ public:
      * @param tickets número de bilhetes a comprar (por defeito, é 1)
      * @return true - caso tenha conseguido adquirir o bilhete ; false - caso não tenho conseguido adquirir o bilhete
      */
-    bool acquireTicket(int flightNum, Plane& plane, bool hasLuggage, int tickets = 1);
+   /* bool acquireTicket(int flightNum, Plane& plane, bool hasLuggage, int tickets = 1); */
 };
 
 

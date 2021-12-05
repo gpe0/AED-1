@@ -77,7 +77,7 @@ public:
      *
      * @param date flight date
      */
-    void setDate(Date date);
+   /* void setDate(Date date); */
 
     /** Sets a flight duration in hours
      *

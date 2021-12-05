@@ -28,21 +28,22 @@ int Duration::getSecs() {
     return RIGHT;
 }
 
-Duration Duration::operator+(const Duration &right) {
+Duration Duration::operator+(Duration const &right) {
     if (!(validObject and right.validObject))
         throw (runtime_error("Invalid Object"));
     int seconds, minutes=0, hours=0;
     seconds = RIGHT + right.RIGHT;
-    while (seconds > 60){
+    while (seconds >= 60){
         seconds -= 60;
         minutes++;
     }
     minutes += MID + right.MID;
-    while (minutes > 60){
+    while (minutes >= 60){
         minutes -= 60;
         hours++;
     }
     hours += LEFT + right.LEFT;
+
     Duration duration(hours, minutes, seconds);
     return duration;
 }

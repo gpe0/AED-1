@@ -4,7 +4,9 @@
 
 using namespace std;
 
-Date::Date() : DAY(getCurrentDate()[0]), MONTH(getCurrentDate()[1]), YEAR(getCurrentDate()[2]) {}
+Date::Date() : DAY(getCurrentDate()[0]), MONTH(getCurrentDate()[1]), YEAR(getCurrentDate()[2]) {
+    validDate = true;
+}
 
 Date::Date(int day, int month, int year) : DAY(day), MONTH(month), YEAR(year) {
     validDate = true;
@@ -50,7 +52,7 @@ int Date::getYear() {
     return 0;
 }
 
-std::vector<int> &Date::getCurrentDate() {
+std::vector<int> Date::getCurrentDate() {
     auto now = std::chrono::system_clock::now();
     time_t nowC = std::chrono::system_clock::to_time_t(now);
     struct tm *parts = std::localtime(&nowC);
@@ -58,6 +60,7 @@ std::vector<int> &Date::getCurrentDate() {
     result.push_back(parts->tm_mday);
     result.push_back(1 + parts->tm_mon);
     result.push_back(1900 + parts->tm_year);
+    return result;
 }
 
 bool Date::isLeapYear(int year) {
@@ -71,5 +74,4 @@ bool Date::isLeapYear(int year) {
     }
     return false;
 }
-
 

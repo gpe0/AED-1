@@ -3,7 +3,7 @@
 #include "Passenger.h"
 
 using namespace std;
-
+/*
 bool Passenger::acquireTicket(int flightNum, Plane& plane, bool hasLuggage,  int tickets) {
     list<Flight> flights;
     bool hasTicket = false;
@@ -21,3 +21,5 @@ bool Passenger::acquireTicket(int flightNum, Plane& plane, bool hasLuggage,  int
 
     return hasTicket;
 }
+
+*/

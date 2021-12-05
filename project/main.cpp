@@ -6,11 +6,23 @@
 #include "Person.h"
 #include "Worker.h"
 #include "Passenger.h"
+#include "Duration.h"
 
 
 using namespace std;
 
 int main() {
+
+    Duration du1(1, 30, 0);
+    Duration du2(0, 30, 0);
+
+    Duration du3 = du1 + du2;
+
+    cout << du3.getHours() << endl;
+    cout << du3.getMin() << endl;
+    cout << du3.getSecs() << endl;
+
+    /*
 
     Date d1(10, 11, 2021);
     Date d2(11, 11, 2021);
@@ -41,7 +53,6 @@ int main() {
     for (Flight x: plane.getFlights()) {
         cout << x.getAvailableSeats() << endl;
     }
-
-
+*/
     return 0;
 }
