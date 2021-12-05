@@ -21,12 +21,6 @@ public:
      */
     TimeGeneralization(int left, int mid, int right);
 
-    /**Stub method for checking the time indication validation. Will be overloaded in child classes
-     *
-     * @return true
-     */
-    static bool isValid(int left, int mid, int right);
-
     friend std::ostream& operator<<(std::ostream& os, TimeGeneralization& object);
 
     friend bool operator<(TimeGeneralization& left, TimeGeneralization& right);

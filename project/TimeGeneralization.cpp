@@ -5,16 +5,12 @@
 using namespace std;
 
 TimeGeneralization::TimeGeneralization(int left, int mid, int right) : LEFT(left), MID(mid), RIGHT(right) {
-    validObject = isValid(left, mid, right);
-}
-
-bool TimeGeneralization::isValid(int left, int mid, int right) {
-    return true;
+    validObject = true;
 }
 
 std::ostream& operator<<(std::ostream& os, TimeGeneralization& object) {
     if (!object.validObject)
-        throw (runtime_error("Invalid Object of superclass TimeGeneralization"));
+        throw (runtime_error("Invalid Object"));
     os << object.LEFT << "/" << object.MID << "/" << object.RIGHT;
     return os;
 }

@@ -3,7 +3,7 @@ project(project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(project main.cpp Flight.cpp Flight.h Plane.cpp Plane.h Service.cpp Service.h Date.cpp Date.h Person.cpp Person.h Worker.cpp Worker.h Passenger.cpp Passenger.h TimeGeneralization.cpp TimeGeneralization.h)
+add_executable(project main.cpp Flight.cpp Flight.h Plane.cpp Plane.h Service.cpp Service.h Date.cpp Date.h Person.cpp Person.h Worker.cpp Worker.h Passenger.cpp Passenger.h TimeGeneralization.cpp TimeGeneralization.h Duration.cpp Duration.h)
 
 # Doxygen Build
 find_package(Doxygen)
