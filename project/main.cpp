@@ -22,8 +22,6 @@ int main() {
     cout << du3.getMin() << endl;
     cout << du3.getSecs() << endl;
 
-    /*
-
     Date d1(10, 11, 2021);
     Date d2(11, 11, 2021);
     Date d3;
@@ -53,6 +51,5 @@ int main() {
     for (Flight x: plane.getFlights()) {
         cout << x.getAvailableSeats() << endl;
     }
-*/
     return 0;
 }

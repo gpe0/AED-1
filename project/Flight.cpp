@@ -39,11 +39,6 @@ void Flight::setNum(int num) {
 void Flight::setAvailableSeats(int availableSeat) {
     this->availableSeats = availableSeat;
 }
-/*
-void Flight::setDate(Date date){
-    date = new Date();
-}
- */
 
 void Flight::setDuration(float duration) {
     this->duration = duration;

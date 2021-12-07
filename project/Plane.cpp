@@ -29,13 +29,17 @@ std::queue<Service> Plane::getFinishedServices() const {
     return finishedServices;
 }
 
-/*
-
 void Plane::setFlights(std::list<Flight> flights) {
-    this->flights = flights;
+    this->flights.clear();
+    for (Flight f : flights) {
+        addFlight(f);
+    }
 }
 
-*/
+void Plane::addFlight(Flight flight) {
+    flights.push_back(flight);
+}
+
 
 void Plane::addService(Service service) {
     services.push(service);

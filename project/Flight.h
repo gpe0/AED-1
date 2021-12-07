@@ -73,12 +73,6 @@ public:
      */
     void setAvailableSeats(int availableSeats);
 
-    /** Sets a flight date
-     *
-     * @param date flight date
-     */
-   /* void setDate(Date date); */
-
     /** Sets a flight duration in hours
      *
      * @param duration flight duration in hours
