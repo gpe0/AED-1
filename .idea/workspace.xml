@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="project" targetName="AED-1" />
+      <config projectName="project" targetName="gmock_main" />
+      <config projectName="project" targetName="gtest" />
+      <config projectName="project" targetName="gtest_main" />
+      <config projectName="project" targetName="gmock" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1fb67c51-a1c1-43c8-94c5-94813acf929e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Date.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Date.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Duration.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Duration.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Flight.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Flight.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Passenger.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Passenger.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Person.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Person.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Plane.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Plane.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Service.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Service.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/TimeGeneralization.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/TimeGeneralization.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Worker.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Worker.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/Doxyfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_date_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_flight_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_passenger_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_person_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_plain_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_plane_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_service_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/_worker_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/annotated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/bc_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/bdwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_date-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_date.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_flight-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_flight.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_passenger-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_passenger.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_passenger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_person-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_person.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_plain-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_plain.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_plane-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_plane.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_service-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_service.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_worker-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_worker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/class_worker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/closed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/dir_017ad5e908c41501f6a06b5119b37293.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/dir_0dc367f79b07ebfaec8a041a48a57a2c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/dir_218c7f5faf0d11c4a0569a0859abd428.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/dir_7b8e0e68138d15a4d7d15803738c86bc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/doxygen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/doxygen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/dynsections.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/folderclosed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/folderopen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/functions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/functions_func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/hierarchy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/menudata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/nav_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/nav_g.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/nav_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/all_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/classes_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/functions_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/mag_sel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/nomatches.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/search_l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/search_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/search_r.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/search/searchdata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/splitbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/sync_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/sync_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/tab_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/tab_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/tab_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/tab_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/docs/output/html/tabs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/main.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2299Baw8cCXDR4IDDF9fxVfWhWf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Ambiente de Trabalho/AED/AED_exercício_1" />
+  </component>
+  <component name="RunManager" selected="CMake Application.AED-1">
+    <configuration name="AED-1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="AED-1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="AED-1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.AED-1" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1fb67c51-a1c1-43c8-94c5-94813acf929e" name="Changes" comment="" />
+      <created>1639238800814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639238800814</updated>
+      <workItem from="1639238803227" duration="2840000" />
+      <workItem from="1639241793251" duration="1167000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

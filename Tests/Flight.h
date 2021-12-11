@@ -1,0 +1,96 @@
+#ifndef TESTS_FLIGHT_H
+#define TESTS_FLIGHT_H
+
+#include <string>
+#include "Date.h"
+
+class Flight {
+private:
+    int num;
+    int availableSeats;
+    Date date;
+    float duration;
+    std::string origin;
+    std::string destination;
+
+public:
+    /** Initializes a flight (the number of seats will start at '-1' and then be altered to
+     * the capacity of the plane the flight is attributed to)
+     * @param num flight number
+     * @param date flight date
+     * @param duration flight duration in hours
+     * @param origin flight origin
+     * @param destination flight destination
+     */
+    Flight(int num, Date date, float duration, std::string origin, std::string destination);
+
+    /** Returns the flight number
+     *
+     * @return flight number
+     */
+    int getNum();
+
+    /** Returns the number os still available seats
+     *
+     * @return available seats
+     */
+    int getAvailableSeats();
+
+    /** Returns the flight date
+     *
+     * @return flight date
+     */
+    Date getDate();
+
+    /** Returns the flight duration in hours
+     *
+     * @return flight duration in hours
+     */
+    float getDuration();
+
+    /** Returns the flight origin
+     *
+     * @return flight origin
+     */
+    std::string getOrigin();
+
+    /** Returns the flight destination
+     *
+     * @return flight destination
+     */
+    std::string getDestination();
+
+    /** Sets a flight number
+     *
+     * @param num flight number
+     */
+    void setNum(int num);
+
+    /** Sets the number of available seats
+     * Possibility of implementing num++
+     *
+     * @param avaibleSeat number of available seats
+     */
+    void setAvailableSeats(int availableSeats);
+
+    /** Sets a flight duration in hours
+     *
+     * @param duration flight duration in hours
+     */
+    void setDuration(float duration);
+
+    /** Sets a flight origin
+     *
+     * @param origin flight origin
+     */
+    void setOrigin(std::string origin);
+
+    /** Sets a flight destination
+     *
+     * @param destination flight destination
+     */
+    void setDestination(std::string destination);
+};
+
+
+#endif

@@ -1,0 +1,2 @@
+"D:\CLion 2021.3\bin\mingw\bin\ar.exe" qc ..\..\libgmockd.a CMakeFiles/gmock.dir/src/gmock-all.cc.obj
+"D:\CLion 2021.3\bin\mingw\bin\ranlib.exe" ..\..\libgmockd.a
