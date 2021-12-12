@@ -49,7 +49,7 @@ int Date::getMonth() {
 int Date::getYear() {
     if (not validDate)
         throw (runtime_error("Invalid Date"));
-    return 0;
+    return YEAR;
 }
 
 std::vector<int> Date::getCurrentDate() {

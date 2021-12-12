@@ -8,11 +8,18 @@
 #include "Passenger.h"
 #include "Duration.h"
 
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
 
+    testing::InitGoogleTest(&argc, argv);
+    std::cout << "AED 2021/2022 - Projeto 1" << std::endl;
+    return RUN_ALL_TESTS();
+
+/*
     Duration du1(1, 30, 0);
     Duration du2(0, 30, 0);
 
@@ -51,5 +58,7 @@ int main() {
     for (Flight x: plane.getFlights()) {
         cout << x.getAvailableSeats() << endl;
     }
+  */
+
     return 0;
 }
