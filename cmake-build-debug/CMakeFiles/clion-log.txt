@@ -1,6 +1,0 @@
-"D:\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\pcere\OneDrive\Documentos\GitHub\AED-1
--- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
-Doxygen needs to be installed to generate the documentation.
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/pcere/OneDrive/Documentos/GitHub/AED-1/cmake-build-debug

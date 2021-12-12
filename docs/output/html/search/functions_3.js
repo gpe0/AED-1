@@ -9,7 +9,7 @@ var searchData=
   ['getfinishedservices_6',['getFinishedServices',['../class_plane.html#a57ee05975c1f83324bf1324b60d9aaef',1,'Plane']]],
   ['getflights_7',['getFlights',['../class_plane.html#aba46bbb6cba9b20805c56e4328dbc007',1,'Plane']]],
   ['getlicenseplate_8',['getLicensePlate',['../class_plane.html#a55cdc5b20520a5f4e0b14388e7617f48',1,'Plane']]],
-  ['getname_9',['getName',['../class_person.html#ab20f096fdfd5201818c45754af4c3e3b',1,'Person']]],
+  ['getname_9',['getName',['../class_person.html#a9db2e2ccfc6cfa0d7979613ec2aaa922',1,'Person']]],
   ['getnum_10',['getNum',['../class_flight.html#a0108d9bd179385c6ae5fd55081bec64e',1,'Flight']]],
   ['getorigin_11',['getOrigin',['../class_flight.html#a9c0d727ed31c3a263f2b7f68cefbe4cc',1,'Flight']]],
   ['getservices_12',['getServices',['../class_plane.html#afe2ac0c20d8fcd8942fc1f55ff19a175',1,'Plane']]],

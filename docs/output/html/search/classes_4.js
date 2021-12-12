@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['worker_0',['Worker',['../class_worker.html',1,'']]]
+  ['timegeneralization_0',['TimeGeneralization',['../class_time_generalization.html',1,'']]]
 ];

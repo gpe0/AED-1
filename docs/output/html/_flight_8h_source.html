@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED: C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/Flight.h Source File</title>
+<title>AED: C:/Users/Utilizador/Documents/GitHub/AED-1/Tests/Flight.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,7 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,12 +61,17 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_33c78a012c8d08979f57a54a07694c46.html">Tests</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/Flight.h</div></div>
+  <div class="headertitle"><div class="title">Flight.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PROJECT_FLIGHT_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PROJECT_FLIGHT_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TESTS_FLIGHT_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TESTS_FLIGHT_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Date.h&quot;</span></div>
@@ -100,32 +104,29 @@ $(function() {
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a88e1f2f1fe493821d4919e3c856442ac">setAvailableSeats</a>(<span class="keywordtype">int</span> availableSeats);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a36bb609ba99ef7b93bd7951461d6b2d3">setDate</a>(<a class="code hl_class" href="class_date.html">Date</a> date);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">setDuration</a>(<span class="keywordtype">float</span> duration);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">setDuration</a>(<span class="keywordtype">float</span> duration);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">setOrigin</a>(std::string origin);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">setOrigin</a>(std::string origin);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">setDestination</a>(std::string destination);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:6</div></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">setDestination</a>(std::string destination);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:7</div></div>
 <div class="ttc" id="aclass_flight_html"><div class="ttname"><a href="class_flight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:7</div></div>
-<div class="ttc" id="aclass_flight_html_a0108d9bd179385c6ae5fd55081bec64e"><div class="ttname"><a href="class_flight.html#a0108d9bd179385c6ae5fd55081bec64e">Flight::getNum</a></div><div class="ttdeci">int getNum()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:12</div></div>
-<div class="ttc" id="aclass_flight_html_a0742a26fdc41cec3bfba087f2158e975"><div class="ttname"><a href="class_flight.html#a0742a26fdc41cec3bfba087f2158e975">Flight::getDate</a></div><div class="ttdeci">Date getDate()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:20</div></div>
-<div class="ttc" id="aclass_flight_html_a2e8a66323dfc8a0371e538cad22ff051"><div class="ttname"><a href="class_flight.html#a2e8a66323dfc8a0371e538cad22ff051">Flight::setNum</a></div><div class="ttdeci">void setNum(int num)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:36</div></div>
-<div class="ttc" id="aclass_flight_html_a36bb609ba99ef7b93bd7951461d6b2d3"><div class="ttname"><a href="class_flight.html#a36bb609ba99ef7b93bd7951461d6b2d3">Flight::setDate</a></div><div class="ttdeci">void setDate(Date date)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:44</div></div>
-<div class="ttc" id="aclass_flight_html_a656113fdd0fa99e0a58752b3d66ad08d"><div class="ttname"><a href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">Flight::setDestination</a></div><div class="ttdeci">void setDestination(std::string destination)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:56</div></div>
-<div class="ttc" id="aclass_flight_html_a6ed62c92fe6633e2a19b8fd0e209f77d"><div class="ttname"><a href="class_flight.html#a6ed62c92fe6633e2a19b8fd0e209f77d">Flight::getAvailableSeats</a></div><div class="ttdeci">int getAvailableSeats()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:16</div></div>
-<div class="ttc" id="aclass_flight_html_a79fbcf4827984d09f08d849506df2260"><div class="ttname"><a href="class_flight.html#a79fbcf4827984d09f08d849506df2260">Flight::getDuration</a></div><div class="ttdeci">float getDuration()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:24</div></div>
+<div class="ttc" id="aclass_flight_html_a0108d9bd179385c6ae5fd55081bec64e"><div class="ttname"><a href="class_flight.html#a0108d9bd179385c6ae5fd55081bec64e">Flight::getNum</a></div><div class="ttdeci">int getNum()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:11</div></div>
+<div class="ttc" id="aclass_flight_html_a0742a26fdc41cec3bfba087f2158e975"><div class="ttname"><a href="class_flight.html#a0742a26fdc41cec3bfba087f2158e975">Flight::getDate</a></div><div class="ttdeci">Date getDate()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:19</div></div>
+<div class="ttc" id="aclass_flight_html_a2e8a66323dfc8a0371e538cad22ff051"><div class="ttname"><a href="class_flight.html#a2e8a66323dfc8a0371e538cad22ff051">Flight::setNum</a></div><div class="ttdeci">void setNum(int num)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:35</div></div>
+<div class="ttc" id="aclass_flight_html_a656113fdd0fa99e0a58752b3d66ad08d"><div class="ttname"><a href="class_flight.html#a656113fdd0fa99e0a58752b3d66ad08d">Flight::setDestination</a></div><div class="ttdeci">void setDestination(std::string destination)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:51</div></div>
+<div class="ttc" id="aclass_flight_html_a6ed62c92fe6633e2a19b8fd0e209f77d"><div class="ttname"><a href="class_flight.html#a6ed62c92fe6633e2a19b8fd0e209f77d">Flight::getAvailableSeats</a></div><div class="ttdeci">int getAvailableSeats()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:15</div></div>
+<div class="ttc" id="aclass_flight_html_a79fbcf4827984d09f08d849506df2260"><div class="ttname"><a href="class_flight.html#a79fbcf4827984d09f08d849506df2260">Flight::getDuration</a></div><div class="ttdeci">float getDuration()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:23</div></div>
 <div class="ttc" id="aclass_flight_html_a88cb2ffd5f287c6deadeaefe2e87ace1"><div class="ttname"><a href="class_flight.html#a88cb2ffd5f287c6deadeaefe2e87ace1">Flight::Flight</a></div><div class="ttdeci">Flight(int num, Date date, float duration, std::string origin, std::string destination)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:3</div></div>
-<div class="ttc" id="aclass_flight_html_a88e1f2f1fe493821d4919e3c856442ac"><div class="ttname"><a href="class_flight.html#a88e1f2f1fe493821d4919e3c856442ac">Flight::setAvailableSeats</a></div><div class="ttdeci">void setAvailableSeats(int availableSeats)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:40</div></div>
-<div class="ttc" id="aclass_flight_html_a9c0d727ed31c3a263f2b7f68cefbe4cc"><div class="ttname"><a href="class_flight.html#a9c0d727ed31c3a263f2b7f68cefbe4cc">Flight::getOrigin</a></div><div class="ttdeci">std::string getOrigin()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:28</div></div>
-<div class="ttc" id="aclass_flight_html_a9f3a6e14b259929d45f97296b0b7f5fb"><div class="ttname"><a href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">Flight::setDuration</a></div><div class="ttdeci">void setDuration(float duration)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:48</div></div>
-<div class="ttc" id="aclass_flight_html_aa6fe2e359d3e72c70d807c4e5a710661"><div class="ttname"><a href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">Flight::setOrigin</a></div><div class="ttdeci">void setOrigin(std::string origin)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:52</div></div>
-<div class="ttc" id="aclass_flight_html_ab6325b31b95c9b7c4d0c4a3be756f7c5"><div class="ttname"><a href="class_flight.html#ab6325b31b95c9b7c4d0c4a3be756f7c5">Flight::getDestination</a></div><div class="ttdeci">std::string getDestination()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:32</div></div>
+<div class="ttc" id="aclass_flight_html_a88e1f2f1fe493821d4919e3c856442ac"><div class="ttname"><a href="class_flight.html#a88e1f2f1fe493821d4919e3c856442ac">Flight::setAvailableSeats</a></div><div class="ttdeci">void setAvailableSeats(int availableSeats)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:39</div></div>
+<div class="ttc" id="aclass_flight_html_a9c0d727ed31c3a263f2b7f68cefbe4cc"><div class="ttname"><a href="class_flight.html#a9c0d727ed31c3a263f2b7f68cefbe4cc">Flight::getOrigin</a></div><div class="ttdeci">std::string getOrigin()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:27</div></div>
+<div class="ttc" id="aclass_flight_html_a9f3a6e14b259929d45f97296b0b7f5fb"><div class="ttname"><a href="class_flight.html#a9f3a6e14b259929d45f97296b0b7f5fb">Flight::setDuration</a></div><div class="ttdeci">void setDuration(float duration)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:43</div></div>
+<div class="ttc" id="aclass_flight_html_aa6fe2e359d3e72c70d807c4e5a710661"><div class="ttname"><a href="class_flight.html#aa6fe2e359d3e72c70d807c4e5a710661">Flight::setOrigin</a></div><div class="ttdeci">void setOrigin(std::string origin)</div><div class="ttdef"><b>Definition:</b> Flight.cpp:47</div></div>
+<div class="ttc" id="aclass_flight_html_ab6325b31b95c9b7c4d0c4a3be756f7c5"><div class="ttname"><a href="class_flight.html#ab6325b31b95c9b7c4d0c4a3be756f7c5">Flight::getDestination</a></div><div class="ttdeci">std::string getDestination()</div><div class="ttdef"><b>Definition:</b> Flight.cpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

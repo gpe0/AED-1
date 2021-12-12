@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(lib/googletest-master)
 include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
+include_directories(Tests/)
 
 add_executable(AED-1 main.cpp Tests/Flight.cpp Tests/Flight.h Tests/Plane.cpp Tests/Plane.h Tests/Service.cpp Tests/Service.h Tests/Date.cpp Tests/Date.h Tests/Person.cpp Tests/Person.h Tests/Worker.cpp Tests/Worker.h Tests/Passenger.cpp Tests/Passenger.h Tests/TimeGeneralization.cpp Tests/TimeGeneralization.h Tests/Duration.cpp Tests/Duration.h)
 

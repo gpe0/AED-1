@@ -87,8 +87,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0397c6f89fafc12e738923f612bc41a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31113fb0a49d119ce5333eddcf9c10e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a31113fb0a49d119ce5333eddcf9c10e9">Person</a> (std::string name, int age, char sex)</td></tr>
 <tr class="separator:a31113fb0a49d119ce5333eddcf9c10e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab20f096fdfd5201818c45754af4c3e3b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#ab20f096fdfd5201818c45754af4c3e3b">getName</a> () const</td></tr>
-<tr class="separator:ab20f096fdfd5201818c45754af4c3e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0d75738df900a7e9f38ce3bfd2f04e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#ae0d75738df900a7e9f38ce3bfd2f04e5">isValid</a> ()</td></tr>
+<tr class="separator:ae0d75738df900a7e9f38ce3bfd2f04e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db2e2ccfc6cfa0d7979613ec2aaa922"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a9db2e2ccfc6cfa0d7979613ec2aaa922">getName</a> () const</td></tr>
+<tr class="separator:a9db2e2ccfc6cfa0d7979613ec2aaa922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b66dbee570398920b8fb6aacddd2559"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a4b66dbee570398920b8fb6aacddd2559">getAge</a> () const</td></tr>
 <tr class="separator:a4b66dbee570398920b8fb6aacddd2559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb92dfb78e6f780829188e6b38a42bf"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_person.html#a0cb92dfb78e6f780829188e6b38a42bf">getSex</a> () const</td></tr>
@@ -111,6 +113,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>age</b></td></tr>
 <tr class="memitem:a46160b0d796577b5be3fe686969e3bb6"><td class="memItemLeft" align="right" valign="top"><a id="a46160b0d796577b5be3fe686969e3bb6" name="a46160b0d796577b5be3fe686969e3bb6"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>sex</b></td></tr>
 <tr class="separator:a46160b0d796577b5be3fe686969e3bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0599bb200ee38332cd47e2f1f1ad8205"><td class="memItemLeft" align="right" valign="top"><a id="a0599bb200ee38332cd47e2f1f1ad8205" name="a0599bb200ee38332cd47e2f1f1ad8205"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>validPerson</b></td></tr>
+<tr class="separator:a0599bb200ee38332cd47e2f1f1ad8205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0397c6f89fafc12e738923f612bc41a3" name="a0397c6f89fafc12e738923f612bc41a3"></a>
@@ -194,22 +199,22 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>sex</b></td></tr>
 
 </div>
 </div>
-<a id="ab20f096fdfd5201818c45754af4c3e3b" name="ab20f096fdfd5201818c45754af4c3e3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab20f096fdfd5201818c45754af4c3e3b">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="a9db2e2ccfc6cfa0d7979613ec2aaa922" name="a9db2e2ccfc6cfa0d7979613ec2aaa922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db2e2ccfc6cfa0d7979613ec2aaa922">&#9670;&nbsp;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Person::getName </td>
+          <td class="memname">string Person::getName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Returns the person's name</p>
-<dl class="section return"><dt>Returns</dt><dd>person's name </dd></dl>
+<p >Returns if the person's data is valid</p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>
@@ -229,6 +234,25 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>sex</b></td></tr>
 </div><div class="memdoc">
 <p >Returns the person's sex</p>
 <dl class="section return"><dt>Returns</dt><dd>person's sex </dd></dl>
+
+</div>
+</div>
+<a id="ae0d75738df900a7e9f38ce3bfd2f04e5" name="ae0d75738df900a7e9f38ce3bfd2f04e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0d75738df900a7e9f38ce3bfd2f04e5">&#9670;&nbsp;</a></span>isValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Person::isValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Returns the person's name</p>
+<dl class="section return"><dt>Returns</dt><dd>person's name </dd></dl>
 
 </div>
 </div>
@@ -308,8 +332,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>sex</b></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/<a class="el" href="_person_8h_source.html">Person.h</a></li>
-<li>C:/Users/guilh/OneDrive/Documents/GitHub/AED-1/project/Person.cpp</li>
+<li>C:/Users/Utilizador/Documents/GitHub/AED-1/Tests/<a class="el" href="_person_8h_source.html">Person.h</a></li>
+<li>C:/Users/Utilizador/Documents/GitHub/AED-1/Tests/Person.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
