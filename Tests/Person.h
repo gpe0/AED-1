@@ -10,6 +10,14 @@ protected:
     char sex;
     bool validPerson;
 
+    class InvalidPerson {
+    private:
+        std::string msg;
+    public:
+        InvalidPerson(std::string msg) {this->msg = msg;};
+        std::string getMsg() {return msg;};
+    };
+
 public:
     /**Initializes uma pessoa "Undefined"
      *will have as values:

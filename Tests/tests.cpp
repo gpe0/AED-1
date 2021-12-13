@@ -88,10 +88,10 @@ TEST(test_1, Person) {
 
     // Testing exceptions
     ASSERT_EQ(true, p1.isValid());
-    p1.setAge(0);
+    p1.setAge(-1);
     ASSERT_EQ(false, p1.isValid());
     p1.setAge(120);
-    ASSERT_EQ(false, p1.isValid());
+    ASSERT_EQ(true, p1.isValid());
     p1.setAge(19);
     // Testing age limits
 
@@ -103,7 +103,7 @@ TEST(test_1, Person) {
 
     // Testing throws
     p1.setAge(0); // making validPerson = false
-   // ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getName());
-    //ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getSex());
-    //ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getAge());
+    //ASSERT_THROW(p1.getName(), Person::InvalidPerson("Invalid Person"));
+   // ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getSex());
+   // ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getAge());
 }

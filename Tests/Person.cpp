@@ -22,19 +22,19 @@ bool Person::isValid() {
 
 string Person::getName() const{
     if (not validPerson)
-        throw (runtime_error("Invalid Person"));
+        throw InvalidPerson("Invalid Person");
     return name;
 }
 
 int Person::getAge() const{
     if (not validPerson)
-        throw (runtime_error("Invalid Person"));
+        throw InvalidPerson("Invalid Person");
     return age;
 }
 
 char Person::getSex() const{
     if (not validPerson)
-        throw (runtime_error("Invalid Person"));
+        throw InvalidPerson("Invalid Person");
     return sex;
 }
 
@@ -43,10 +43,18 @@ void Person::setName(string name) {
 }
 
 void Person::setAge(int age) {
+
+    if (age < 0) validPerson = false;
+    else validPerson = true;
+
     this->age = age;
 }
 
 void Person::setSex(char sex) {
+
+    if (sex == 'M' || sex == 'F' || sex == 'U') validPerson = true;
+    else validPerson = false;
+
     this->sex = sex;
 }
 
