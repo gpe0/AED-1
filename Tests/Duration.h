@@ -1,9 +1,5 @@
-//
-// Created by guilh on 12/5/2021.
-//
-
-#ifndef PROJECT_DURATION_H
-#define PROJECT_DURATION_H
+#ifndef DURATION_H
+#define DURATION_H
 
 
 #include "TimeGeneralization.h"
@@ -18,4 +14,4 @@ public:
 };
 
 
-#endif //PROJECT_DURATION_H
+#endif

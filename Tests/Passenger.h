@@ -1,5 +1,5 @@
-#ifndef PROJECT_PASSENGER_H
-#define PROJECT_PASSENGER_H
+#ifndef PASSENGER_H
+#define PASSENGER_H
 
 #include "Person.h"
 #include "Flight.h"

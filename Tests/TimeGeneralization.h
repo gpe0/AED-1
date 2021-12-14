@@ -1,5 +1,5 @@
-#ifndef PROJECT_TIMEGENERALIZATION_H
-#define PROJECT_TIMEGENERALIZATION_H
+#ifndef TIMEGENERALIZATION_H
+#define TIMEGENERALIZATION_H
 
 
 #include <iostream>
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //PROJECT_TIMEGENERALIZATION_H
+#endif

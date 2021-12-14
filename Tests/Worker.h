@@ -1,5 +1,5 @@
-#ifndef PROJECT_WORKER_H
-#define PROJECT_WORKER_H
+#ifndef WORKER_H
+#define WORKER_H
 
 #include <string>
 #include "Person.h"

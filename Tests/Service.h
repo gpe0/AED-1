@@ -1,5 +1,5 @@
-#ifndef PROJECT_SERVICE_H
-#define PROJECT_SERVICE_H
+#ifndef SERVICE_H
+#define SERVICE_H
 
 #include <string>
 #include "Date.h"

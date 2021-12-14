@@ -12,6 +12,7 @@
 #include "Worker.h"
 
 using testing::Eq;
+using namespace std;
 
 TEST(test_1, Date){
     Date p1(4, 10, 1990);
@@ -102,8 +103,48 @@ TEST(test_1, Person) {
     // Testing sex limits
 
     // Testing throws
-    p1.setAge(0); // making validPerson = false
-    //ASSERT_THROW(p1.getName(), Person::InvalidPerson("Invalid Person"));
-   // ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getSex());
-   // ASSERT_EQ(std::runtime_error("Invalid Person"), p1.getAge());
+    p1.setAge(-1); // making validPerson = false
+
+    //Testing getName()
+    try {
+        p1.getName();
+        FAIL() << "Valid Person";
+    }
+    catch(Person::InvalidPerson const & err) {
+        EXPECT_EQ(err.what(), "Invalid Person");
+
+    }
+    catch(...) {
+        FAIL() << "Invalid Person";
+
+    }
+
+    //Testing getAge()
+    try {
+        p1.getAge();
+        FAIL() << "Valid Person";
+    }
+    catch(Person::InvalidPerson const & err) {
+        EXPECT_EQ(err.what(), "Invalid Person");
+
+    }
+    catch(...) {
+        FAIL() << "Invalid Person";
+
+    }
+
+    //Testing getSex()
+    try {
+        p1.getSex();
+        FAIL() << "Valid Person";
+    }
+    catch(Person::InvalidPerson const & err) {
+        EXPECT_EQ(err.what(), "Invalid Person");
+
+    }
+    catch(...) {
+        FAIL() << "Invalid Person";
+
+    }
+
 }

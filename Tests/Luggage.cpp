@@ -1,12 +1,14 @@
-#include <Luggage.h>
+#include "Luggage.h"
 
 using namespace std;
 
-Luggage::Luggage(int luggageID, double width, double height, double weight) {
-    luggageID = 0;
-    width = 0;
-    height = 0;
-    weight = 0;
+int Luggage::id = 1;
+
+Luggage::Luggage(double width, double height, double weight) {
+    this->luggageID = id++;
+    this->width = width;
+    this->height = height;
+    this->weight = weight;
 }
 
 int Luggage::getID(){
@@ -25,18 +27,17 @@ double Luggage::getWeight() {
     return weight;
 }
 
-void Luggage::setID(int num) {
-    luggageID = num;
+void Luggage::setWidth(double width) {
+    this->width = width;
 }
 
-void Luggage::setWeight(double num) {
-    weight = num;
+void Luggage::setHeight(double height) {
+    this->height = height;
 }
 
-void Luggage::setHeight(double num) {
-    height = num;
+void Luggage::setWeight(double weight) {
+    this->weight = weight;
 }
 
-void Luggage::setWidth(double num) {
-    width = num;
-}
+
+

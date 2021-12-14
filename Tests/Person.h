@@ -1,5 +1,5 @@
-#ifndef PROJECT_PERSON_H
-#define PROJECT_PERSON_H
+#ifndef PERSON_H
+#define PERSON_H
 
 #include <string>
 
@@ -10,13 +10,6 @@ protected:
     char sex;
     bool validPerson;
 
-    class InvalidPerson {
-    private:
-        std::string msg;
-    public:
-        InvalidPerson(std::string msg) {this->msg = msg;};
-        std::string getMsg() {return msg;};
-    };
 
 public:
     /**Initializes uma pessoa "Undefined"
@@ -79,6 +72,14 @@ public:
      * @param sex person's sex
      */
     void setSex(char sex);
+
+    class InvalidPerson {
+    private:
+        std::string msg;
+    public:
+        InvalidPerson(std::string msg) {this->msg = msg;};
+        std::string what() const {return msg;};
+    };
 };
 
 

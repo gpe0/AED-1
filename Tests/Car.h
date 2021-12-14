@@ -1,23 +1,18 @@
-#ifndef AED_1_CAR_H
-#define AED_1_CAR_H
+#ifndef CAR_H
+#define CAR_H
 #include <iostream>
 
-class Car{
+class Car {
 private:
-    int capacity;
-    int occupied;
-    //vector<Carriage> car;
-    //missing class Carriage
+    const int MAXCARRIAGES;
+    //stack<Carriage> carriages;
 public:
-    Car();
+    Car(int MaxCarriages);
     //void addCarriage(Carriage aux);
-    int getCapacity();
-    int getOccupied();
-    void setCapacity(int num);
-    void setOccupied(int num);
+    int getMaxCarriages();
 };
 
 
 
 
-#endif //AED_1_CAR_H
+#endif

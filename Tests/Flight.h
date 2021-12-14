@@ -1,5 +1,5 @@
-#ifndef TESTS_FLIGHT_H
-#define TESTS_FLIGHT_H
+#ifndef FLIGHT_H
+#define FLIGHT_H
 
 #include <string>
 #include "Date.h"

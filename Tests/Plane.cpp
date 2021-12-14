@@ -8,7 +8,6 @@ Plane::Plane(std::string licensePlate, int capacity, std::list<Flight> flights, 
     }
 }
 
-
 std::string Plane::getLicensePlate() const {
     return licensePlate;
 }

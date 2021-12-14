@@ -1,5 +1,5 @@
-#ifndef PROJECT_DATE_H
-#define PROJECT_DATE_H
+#ifndef DATE_H
+#define DATE_H
 
 #include <iostream>
 #include <vector>

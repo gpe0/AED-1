@@ -11,9 +11,8 @@ Person::Person() : name("undefined"), sex('U'){
 Person::Person(string name, int age, char sex) : name(name), sex(sex){
     validPerson = true;
     this->age = age;
-    if (age <= 0 || age > 120 || sex != 'M' || sex != 'F' || sex != 'U') {
-        validPerson == false;
-    }
+    if (age < 0 || (sex != 'M' && sex != 'F' && sex != 'U')) validPerson = false;
+
 }
 
 bool Person::isValid() {
