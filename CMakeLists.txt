@@ -10,7 +10,7 @@ include_directories(Tests/)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Tests")
 
-add_executable(AED-1 main.cpp Tests/Flight.cpp Tests/Flight.h Tests/Plane.cpp Tests/Plane.h Tests/Service.cpp Tests/Service.h Tests/Date.cpp Tests/Date.h Tests/Person.cpp Tests/Person.h Tests/Worker.cpp Tests/Worker.h Tests/Passenger.cpp Tests/Passenger.h Tests/TimeGeneralization.cpp Tests/TimeGeneralization.h Tests/Duration.cpp Tests/Duration.h Tests/tests.cpp)
+add_executable(AED-1 main.cpp Tests/Flight.cpp Tests/Flight.h Tests/Plane.cpp Tests/Plane.h Tests/Service.cpp Tests/Service.h Tests/Date.cpp Tests/Date.h Tests/Person.cpp Tests/Person.h Tests/Worker.cpp Tests/Worker.h Tests/Passenger.cpp Tests/Passenger.h Tests/TimeGeneralization.cpp Tests/TimeGeneralization.h Tests/Duration.cpp Tests/Duration.h Tests/tests.cpp Tests/Bst.h)
 
 target_link_libraries(AED-1 gtest gtest_main)
 

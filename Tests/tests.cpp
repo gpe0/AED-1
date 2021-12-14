@@ -44,7 +44,8 @@ TEST(test_1, Duration){
 
 TEST(test_1, Flight){
     Date p1(4, 10, 1990);
-    Flight f1(2, p1, 2.10, "Oporto", "Lisbon");
+    Duration d1(0, 45, 0);
+    Flight f1(2, p1, d1, "Oporto", "Lisbon");
     ASSERT_EQ(4, f1.getDate().getDay());
     ASSERT_EQ(10, f1.getDate().getMonth());
     ASSERT_EQ(1990, f1.getDate().getYear());
@@ -53,9 +54,8 @@ TEST(test_1, Flight){
     f1.setNum(3);
     ASSERT_EQ(3, f1.getNum());
     // Tests if functions getNum and setNum are working properly
-    ASSERT_NEAR(2.10, f1.getDuration(), 0.01);
-    f1.setDuration(3.20);
-    ASSERT_NEAR(3.20, f1.getDuration(), 0.01);
+    ASSERT_EQ(45, f1.getDuration().getMin());
+    ASSERT_EQ(0, f1.getDuration().getHours());
     // Tests if functions setDuration and getDuration are working properly
     ASSERT_EQ("Oporto", f1.getOrigin());
     f1.setOrigin("Madrid");

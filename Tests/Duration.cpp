@@ -1,7 +1,3 @@
-//
-// Created by guilh on 12/5/2021.
-//
-
 #include "Duration.h"
 
 using namespace std;
@@ -12,25 +8,25 @@ Duration::Duration(int hours, int min, int secs) : TimeGeneralization(hours, min
 
 int Duration::getHours() {
     if (!validObject)
-        throw (runtime_error("Invalid Object"));
+        throw InvalidDuration("Invalid Duration");
     return LEFT;
 }
 
 int Duration::getMin() {
     if (!validObject)
-        throw (runtime_error("Invalid Object"));
+        throw InvalidDuration("Invalid Duration");
     return MID;
 }
 
 int Duration::getSecs() {
     if (!validObject)
-        throw (runtime_error("Invalid Object"));
+        throw InvalidDuration("Invalid Duration");
     return RIGHT;
 }
 
 Duration Duration::operator+(Duration const &right) {
     if (!(validObject and right.validObject))
-        throw (runtime_error("Invalid Object"));
+        throw InvalidDuration("Invalid Duration");
     int seconds, minutes=0, hours=0;
     seconds = RIGHT + right.RIGHT;
     while (seconds >= 60){

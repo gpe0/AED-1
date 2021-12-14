@@ -3,13 +3,14 @@
 
 #include <string>
 #include "Date.h"
+#include "Duration.h"
 
 class Flight {
 private:
     int num;
     int availableSeats;
     Date date;
-    float duration;
+    const Duration DURATION;
     std::string origin;
     std::string destination;
 
@@ -22,7 +23,7 @@ public:
      * @param origin flight origin
      * @param destination flight destination
      */
-    Flight(int num, Date date, float duration, std::string origin, std::string destination);
+    Flight(int num, Date date, Duration DURATION, std::string origin, std::string destination);
 
     /** Returns the flight number
      *
@@ -42,11 +43,11 @@ public:
      */
     Date getDate();
 
-    /** Returns the flight duration in hours
+    /** Returns the flight duration (using Duration Class)
      *
-     * @return flight duration in hours
+     * @return flight duration
      */
-    float getDuration();
+    Duration getDuration();
 
     /** Returns the flight origin
      *
@@ -72,12 +73,6 @@ public:
      * @param avaibleSeat number of available seats
      */
     void setAvailableSeats(int availableSeats);
-
-    /** Sets a flight duration in hours
-     *
-     * @param duration flight duration in hours
-     */
-    void setDuration(float duration);
 
     /** Sets a flight origin
      *
