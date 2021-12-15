@@ -10,6 +10,7 @@
 #include "Service.h"
 #include "ConstTimeGen.h"
 #include "Worker.h"
+#include "Carriage.h"
 
 using testing::Eq;
 using namespace std;
@@ -104,9 +105,15 @@ TEST(test_1, Flight){
     Date p1(4, 10, 1990);
     Duration d1(0, 45, 0);
     Flight f1(2, p1, d1, "Oporto", "Lisbon");
-    ASSERT_EQ(4, f1.getDate().getDay());
-    ASSERT_EQ(10, f1.getDate().getMonth());
-    ASSERT_EQ(1990, f1.getDate().getYear());
+
+
+    int day = f1.getDate().getDay();
+    int month = f1.getDate().getMonth();
+    int year = f1.getDate().getYear();
+
+    ASSERT_EQ(4, day);
+    ASSERT_EQ(10, month);
+    ASSERT_EQ(1990, year);
     // Tests if functions getDate is working properly
     ASSERT_EQ(2, f1.getNum());
     f1.setNum(3);
@@ -204,5 +211,57 @@ TEST(test_1, Person) {
         FAIL() << "Invalid Person";
 
     }
+
+}
+
+TEST(test_2, Carriage) {
+    Carriage carriage(3, 4);
+    Luggage l1(3.2, 1.6, 8);
+    Luggage l2(4.4, 3.3, 10);
+
+    EXPECT_TRUE(carriage.getLuggages().empty());
+    EXPECT_EQ(l1.getID(), 1);
+    EXPECT_EQ(l2.getID(), 2);
+
+    carriage.addLuggage(l1);
+    carriage.addLuggage(l2);
+
+    EXPECT_EQ(carriage.getLuggages().size(), 1);
+    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
+    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
+
+    carriage.addLuggage(l1);
+    carriage.addLuggage(l1);
+
+    EXPECT_EQ(carriage.getLuggages().size(), 1);
+    EXPECT_EQ(carriage.getLuggages().top().size(), 4);
+    EXPECT_EQ(carriage.getLuggages().top().top(), l1);
+
+    carriage.addLuggage(l1);
+    carriage.addLuggage(l2);
+
+    EXPECT_EQ(carriage.getLuggages().size(), 2);
+    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
+    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
+
+
+    carriage.removeNextLuggage();
+    carriage.removeNextLuggage();
+
+    EXPECT_EQ(carriage.getLuggages().size(), 1);
+    EXPECT_EQ(carriage.getLuggages().top().size(), 4);
+    EXPECT_EQ(carriage.getLuggages().top().top(), l1);
+
+    carriage.removeNextLuggage();
+    carriage.removeNextLuggage();
+
+    EXPECT_EQ(carriage.getLuggages().size(), 1);
+    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
+    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
+
+    carriage.removeNextLuggage();
+    carriage.removeNextLuggage();
+
+    EXPECT_TRUE(carriage.getLuggages().empty());
 
 }

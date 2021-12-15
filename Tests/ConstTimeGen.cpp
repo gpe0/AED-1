@@ -22,6 +22,6 @@ bool operator<(ConstTimeGen &left, ConstTimeGen &right) {
         or (left.LEFT==right.LEFT and left.MID==right.MID and left.RIGHT < right.RIGHT);
 }
 
-bool ConstTimeGen::setInvalid() {
+void ConstTimeGen::setInvalid() {
     validTime = false;
 }

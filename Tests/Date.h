@@ -27,10 +27,10 @@ public:
      */
     Date(int day, int month, int year);
 
-    bool isValid();
-    int getDay();
-    int getMonth();
-    int getYear();
+    bool isValid() const;
+    int getDay() const;
+    int getMonth() const;
+    int getYear() const;
 
     friend std::ostream& operator<<(std::ostream& os, Date& date);
 

@@ -21,7 +21,7 @@ public:
      */
     ConstTimeGen(int left, int mid, int right);
 
-    bool setInvalid();
+    void setInvalid();
 
     friend std::ostream& operator<<(std::ostream& os, ConstTimeGen& object);
 

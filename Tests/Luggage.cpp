@@ -11,19 +11,19 @@ Luggage::Luggage(double width, double height, double weight) {
     this->weight = weight;
 }
 
-int Luggage::getID(){
+int Luggage::getID() const {
     return luggageID;
 };
 
-double Luggage::getWidth() {
+double Luggage::getWidth() const {
     return width;
 }
 
-double Luggage::getHeight() {
+double Luggage::getHeight() const {
     return height;
 }
 
-double Luggage::getWeight() {
+double Luggage::getWeight() const {
     return weight;
 }
 
@@ -37,6 +37,10 @@ void Luggage::setHeight(double height) {
 
 void Luggage::setWeight(double weight) {
     this->weight = weight;
+}
+
+bool Luggage::operator==(const Luggage &right) const {
+    return luggageID == right.luggageID;
 }
 
 

@@ -9,8 +9,8 @@ class Flight {
 private:
     int num;
     int availableSeats;
-    Date date;
-    const Duration DURATION;
+    Date *date;
+    Duration *duration;
     std::string origin;
     std::string destination;
 
@@ -23,43 +23,43 @@ public:
      * @param origin flight origin
      * @param destination flight destination
      */
-    Flight(int num, Date date, Duration DURATION, std::string origin, std::string destination);
+    Flight(int num, Date date, Duration duration, std::string origin, std::string destination);
 
     /** Returns the flight number
      *
      * @return flight number
      */
-    int getNum();
+    int getNum() const;
 
     /** Returns the number os still available seats
      *
      * @return available seats
      */
-    int getAvailableSeats();
+    int getAvailableSeats() const;
 
     /** Returns the flight date
      *
      * @return flight date
      */
-    Date getDate();
+    Date getDate() const;
 
     /** Returns the flight duration (using Duration Class)
      *
      * @return flight duration
      */
-    Duration getDuration();
+    Duration getDuration() const;
 
     /** Returns the flight origin
      *
      * @return flight origin
      */
-    std::string getOrigin();
+    std::string getOrigin() const;
 
     /** Returns the flight destination
      *
      * @return flight destination
      */
-    std::string getDestination();
+    std::string getDestination() const;
 
     /** Sets a flight number
      *
@@ -74,10 +74,22 @@ public:
      */
     void setAvailableSeats(int availableSeats);
 
-    /** Sets a flight origin
+    /** Sets a flight date
      *
-     * @param origin flight origin
+     * @param date flight date
      */
+    void setDate(Date date);
+
+    /** Sets a flight duration
+     *
+     * @param duration flight duration
+     */
+    void setDuration(Duration duration);
+
+    /** Sets a flight origin
+    *
+    * @param origin flight origin
+    */
     void setOrigin(std::string origin);
 
     /** Sets a flight destination

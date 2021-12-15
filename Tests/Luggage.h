@@ -10,14 +10,16 @@ private:
 
 public:
     Luggage(double width, double height, double weight);
-    int getID(); //returns number of suitcases
-    double getWidth();
-    double getHeight();
-    double getWeight();
+    int getID() const;
+    double getWidth() const;
+    double getHeight() const;
+    double getWeight() const;
 
     void setWidth(double width);
     void setHeight(double height);
     void setWeight(double weight);
+
+    bool operator ==(const Luggage& right) const;
 };
 
 

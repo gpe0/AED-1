@@ -30,23 +30,23 @@ std::ostream& operator<<(std::ostream& os, Date& date) {
     return os;
 }
 
-bool Date::isValid() {
+bool Date::isValid() const {
     return validDate;
 }
 
-int Date::getDay() {
+int Date::getDay() const {
     if (not validDate)
         throw (runtime_error("Invalid Date"));
     return DAY;
 }
 
-int Date::getMonth() {
+int Date::getMonth() const {
     if (not validDate)
         throw (runtime_error("Invalid Date"));
     return MONTH;
 }
 
-int Date::getYear() {
+int Date::getYear() const {
     if (not validDate)
         throw (runtime_error("Invalid Date"));
     return YEAR;

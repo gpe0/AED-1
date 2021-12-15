@@ -1,15 +1,22 @@
 #ifndef CAR_H
 #define CAR_H
-#include <iostream>
+
+#include <list>
+#include "Carriage.h"
 
 class Car {
 private:
-    const int MAXCARRIAGES;
-    //stack<Carriage> carriages;
+    const int CARRIAGES;
+    list<Carriage> carriages;
 public:
-    Car(int MaxCarriages);
+    Car(int carriages);
     //void addCarriage(Carriage aux);
     int getMaxCarriages();
+
+    bool addLuggage(Luggage l);
+    bool removeNextLuggage();
+
+    list<Carriage> getCarriages();
 };
 
 
