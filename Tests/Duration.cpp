@@ -8,25 +8,25 @@ Duration::Duration(int hours, int min, int secs) : ConstTimeGen(hours, min, secs
 
 int Duration::getHours() {
     if (!validTime)
-        throw InvalidDuration("Invalid Duration");
+        throw InvalidTime("Invalid Duration");
     return LEFT;
 }
 
 int Duration::getMin() {
     if (!validTime)
-        throw InvalidDuration("Invalid Duration");
+        throw InvalidTime("Invalid Duration");
     return MID;
 }
 
 int Duration::getSecs() {
     if (!validTime)
-        throw InvalidDuration("Invalid Duration");
+        throw InvalidTime("Invalid Duration");
     return RIGHT;
 }
 
 Duration Duration::operator+(Duration const &right) {
     if (!(validTime and right.validTime))
-        throw InvalidDuration("Invalid Duration");
+        throw InvalidTime("Invalid Duration");
     int seconds, minutes=0, hours=0;
     seconds = RIGHT + right.RIGHT;
     while (seconds >= 60){

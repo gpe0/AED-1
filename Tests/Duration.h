@@ -11,14 +11,6 @@ public:
     int getMin();
     int getSecs();
     Duration operator+(Duration const &right);
-
-    class InvalidDuration {
-    private:
-        std::string msg;
-    public:
-        InvalidDuration(std::string msg) {this->msg = msg;};
-        std::string what() const {return msg;};
-    };
 };
 
 

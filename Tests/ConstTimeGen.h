@@ -23,9 +23,9 @@ public:
 
     void setInvalid();
 
-    friend std::ostream& operator<<(std::ostream& os, ConstTimeGen& object);
+    friend std::ostream& operator<<(std::ostream& os, const ConstTimeGen& object) ;
 
-    friend bool operator<(ConstTimeGen& left, ConstTimeGen& right);
+    friend bool operator<(const ConstTimeGen& left, const ConstTimeGen& right) ;
 
     class InvalidTime {
     private:
