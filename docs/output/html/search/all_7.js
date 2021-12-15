@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['timegeneralization_0',['TimeGeneralization',['../class_time_generalization.html',1,'TimeGeneralization'],['../class_time_generalization.html#a0449389cf11a8f12b060d8ceac298137',1,'TimeGeneralization::TimeGeneralization()']]]
+  ['location_0',['Location',['../class_location.html',1,'']]],
+  ['luggage_1',['Luggage',['../class_luggage.html',1,'']]]
 ];

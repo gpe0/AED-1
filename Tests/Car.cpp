@@ -2,8 +2,10 @@
 
 using namespace std;
 
-Car::Car(int carriages): CARRIAGES(carriages) {
-
+Car::Car(int carriages, int stackNumber, int stackSize): CARRIAGES(carriages) {
+    for (int i = 0; i < carriages; i++) {
+        this->carriages.emplace_back(stackNumber, stackSize);
+    }
 }
 
 int Car::getMaxCarriages() {
@@ -20,11 +22,10 @@ bool Car::addLuggage(Luggage l) {
 }
 
 bool Car::removeNextLuggage() {
-    for (auto it = --carriages.end(); it != --carriages.begin(); it--) {
+    for (auto it = carriages.rbegin(); it != carriages.rend(); it++) {
         if ((*it).removeNextLuggage()) {
             return true;
         }
-        it = --carriages.erase(it);
     }
     return false;
 }

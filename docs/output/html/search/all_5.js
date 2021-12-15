@@ -1,6 +1,20 @@
 var searchData=
 [
-  ['passenger_0',['Passenger',['../class_passenger.html',1,'Passenger'],['../class_passenger.html#ab5c74148a854548a0809f6aef55cd3d0',1,'Passenger::Passenger()']]],
-  ['person_1',['Person',['../class_person.html',1,'Person'],['../class_person.html#a0397c6f89fafc12e738923f612bc41a3',1,'Person::Person()'],['../class_person.html#a31113fb0a49d119ce5333eddcf9c10e9',1,'Person::Person(std::string name, int age, char sex)']]],
-  ['plane_2',['Plane',['../class_plane.html',1,'Plane'],['../class_plane.html#a08441a38dbcbba0fcea8c487db55179e',1,'Plane::Plane()']]]
+  ['getage_0',['getAge',['../class_person.html#a4b66dbee570398920b8fb6aacddd2559',1,'Person']]],
+  ['getavailableseats_1',['getAvailableSeats',['../class_flight.html#a5ba1886b38c034794d788e7268183236',1,'Flight']]],
+  ['getcapacity_2',['getCapacity',['../class_plane.html#a728dcd76ef4c8f4a2baebdbb6b521549',1,'Plane']]],
+  ['getdate_3',['getDate',['../class_flight.html#ac7d86ffa7e0b4d151d874d64b336df76',1,'Flight']]],
+  ['getdestination_4',['getDestination',['../class_flight.html#a796784349325e703d6989344d7ad025b',1,'Flight']]],
+  ['getduration_5',['getDuration',['../class_flight.html#a86312d2882adab277c57411e0dc3bdaa',1,'Flight']]],
+  ['getfinishedservices_6',['getFinishedServices',['../class_plane.html#a57ee05975c1f83324bf1324b60d9aaef',1,'Plane']]],
+  ['getflights_7',['getFlights',['../class_plane.html#aba46bbb6cba9b20805c56e4328dbc007',1,'Plane']]],
+  ['getlicenseplate_8',['getLicensePlate',['../class_plane.html#a55cdc5b20520a5f4e0b14388e7617f48',1,'Plane']]],
+  ['getluggages_9',['getLuggages',['../class_carriage.html#ab984dc7df270f24bf3df31d1db046931',1,'Carriage']]],
+  ['getmaxstacknumber_10',['getMaxStackNumber',['../class_carriage.html#ae9b27dbd8e45bb265e17baaaa653856c',1,'Carriage']]],
+  ['getmaxstacksize_11',['getMaxSTackSize',['../class_carriage.html#a7adf4da444be14ad592b249ed11d4a2f',1,'Carriage']]],
+  ['getname_12',['getName',['../class_person.html#a9db2e2ccfc6cfa0d7979613ec2aaa922',1,'Person']]],
+  ['getnum_13',['getNum',['../class_flight.html#a8e3cb40aea69652fe8d6b35f09ce18bb',1,'Flight']]],
+  ['getorigin_14',['getOrigin',['../class_flight.html#a3eb00d3e3efdf09c433636c5c75e8c63',1,'Flight']]],
+  ['getservices_15',['getServices',['../class_plane.html#afe2ac0c20d8fcd8942fc1f55ff19a175',1,'Plane']]],
+  ['getsex_16',['getSex',['../class_person.html#a0cb92dfb78e6f780829188e6b38a42bf',1,'Person']]]
 ];

@@ -11,13 +11,14 @@
 #include "ConstTimeGen.h"
 #include "Worker.h"
 #include "Carriage.h"
+#include "Car.h"
 
 using testing::Eq;
 using namespace std;
 
 //Time related tests
 
-TEST(test_1, ConstTimeGen){
+TEST(test1, ConstTimeGen){
     //Tests class when object is valid
     ConstTimeGen t1(0,0,0);
     ConstTimeGen t2(1,0,0);
@@ -73,7 +74,7 @@ TEST(test_1, ConstTimeGen){
     //Testing <<
 
 }
-TEST(test_1, Date){
+TEST(test1, Date){
     Date p1(4, 10, 1990);
     Date p2(32, 12, 1990);
     Date p3(28, -1, 1990);
@@ -96,12 +97,12 @@ TEST(test_1, Date){
 
 
 
-TEST(test_1, Duration){
+TEST(test1, Duration){
     Duration d1(10, 12, 14);
     // TODO
 }
 
-TEST(test_1, Flight){
+TEST(test1, Flight){
     Date p1(4, 10, 1990);
     Duration d1(0, 45, 0);
     Flight f1(2, p1, d1, "Oporto", "Lisbon");
@@ -137,7 +138,7 @@ TEST(test_1, Flight){
 }
 
 
-TEST(test_1, Person) {
+TEST(test1, Person) {
     Person p1("Pedro", 19, 'M');
     ASSERT_EQ("Pedro", p1.getName());
     p1.setName("Gonçalo");
@@ -214,7 +215,7 @@ TEST(test_1, Person) {
 
 }
 
-TEST(test_2, Carriage) {
+TEST(test2, Carriage) {
     Carriage carriage(3, 4);
     Luggage l1(3.2, 1.6, 8);
     Luggage l2(4.4, 3.3, 10);
@@ -263,5 +264,76 @@ TEST(test_2, Carriage) {
     carriage.removeNextLuggage();
 
     EXPECT_TRUE(carriage.getLuggages().empty());
+
+}
+
+TEST(test2, Car) {
+    Car car(3, 3, 4);
+
+    Luggage l1(3.2, 1.6, 8);
+    Luggage l2(4.4, 3.3, 10);
+
+    EXPECT_TRUE(car.getCarriages().size() == 3);
+
+    car.addLuggage(l1);
+
+    EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 1);
+
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+
+    EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 2);
+    EXPECT_EQ(car.getCarriages().front().getLuggages().top().size(), 1);
+
+    car.removeNextLuggage();
+    car.removeNextLuggage();
+    car.removeNextLuggage();
+    car.removeNextLuggage();
+    car.removeNextLuggage();
+
+    EXPECT_TRUE(car.getCarriages().front().getLuggages().empty());
+
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+    car.addLuggage(l1);
+
+
+
+    EXPECT_FALSE(car.addLuggage(l1));
 
 }

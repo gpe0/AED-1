@@ -9,8 +9,8 @@ private:
     const int CARRIAGES;
     list<Carriage> carriages;
 public:
-    Car(int carriages);
-    //void addCarriage(Carriage aux);
+    Car(int carriages, int stackNumber, int stackSize);
+
     int getMaxCarriages();
 
     bool addLuggage(Luggage l);
