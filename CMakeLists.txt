@@ -15,7 +15,8 @@ add_executable(AED-1 main.cpp Tests/Flight.cpp Tests/Flight.h Tests/Plane.cpp
         Tests/Person.cpp Tests/Person.h Tests/Worker.cpp Tests/Worker.h Tests/Passenger.cpp
         Tests/Passenger.h Tests/ConstTimeGen.cpp Tests/ConstTimeGen.h Tests/Duration.cpp Tests/Duration.h
         Tests/tests.cpp Tests/Bst.h Tests/Location.cpp Tests/Location.h Tests/Carriage.cpp
-        Tests/Carriage.h Tests/Luggage.h Tests/Luggage.cpp Tests/Car.h Tests/Car.cpp Tests/Schedule.cpp Tests/Schedule.h)
+        Tests/Carriage.h Tests/Luggage.h Tests/Luggage.cpp Tests/Car.h Tests/Car.cpp
+        Tests/Schedule.cpp Tests/Schedule.h)
 
 target_link_libraries(AED-1 gtest gtest_main)
 

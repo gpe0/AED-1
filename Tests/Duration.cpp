@@ -24,7 +24,7 @@ int Duration::getSecs() {
     return RIGHT;
 }
 
-Duration Duration::operator+(Duration const &right) {
+Duration Duration::operator+(Duration const &right) const {
     if (!(validTime and right.validTime))
         throw InvalidTime("Invalid Duration");
     int seconds, minutes=0, hours=0;
@@ -43,3 +43,4 @@ Duration Duration::operator+(Duration const &right) {
     Duration duration(hours, minutes, seconds);
     return duration;
 }
+

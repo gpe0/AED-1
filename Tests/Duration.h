@@ -10,7 +10,7 @@ public:
     int getHours();
     int getMin();
     int getSecs();
-    Duration operator+(Duration const &right);
+    Duration operator+(Duration const &right) const;
 };
 
 
