@@ -137,6 +137,10 @@ TEST(test1, Flight){
     // Tests if functions getAvailableSeats and setAvailableSeats are working properly
 }
 
+TEST(test1, Plane) {
+
+}
+
 
 TEST(test1, Person) {
     Person p1("Pedro", 19, 'M');
@@ -294,46 +298,5 @@ TEST(test2, Car) {
     car.removeNextLuggage();
 
     EXPECT_TRUE(car.getCarriages().front().getLuggages().empty());
-
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-
-
-
-    EXPECT_FALSE(car.addLuggage(l1));
 
 }

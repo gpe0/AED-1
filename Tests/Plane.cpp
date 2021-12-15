@@ -1,34 +1,55 @@
+#include <iostream>
 #include "Plane.h"
 
-Plane::Plane(std::string licensePlate, int capacity, std::list<Flight> flights, std::queue<Service> services) : licensePlate(licensePlate), capacity(capacity), flights(flights), services(services) {
+using namespace std;
+
+Plane::Plane(std::string licensePlate, std::string type, int capacity, list<Flight> flights, queue<Service> services) : LICENSEPLATE(licensePlate), TYPE(type) , CAPACITY(capacity), flights(flights), services(services) {
     finishedServices = std::queue<Service>();
 
     for (Flight &flight : this->flights) {
         flight.setAvailableSeats(capacity);
     }
+
+    if (licensePlate.size() != 4) throw InvalidPlane("Invalid License Plate");
+
+    for (int i = 0; i < type.size(); i++) {
+        if (i == 0 && !(type[i] >= 'A' && type[i] <= 'Z')) {
+            throw InvalidPlane("Invalid License Plate");
+        }
+
+        if (i != 0 && !(type[i] >= '0' && type[i] <= '9')) {
+            throw InvalidPlane("Invalid License Plate");
+        }
+
+    }
+
 }
 
-std::string Plane::getLicensePlate() const {
-    return licensePlate;
+string Plane::getLicensePlate() const {
+    return LICENSEPLATE;
+}
+
+std::string Plane::getType() const {
+    return TYPE;
 }
 
 int Plane::getCapacity() const {
-    return capacity;
+    return CAPACITY;
 }
 
-std::list<Flight> Plane::getFlights() const {
+list<Flight> Plane::getFlights() const {
     return flights;
 }
 
-std::queue<Service> Plane::getServices() const {
+queue<Service> Plane::getServices() const {
     return services;
 }
 
-std::queue<Service> Plane::getFinishedServices() const {
+queue<Service> Plane::getFinishedServices() const {
     return finishedServices;
 }
 
-void Plane::setFlights(std::list<Flight> flights) {
+void Plane::setFlights(list<Flight> flights) {
     this->flights.clear();
     for (Flight f : flights) {
         addFlight(f);
