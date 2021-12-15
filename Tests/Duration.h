@@ -2,9 +2,9 @@
 #define DURATION_H
 
 
-#include "TimeGeneralization.h"
+#include "ConstTimeGen.h"
 
-class Duration : public TimeGeneralization {
+class Duration : public ConstTimeGen {
 public:
     Duration(int hours, int min, int secs);
     int getHours();

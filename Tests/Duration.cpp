@@ -2,30 +2,30 @@
 
 using namespace std;
 
-Duration::Duration(int hours, int min, int secs) : TimeGeneralization(hours, min, secs) {
-    validObject = !(hours < 0 or min < 0 or secs < 0 or min > 60 or secs > 60);
+Duration::Duration(int hours, int min, int secs) : ConstTimeGen(hours, min, secs) {
+    validTime = !(hours < 0 or min < 0 or secs < 0 or min > 60 or secs > 60);
 }
 
 int Duration::getHours() {
-    if (!validObject)
+    if (!validTime)
         throw InvalidDuration("Invalid Duration");
     return LEFT;
 }
 
 int Duration::getMin() {
-    if (!validObject)
+    if (!validTime)
         throw InvalidDuration("Invalid Duration");
     return MID;
 }
 
 int Duration::getSecs() {
-    if (!validObject)
+    if (!validTime)
         throw InvalidDuration("Invalid Duration");
     return RIGHT;
 }
 
 Duration Duration::operator+(Duration const &right) {
-    if (!(validObject and right.validObject))
+    if (!(validTime and right.validTime))
         throw InvalidDuration("Invalid Duration");
     int seconds, minutes=0, hours=0;
     seconds = RIGHT + right.RIGHT;

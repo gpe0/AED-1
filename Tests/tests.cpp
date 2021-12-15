@@ -8,12 +8,70 @@
 #include "Person.h"
 #include "Plane.h"
 #include "Service.h"
-#include "TimeGeneralization.h"
+#include "ConstTimeGen.h"
 #include "Worker.h"
 
 using testing::Eq;
 using namespace std;
 
+//Time related tests
+
+TEST(test_1, ConstTimeGen){
+    //Tests class when object is valid
+    ConstTimeGen t1(0,0,0);
+    ConstTimeGen t2(1,0,0);
+    ConstTimeGen t3(0,1,0);
+    ConstTimeGen t4(0,0,1);
+    ConstTimeGen t5(1,0,1);
+    ASSERT_EQ(true, t1 < t2);
+    ASSERT_EQ(true, t1 < t3);
+    ASSERT_EQ(true, t1 < t4);
+    ASSERT_EQ(false, t2 < t1);
+    ASSERT_EQ(false, t3 < t1);
+    ASSERT_EQ(false, t4 < t1);  //Tests each parameter comparison
+    ASSERT_EQ(false, t5 < t3);
+    ASSERT_EQ(true, t2 < t5);   //Tests normal, mixed cases
+    ASSERT_EQ(false, t1 < t1);  //Tests a possible exception
+
+    //Tests <<
+
+    t1.setInvalid(); //Makes validTime false
+
+    //Testing < operator
+    try {
+        bool filler = t1 < t2;
+        FAIL() << "Valid Time";
+    }
+    catch(ConstTimeGen::InvalidTime const & err) {
+        EXPECT_EQ(err.what(), "Invalid Time");
+    }
+    catch(...) {
+        FAIL() << "Invalid Time";
+    }
+    try {
+        bool filler = t2 < t1;
+        FAIL() << "Valid Time";
+    }
+    catch(ConstTimeGen::InvalidTime const & err) {
+        EXPECT_EQ(err.what(), "Invalid Time");
+    }
+    catch(...) {
+        FAIL() << "Invalid Time";
+    }
+    try {
+        bool filler = t1 < t1;
+        FAIL() << "Valid Time";
+    }
+    catch(ConstTimeGen::InvalidTime const & err) {
+        EXPECT_EQ(err.what(), "Invalid Time");
+    }
+    catch(...) {
+        FAIL() << "Invalid Time";
+    }
+
+    //Testing <<
+
+}
 TEST(test_1, Date){
     Date p1(4, 10, 1990);
     Date p2(32, 12, 1990);
