@@ -2,12 +2,16 @@
 #define AED_1_LOCATION_H
 
 #include <string>
+#include <bits/stdc++.h>
 
 class Location {
 private:
-    float latitude, longitude;
+    double latitude, longitude;
 public:
-    Location(float latitude, float longitude);
+    Location(double latitude, double longitude);
+    float getDistanceToInKM(Location& location2);
+    double getLatitude();
+    double getLongitude();
 
     class InvalidLocation {
     private:
