@@ -1,9 +1,5 @@
-//
-// Created by guilh on 12/16/2021.
-//
-
-#ifndef AED_1_TRANSITSTOP_H
-#define AED_1_TRANSITSTOP_H
+#ifndef TRANSITSTOP_H
+#define TRANSITSTOP_H
 #include "Location.h"
 #include "Schedule.h"
 #include "Date.h"
@@ -38,4 +34,4 @@ public:
 };
 
 
-#endif //AED_1_TRANSITSTOP_H
+#endif

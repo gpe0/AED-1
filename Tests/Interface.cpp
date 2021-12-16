@@ -65,3 +65,42 @@ void Interface::readFlights(string file, list<Flight> &flights) {
     }
 
 }
+
+void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
+
+    ifstream f(file);
+    string line, w;
+
+    getline(f, line);
+    if (f.is_open()) {
+        while (getline(f, line)) {
+            stringstream s(line);
+            stringstream aux;
+
+            getline(s, w, ';'); //license Plate
+
+            string licensePlate = w;
+
+            getline(s, w, ';'); //type
+
+            string type = w;
+
+            getline(s, w, ';'); //capacity
+
+            aux.clear();
+            aux.str(w);
+
+            int capacity;
+
+            aux >> capacity;
+
+
+            list<Flight> flightsL;
+
+            readFlights(flights, flightsL);
+
+            planes.push_back(Plane(licensePlate, type, capacity, flightsL));
+
+        }
+    }
+}

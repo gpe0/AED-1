@@ -1,7 +1,3 @@
-//
-// Created by guilh on 12/16/2021.
-//
-
 #include "TransitStop.h"
 using namespace std;
 TransitStop::TransitStop(std::string name, std::string transportType, Location &location)

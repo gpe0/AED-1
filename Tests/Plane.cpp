@@ -10,14 +10,14 @@ Plane::Plane(std::string licensePlate, std::string type, int capacity, list<Flig
         flight.setAvailableSeats(capacity);
     }
 
-    if (licensePlate.size() != 4) throw InvalidPlane("Invalid License Plate");
+    if (TYPE.size() != 4) throw InvalidPlane("Invalid License Plate");
 
     for (int i = 0; i < type.size(); i++) {
-        if (i == 0 && !(type[i] >= 'A' && type[i] <= 'Z')) {
+        if (i == 0 && !(TYPE[i] >= 'A' && TYPE[i] <= 'Z')) {
             throw InvalidPlane("Invalid License Plate");
         }
 
-        if (i != 0 && !(type[i] >= '0' && type[i] <= '9')) {
+        if (i != 0 && !(TYPE[i] >= '0' && TYPE[i] <= '9')) {
             throw InvalidPlane("Invalid License Plate");
         }
 

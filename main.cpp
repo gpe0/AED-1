@@ -20,12 +20,13 @@ int main(int argc, char* argv[]) {
     cout << "AED 2021/2022 - Projeto 1" << endl;
     return RUN_ALL_TESTS();
 
-    list<Flight> flights;
+    list<Plane> planes;
 
-    Interface::readFlights("flights.csv", flights);
+    Interface::readPlanes("planes.csv", planes, "flights.csv");
 
-    for (auto ele : flights) {
-        cout << ele.getNum() << endl;
+    for (auto ele : planes) {
+        cout << ele.getLicensePlate() << endl;
+        cout << ele.getType() << endl;
     }
 
     return 0;
