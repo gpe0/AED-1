@@ -1,16 +1,11 @@
 #ifndef DATE_H
 #define DATE_H
 
+#include "ConstTimeGen.h"
 #include <iostream>
 #include <vector>
 
-class Date {
-private:
-    const int DAY;
-    const int MONTH;
-    const int YEAR;
-    bool validDate;
-
+class Date : public ConstTimeGen {
 public:
 
     /** Initializes the current date (testing not implemented yet)

@@ -4,25 +4,24 @@
 
 using namespace std;
 
-Date::Date() : DAY(getCurrentDate()[0]), MONTH(getCurrentDate()[1]), YEAR(getCurrentDate()[2]) {
-    validDate = true;
+Date::Date() : ConstTimeGen(getCurrentDate()[0], getCurrentDate()[1], getCurrentDate()[2]) {
+    validTime = true;
 }
 
-Date::Date(int day, int month, int year) : DAY(day), MONTH(month), YEAR(year) {
-    validDate = true;
+Date::Date(int day, int month, int year) : ConstTimeGen(day, month, year) {
     if (day > 31 or day < 1 or month < 1 or month > 12){
-        validDate = false;
+        validTime = false;
     }
     else if (month == 2){
         if (isLeapYear(year))
-            validDate = (day <= 29);
+            validTime = (day <= 29);
         else
-            validDate = (day <= 28);
+            validTime = (day <= 28);
     }
     else if (month == 4 or month == 6 or month == 9 or month == 11)
-        validDate = (day <= 30);
+        validTime = (day <= 30);
     else
-        validDate = (day <= 31);
+        validTime = (day <= 31);
 }
 
 std::ostream& operator<<(std::ostream& os, Date& date) {
@@ -31,25 +30,25 @@ std::ostream& operator<<(std::ostream& os, Date& date) {
 }
 
 bool Date::isValid() const {
-    return validDate;
+    return validTime;
 }
 
 int Date::getDay() const {
-    if (not validDate)
-        throw (runtime_error("Invalid Date"));
-    return DAY;
+    if (not validTime)
+        throw (InvalidTime("Invalid Date"));
+    return LEFT;
 }
 
 int Date::getMonth() const {
-    if (not validDate)
-        throw (runtime_error("Invalid Date"));
-    return MONTH;
+    if (not validTime)
+        throw (InvalidTime("Invalid Date"));
+    return MID;
 }
 
 int Date::getYear() const {
-    if (not validDate)
-        throw (runtime_error("Invalid Date"));
-    return YEAR;
+    if (not validTime)
+        throw (InvalidTime("Invalid Date"));
+    return RIGHT;
 }
 
 std::vector<int> Date::getCurrentDate() {
