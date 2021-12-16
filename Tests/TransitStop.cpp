@@ -15,9 +15,9 @@ void TransitStop::resetSchedule() {
 }
 
 void TransitStop::appendSchedule(Schedule &schedule) {
-    //if(schedules[-1].getDate() < schedule.getDate()){
-        //throw InvalidTransitStop("the schedule can't be appended without jeopardizing sorting")
-    //}
+    if(schedules[-1].getDate() < schedule.getDate()){
+        throw InvalidTransitStop("the schedule can't be appended without jeopardizing sorting");
+    }
     schedules.push_back(schedule);
 }
 
@@ -26,4 +26,13 @@ std::pair<Date *, Date *> TransitStop::getRangeScheduled() {
     result.first = &(schedules[0].getDate());
     result.second = &(schedules[-1].getDate());
     return std::pair<Date *, Date *>();
+}
+
+void TransitStop::addSchedule(Schedule &schedule) {
+    auto it = schedules.begin();
+    for(it; it != schedules.end(); it++) {
+        if (((*it).getDate()) < schedule.getDate()) continue;
+        else break;
+    }
+    schedules.insert(--it,schedule);
 }
