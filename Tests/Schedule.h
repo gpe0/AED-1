@@ -15,8 +15,12 @@ private:
 public:
     Schedule(Date& date);
     void addEntry(Duration* time, std::string event);
-    void removeEntry(Duration timeBegin, Duration timeEnd);
+    void removeEntry(Duration &timeBegin, Duration &timeEnd);
     void removeEntry(std::string event);
+    std::vector<std::pair<Duration*, std::string>> getEntries(std::string event);
+    std::vector<std::pair<Duration*, std::string>> getEntries(Duration &timeBegin, Duration& timeEnd);
+    Date& getDate();
+    std::vector< std::pair<Duration*, std::string> > getAllEntries();
 };
 
 
