@@ -23,7 +23,7 @@ public:
      * @param origin flight origin
      * @param destination flight destination
      */
-    Flight(int num, Date date, Duration duration, std::string origin, std::string destination);
+    Flight(int num, Date* date, Duration* duration, std::string origin, std::string destination);
 
     /** Returns the flight number
      *

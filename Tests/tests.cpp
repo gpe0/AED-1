@@ -105,7 +105,7 @@ TEST(test1, Duration){
 TEST(test1, Flight){
     Date p1(4, 10, 1990);
     Duration d1(0, 45, 0);
-    Flight f1(2, p1, d1, "Oporto", "Lisbon");
+    Flight f1(2, &p1, &d1, "Oporto", "Lisbon");
 
 
     int day = f1.getDate().getDay();

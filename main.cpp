@@ -7,6 +7,7 @@
 #include "Worker.h"
 #include "Passenger.h"
 #include "Duration.h"
+#include "Interface.h"
 
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
@@ -16,8 +17,18 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
-    std::cout << "AED 2021/2022 - Projeto 1" << std::endl;
+    cout << "AED 2021/2022 - Projeto 1" << endl;
     return RUN_ALL_TESTS();
+
+    list<Flight> flights;
+
+    Interface::readFlights("flights.csv", flights);
+
+    for (auto ele : flights) {
+        cout << ele.getNum() << endl;
+    }
+
+    return 0;
 
 /*
     Duration du1(1, 30, 0);

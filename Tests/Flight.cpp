@@ -1,6 +1,6 @@
 #include "Flight.h"
 
-Flight::Flight(int num, Date date, Duration duration, std::string origin, std::string destination) : date(&date), duration(&duration) {
+Flight::Flight(int num, Date* date, Duration* duration, std::string origin, std::string destination) : date(date), duration(duration) {
     this->num = num;
     this->origin = origin;
     this->destination = destination;
