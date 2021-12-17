@@ -9,15 +9,16 @@
 #include <string>
 
 class TransitStop {
-private:
+protected:
     Location& location;
-    //std::vector<Schedule&> schedules;
+    std::vector<Schedule*> schedules;
     std::string transportType;
     std::string name;
 public:
     TransitStop(std::string name, std::string transportType, Location &location);
 
     std::pair<Date*, Date*> getRangeScheduled();
+    std::string getTransportType();
 
     void resetSchedule();
     void addSchedule(Schedule& schedule);
