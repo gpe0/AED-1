@@ -36,3 +36,7 @@ void TransitStop::addSchedule(Schedule &schedule) {
 std::string TransitStop::getTransportType() {
     return transportType;
 }
+
+TransitStop::TransitStop() : TransitStop("","",) {
+
+}

@@ -15,6 +15,7 @@ protected:
     std::string transportType;
     std::string name;
 public:
+    TransitStop();
     TransitStop(std::string name, std::string transportType, Location &location);
 
     std::pair<Date*, Date*> getRangeScheduled();
