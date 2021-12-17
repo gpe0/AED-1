@@ -10,13 +10,13 @@
 
 class TransitStop {
 protected:
-    Location& location;
+    Location* location;
     std::vector<Schedule*> schedules;
     std::string transportType;
     std::string name;
 public:
     TransitStop();
-    TransitStop(std::string name, std::string transportType, Location &location);
+    TransitStop(std::string name, std::string transportType, Location* location);
 
     std::pair<Date*, Date*> getRangeScheduled();
     std::string getTransportType();

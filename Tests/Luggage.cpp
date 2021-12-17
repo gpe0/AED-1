@@ -9,6 +9,7 @@ Luggage::Luggage(double width, double height, double weight) {
     this->width = width;
     this->height = height;
     this->weight = weight;
+    inCar = false; // assuming it get instantiated with the passenger
 }
 
 int Luggage::getID() const {
@@ -27,16 +28,12 @@ double Luggage::getWeight() const {
     return weight;
 }
 
-void Luggage::setWidth(double width) {
-    this->width = width;
+bool Luggage::isInCar() const {
+    return inCar;
 }
 
-void Luggage::setHeight(double height) {
-    this->height = height;
-}
-
-void Luggage::setWeight(double weight) {
-    this->weight = weight;
+void Luggage::move(bool inCar) {
+    this->inCar = inCar;
 }
 
 bool Luggage::operator==(const Luggage &right) const {

@@ -22,14 +22,43 @@ public:
      */
     Date(int day, int month, int year);
 
+    /**Returns if date is valid or not
+     *
+     * @return validation
+     */
     bool isValid() const;
+
+    /**Returns date's day
+     *
+     * @return day
+     */
     int getDay() const;
+
+    /**Returns date's month
+     *
+     * @return month
+     */
     int getMonth() const;
+
+    /**Returns date's year
+     *
+     * @return year
+     */
     int getYear() const;
 
     friend std::ostream& operator<<(std::ostream& os, Date& date);
 
+    /**Returns the current date
+     *
+     * @return vector with day, month and year
+     */
     static std::vector<int> getCurrentDate();
+
+    /**Checks if a given year is a leap year
+     *
+     * @param year year
+     * @return true - it is leap year ; false - it isn't leap year
+     */
     static bool isLeapYear(int year);
 
 

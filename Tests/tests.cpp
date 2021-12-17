@@ -228,46 +228,18 @@ TEST(test2, Carriage) {
     EXPECT_EQ(l1.getID(), 1);
     EXPECT_EQ(l2.getID(), 2);
 
-    carriage.addLuggage(l1);
-    carriage.addLuggage(l2);
+    carriage.addLuggage(&l1);
+    carriage.addLuggage(&l2);
 
     EXPECT_EQ(carriage.getLuggages().size(), 1);
     EXPECT_EQ(carriage.getLuggages().top().size(), 2);
-    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
+    EXPECT_EQ(*carriage.getLuggages().top().top(), l2);
 
-    carriage.addLuggage(l1);
-    carriage.addLuggage(l1);
-
-    EXPECT_EQ(carriage.getLuggages().size(), 1);
-    EXPECT_EQ(carriage.getLuggages().top().size(), 4);
-    EXPECT_EQ(carriage.getLuggages().top().top(), l1);
-
-    carriage.addLuggage(l1);
-    carriage.addLuggage(l2);
-
-    EXPECT_EQ(carriage.getLuggages().size(), 2);
-    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
-    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
-
+    EXPECT_FALSE(carriage.addLuggage(&l1));
 
     carriage.removeNextLuggage();
-    carriage.removeNextLuggage();
 
-    EXPECT_EQ(carriage.getLuggages().size(), 1);
-    EXPECT_EQ(carriage.getLuggages().top().size(), 4);
-    EXPECT_EQ(carriage.getLuggages().top().top(), l1);
-
-    carriage.removeNextLuggage();
-    carriage.removeNextLuggage();
-
-    EXPECT_EQ(carriage.getLuggages().size(), 1);
-    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
-    EXPECT_EQ(carriage.getLuggages().top().top(), l2);
-
-    carriage.removeNextLuggage();
-    carriage.removeNextLuggage();
-
-    EXPECT_TRUE(carriage.getLuggages().empty());
+    EXPECT_TRUE(carriage.addLuggage(&l2));
 
 }
 
@@ -279,24 +251,8 @@ TEST(test2, Car) {
 
     EXPECT_TRUE(car.getCarriages().size() == 3);
 
-    car.addLuggage(l1);
+    car.addLuggage(&l1);
 
     EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 1);
-
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-    car.addLuggage(l1);
-
-    EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 2);
-    EXPECT_EQ(car.getCarriages().front().getLuggages().top().size(), 1);
-
-    car.removeNextLuggage();
-    car.removeNextLuggage();
-    car.removeNextLuggage();
-    car.removeNextLuggage();
-    car.removeNextLuggage();
-
-    EXPECT_TRUE(car.getCarriages().front().getLuggages().empty());
 
 }

@@ -10,7 +10,7 @@ class Carriage {
 private:
     const int STACKNUMBER;
     const int STACKSIZE;
-    stack<stack<Luggage>> luggages;
+    stack<stack<Luggage*>> luggages;
 
 public:
 
@@ -38,7 +38,7 @@ public:
      * @param l luggage
      * @return whether it passed or failed
      */
-    bool addLuggage(Luggage l);
+    bool addLuggage(Luggage* l);
 
     /**Tries to remove the next luggage from the carriage
      *
@@ -50,7 +50,7 @@ public:
      *
      * @return luggages
      */
-    stack<stack<Luggage>> getLuggages();
+    stack<stack<Luggage*>> getLuggages();
 };
 
 

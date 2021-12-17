@@ -13,9 +13,9 @@
 
 class Airport : public TransitStop{
 private:
-    BST<TransitStop*> transitStops;
+    BST<TransitStop> transitStops;
 public:
-    Airport(std::string name, Location &location);
+    Airport(std::string name, Location* location);
 
     TransitStop& getClosestTransitStop();
     TransitStop& getClosestTransitStopOfType(std::string type);
@@ -28,7 +28,7 @@ public:
     TransitStop& getNextOfType(std::string type);
     TransitStop& getNext();
 
-    bool transitStopIncluded(TransitStop& transitStop);
+    bool transitStopIncluded(TransitStop transitStop);
     void addTransitStop();
     void clearTransitStop();
 

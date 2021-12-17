@@ -12,7 +12,7 @@ int Car::getMaxCarriages() {
     return CARRIAGES;
 }
 
-bool Car::addLuggage(Luggage l) {
+bool Car::addLuggage(Luggage* l) {
     for (Carriage &c : carriages) {
         if (c.addLuggage(l)) {
             return true;

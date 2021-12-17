@@ -33,7 +33,7 @@ public:
     /**Simple menu to interact with the user
      *
      */
-    static void menu();
+    static int menu(int argc, char* argv[]);
 };
 
 

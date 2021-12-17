@@ -4,17 +4,14 @@
 
 #include "Airport.h"
 
-Airport::Airport(std::string name,  Location &location)
-: TransitStop(name, "Airport",location) {
-    Location l(0,0);
-    transitStops(TransitStop("","",l));
+Airport::Airport(std::string name,  Location* location) : TransitStop(name, "Airport", location), transitStops(BST<TransitStop>(TransitStop())) {
 }
 
-bool Airport::transitStopIncluded(TransitStop &transitStop) {
-    if(transitStops.find(&transitStop) != NULL and transitStops.find(&transitStop) != NULL){
-        return true;
-    }
-    return false;
+bool Airport::transitStopIncluded(TransitStop transitStop) {
+    //if(transitStops.find(transitStop) != NULL and transitStops.find(transitStop) != NULL){
+    //    return true;
+    //}
+    //return false;
 }
 
 void Airport::clearTransitStop() {
@@ -22,9 +19,9 @@ void Airport::clearTransitStop() {
 }
 
 TransitStop &Airport::getClosestTransitStop() {
-    if(transitStops.isEmpty())
-        throw (InvalidAirportRequest("Empty BST"));
-    return (*transitStops.findMin());
+    //if(transitStops.isEmpty())
+    //    throw (InvalidAirportRequest("Empty BST"));
+    //return (*transitStops.findMin());
 }
 
 

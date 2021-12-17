@@ -1,5 +1,4 @@
 #include <list>
-#include <iostream>
 #include "Passenger.h"
 
 using namespace std;
@@ -23,13 +22,13 @@ bool Passenger::acquireTicket(int flightNum, Plane& plane, bool hasLuggage,  int
     return hasTicket;
 }
 
-void Passenger::addLuggage(Luggage l) {
+void Passenger::addLuggage(Luggage* l) {
     luggages.push_back(l);
 }
 
-bool Passenger::removeLuggage(Luggage l) {
+bool Passenger::removeLuggage(Luggage* l) {
     for (auto it = luggages.begin(); it != luggages.end(); it++) {
-        if (l == (*it)) {
+        if (*l == *(*it)) {
             luggages.erase(it);
             return true;
         }

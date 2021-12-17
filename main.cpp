@@ -1,6 +1,4 @@
 #include "Interface.h"
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
 
 
 using namespace std;
@@ -10,12 +8,8 @@ int main(int argc, char* argv[]) {
     cout << "AED 2021/2022 - Projeto 1" << endl;
     cout << endl << endl;
 
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 
-    Interface::menu();
-
-
+    Interface::menu(argc, argv);
 
     return 0;
 

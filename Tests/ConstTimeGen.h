@@ -21,6 +21,9 @@ public:
      */
     ConstTimeGen(int left, int mid, int right);
 
+    /**Sets the time invalid
+     *
+     */
     void setInvalid();
 
     friend std::ostream& operator<<(std::ostream& os, const ConstTimeGen& object) ;

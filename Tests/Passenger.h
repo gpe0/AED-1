@@ -9,7 +9,7 @@
 
 class Passenger : public Person {
 private:
-    std::list<Luggage> luggages;
+    std::list<Luggage*> luggages;
 
 
 public:
@@ -35,14 +35,14 @@ public:
       *
       * @param l luggage
       */
-     void addLuggage(Luggage l);
+     void addLuggage(Luggage* l);
 
      /**Tries to remove a specific luggage from the passenger's luggages list
       *
       * @param l luggage
       * @return true - if it removed ; false - if it didn't remove
       */
-     bool removeLuggage(Luggage l);
+     bool removeLuggage(Luggage* l);
 
 };
 

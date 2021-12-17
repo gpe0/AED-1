@@ -1,5 +1,4 @@
 #include <fstream>
-#include <sstream>
 #include <list>
 #include <iostream>
 #include "Interface.h"
@@ -11,6 +10,8 @@
 #include "Passenger.h"
 #include "Duration.h"
 #include "Interface.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
 
 using namespace std;
 
@@ -56,7 +57,7 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
             aux >> durationD;
 
-            int secs = durationD * 3600;
+            int secs = durationD * 3600; //warning
             int min = secs / 60;
             secs = secs % 60;
             int hour = min / 60;
@@ -83,7 +84,7 @@ void Interface::displayMenu() {
     cout << "Airline Information Management" << endl;
     cout << "------------------------------------" << endl << endl;
     cout << "1 - Create a Plane" << endl;
-    cout << "2 - Run Tests (change config)" << endl;
+    cout << "2 - Run Tests" << endl;
     cout << "3 - Debug" << endl;
     cout << "4 - Exit" << endl;
     cout << "------------------------------------" << endl;
@@ -131,7 +132,7 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
     }
 }
 
-void Interface::menu() {
+int Interface::menu(int argc, char* argv[]) {
     int option = 0;
     string input;
     stringstream s;
@@ -161,17 +162,19 @@ void Interface::menu() {
         if (option == 1) {
             //
         } else if (option == 2) {
-            //testing::InitGoogleTest();
+            testing::InitGoogleTest(&argc, argv);
+            return RUN_ALL_TESTS();
         } else if (option == 3) {
 
             list<Plane> planes;
 
             Interface::readPlanes("planes.csv", planes, "flights.csv");
 
-            for (auto ele : planes) {
+            for (const auto & ele : planes) {
                 cout << ele.getLicensePlate() << endl;
                 cout << ele.getType() << endl;
             }
         }
     }
+    return 0;
 }

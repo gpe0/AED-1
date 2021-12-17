@@ -1,6 +1,8 @@
 #include "TransitStop.h"
+
 using namespace std;
-TransitStop::TransitStop(std::string name, std::string transportType, Location &location)
+
+TransitStop::TransitStop(std::string name, std::string transportType, Location* location)
 : location(location) {
     this->name = name;
     this->transportType = transportType;
@@ -37,6 +39,8 @@ std::string TransitStop::getTransportType() {
     return transportType;
 }
 
-TransitStop::TransitStop() : TransitStop("","",) {
-
+TransitStop::TransitStop() {
+    location = new Location(0, 0);
+    name = "";
+    transportType = "";
 }
