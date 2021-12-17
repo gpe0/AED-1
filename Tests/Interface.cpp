@@ -1,10 +1,22 @@
 #include <fstream>
 #include <sstream>
+#include <list>
+#include <iostream>
+#include "Interface.h"
+#include "Flight.h"
+#include "Plane.h"
+#include "Date.h"
+#include "Person.h"
+#include "Worker.h"
+#include "Passenger.h"
+#include "Duration.h"
 #include "Interface.h"
 
 using namespace std;
 
 void Interface::readFlights(string file, list<Flight> &flights) {
+
+    file = "../files/input/" + file;
     ifstream f(file);
     string line, w;
 
@@ -66,7 +78,21 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
 }
 
+void Interface::displayMenu() {
+
+    cout << "Airline Information Management" << endl;
+    cout << "------------------------------------" << endl << endl;
+    cout << "1 - Create a Plane" << endl;
+    cout << "2 - Run Tests (change config)" << endl;
+    cout << "3 - Debug" << endl;
+    cout << "4 - Exit" << endl;
+    cout << "------------------------------------" << endl;
+    cout << "Option: " << flush;
+}
+
 void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
+
+    file = "../files/input/" + file;
 
     ifstream f(file);
     string line, w;
@@ -101,6 +127,51 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
 
             planes.push_back(Plane(licensePlate, type, capacity, flightsL));
 
+        }
+    }
+}
+
+void Interface::menu() {
+    int option = 0;
+    string input;
+    stringstream s;
+
+    while (option != 4) {
+        displayMenu();
+
+        cin >> input;
+
+        s.clear();
+        s.str(input);
+
+        s >> option;
+
+        while (option < 1 || option > 4) {
+
+            cout << "Wrong Input, try again: " << flush;
+
+            cin >> input;
+
+            s.clear();
+            s.str(input);
+
+            s >> option;
+        }
+
+        if (option == 1) {
+            //
+        } else if (option == 2) {
+            //testing::InitGoogleTest();
+        } else if (option == 3) {
+
+            list<Plane> planes;
+
+            Interface::readPlanes("planes.csv", planes, "flights.csv");
+
+            for (auto ele : planes) {
+                cout << ele.getLicensePlate() << endl;
+                cout << ele.getType() << endl;
+            }
         }
     }
 }

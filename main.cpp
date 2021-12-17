@@ -1,33 +1,21 @@
-#include <iostream>
-#include <list>
-#include "Flight.h"
-#include "Plane.h"
-#include "Date.h"
-#include "Person.h"
-#include "Worker.h"
-#include "Passenger.h"
-#include "Duration.h"
 #include "Interface.h"
-
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    testing::InitGoogleTest(&argc, argv);
     cout << "AED 2021/2022 - Projeto 1" << endl;
+    cout << endl << endl;
+
+    testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 
-    list<Plane> planes;
+    Interface::menu();
 
-    Interface::readPlanes("planes.csv", planes, "flights.csv");
 
-    for (auto ele : planes) {
-        cout << ele.getLicensePlate() << endl;
-        cout << ele.getType() << endl;
-    }
 
     return 0;
 

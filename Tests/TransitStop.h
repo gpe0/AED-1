@@ -11,7 +11,7 @@
 class TransitStop {
 private:
     Location& location;
-    std::vector<Schedule&> schedules;
+    //std::vector<Schedule&> schedules;
     std::string transportType;
     std::string name;
 public:

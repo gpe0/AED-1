@@ -64,53 +64,178 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_interface-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Interface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">Interface Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for Interface:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_interface.png" usemap="#Interface_map" alt=""/>
-  <map id="Interface_map" name="Interface_map">
-<area href="class_mock.html" alt="Mock" shape="rect" coords="0,56,62,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a65d6ae604e7e9a513aec72c9c94e0b97"><td class="memItemLeft" align="right" valign="top"><a id="a65d6ae604e7e9a513aec72c9c94e0b97" name="a65d6ae604e7e9a513aec72c9c94e0b97"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromString</b> (char *str)=0</td></tr>
-<tr class="separator:a65d6ae604e7e9a513aec72c9c94e0b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab26cc619f7b08203bcd3840449b23f8d"><td class="memItemLeft" align="right" valign="top"><a id="ab26cc619f7b08203bcd3840449b23f8d" name="ab26cc619f7b08203bcd3840449b23f8d"></a>
-virtual char *&#160;</td><td class="memItemRight" valign="bottom"><b>StringFromString</b> (char *str)=0</td></tr>
-<tr class="separator:ab26cc619f7b08203bcd3840449b23f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34c8a5fd2236a6b009f86a4e5851b61"><td class="memItemLeft" align="right" valign="top"><a id="ab34c8a5fd2236a6b009f86a4e5851b61" name="ab34c8a5fd2236a6b009f86a4e5851b61"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>IntFromString</b> (char *str)=0</td></tr>
-<tr class="separator:ab34c8a5fd2236a6b009f86a4e5851b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ec1c3391dfd90b36f25a7eddabcf383"><td class="memItemLeft" align="right" valign="top"><a id="a7ec1c3391dfd90b36f25a7eddabcf383" name="a7ec1c3391dfd90b36f25a7eddabcf383"></a>
-virtual int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>IntRefFromString</b> (char *str)=0</td></tr>
-<tr class="separator:a7ec1c3391dfd90b36f25a7eddabcf383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dab3c82b857a9a5f52b3ce6f7df547f"><td class="memItemLeft" align="right" valign="top"><a id="a7dab3c82b857a9a5f52b3ce6f7df547f" name="a7dab3c82b857a9a5f52b3ce6f7df547f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromFunc</b> (void(*func)(char *str))=0</td></tr>
-<tr class="separator:a7dab3c82b857a9a5f52b3ce6f7df547f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa43fb56650a57b6b3e7743e54e50cb86"><td class="memItemLeft" align="right" valign="top"><a id="aa43fb56650a57b6b3e7743e54e50cb86" name="aa43fb56650a57b6b3e7743e54e50cb86"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromIntRef</b> (int &amp;n)=0</td></tr>
-<tr class="separator:aa43fb56650a57b6b3e7743e54e50cb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2b3e9411c893a45642d3af632752c66"><td class="memItemLeft" align="right" valign="top"><a id="ae2b3e9411c893a45642d3af632752c66" name="ae2b3e9411c893a45642d3af632752c66"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromFloat</b> (float n)=0</td></tr>
-<tr class="separator:ae2b3e9411c893a45642d3af632752c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa56524017aabdbe46510648c711ab8a8"><td class="memItemLeft" align="right" valign="top"><a id="aa56524017aabdbe46510648c711ab8a8" name="aa56524017aabdbe46510648c711ab8a8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromDouble</b> (double n)=0</td></tr>
-<tr class="separator:aa56524017aabdbe46510648c711ab8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84fe7e53f881db2f823ad35d004927a"><td class="memItemLeft" align="right" valign="top"><a id="ae84fe7e53f881db2f823ad35d004927a" name="ae84fe7e53f881db2f823ad35d004927a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>VoidFromVector</b> (const std::vector&lt; int &gt; &amp;v)=0</td></tr>
-<tr class="separator:ae84fe7e53f881db2f823ad35d004927a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acbb1ca17a7fff0269f6498059af95795"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#acbb1ca17a7fff0269f6498059af95795">readPlanes</a> (std::string file, std::list&lt; <a class="el" href="class_plane.html">Plane</a> &gt; &amp;planes, std::string flights)</td></tr>
+<tr class="separator:acbb1ca17a7fff0269f6498059af95795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369c7fceb7acfec2b8cf8452a832aab5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a369c7fceb7acfec2b8cf8452a832aab5">menu</a> ()</td></tr>
+<tr class="separator:a369c7fceb7acfec2b8cf8452a832aab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a745b6fc9a98bb1b9b7af6ae2debdd07a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a745b6fc9a98bb1b9b7af6ae2debdd07a">readFlights</a> (std::string file, std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;flights)</td></tr>
+<tr class="separator:a745b6fc9a98bb1b9b7af6ae2debdd07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d6e9abe255b2452021041e37fa7bee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a06d6e9abe255b2452021041e37fa7bee">displayMenu</a> ()</td></tr>
+<tr class="separator:a06d6e9abe255b2452021041e37fa7bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Utilizador/Documents/GitHub/AED-1/lib/googletest-master/googlemock/test/<a class="el" href="gmock__link__test_8h_source.html">gmock_link_test.h</a></li>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06d6e9abe255b2452021041e37fa7bee" name="a06d6e9abe255b2452021041e37fa7bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d6e9abe255b2452021041e37fa7bee">&#9670;&nbsp;</a></span>displayMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::displayMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Display the menu (in terminal) </p>
+
+</div>
+</div>
+<a id="a369c7fceb7acfec2b8cf8452a832aab5" name="a369c7fceb7acfec2b8cf8452a832aab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369c7fceb7acfec2b8cf8452a832aab5">&#9670;&nbsp;</a></span>menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::menu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Simple menu to interact with the user </p>
+
+</div>
+</div>
+<a id="a745b6fc9a98bb1b9b7af6ae2debdd07a" name="a745b6fc9a98bb1b9b7af6ae2debdd07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745b6fc9a98bb1b9b7af6ae2debdd07a">&#9670;&nbsp;</a></span>readFlights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::readFlights </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>flights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reads a csv file and instantiate a list of Flights</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>name of the file (must end with .csv) </td></tr>
+    <tr><td class="paramname">flights</td><td>passed by reference flight's list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acbb1ca17a7fff0269f6498059af95795" name="acbb1ca17a7fff0269f6498059af95795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb1ca17a7fff0269f6498059af95795">&#9670;&nbsp;</a></span>readPlanes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::readPlanes </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_plane.html">Plane</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>planes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>flights</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reads a csv file and instantiate a list of Planes with the flights from the a given csv</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>name of the planes' file (must end with .csv) </td></tr>
+    <tr><td class="paramname">planes</td><td>passed by reference plane's list </td></tr>
+    <tr><td class="paramname">flights</td><td>name of the flights' file (must end with .csv) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>D:/PROJECTS/AED-1/Tests/<a class="el" href="_interface_8h_source.html">Interface.h</a></li>
+<li>D:/PROJECTS/AED-1/Tests/Interface.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
