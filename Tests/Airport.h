@@ -1,9 +1,5 @@
-//
-// Created by guilh on 12/17/2021.
-//
-
-#ifndef AED_1_AIRPORT_H
-#define AED_1_AIRPORT_H
+#ifndef AIRPORT_H
+#define AIRPORT_H
 
 #include "TransitStop.h"
 #include "Bst.h"
@@ -17,16 +13,16 @@ private:
 public:
     Airport(std::string name, Location* location);
 
-    TransitStop& getClosestTransitStop();
-    TransitStop& getClosestTransitStopOfType(std::string type);
+    TransitStop getClosestTransitStop();
+    TransitStop getClosestTransitStopOfType(std::string type);
 
     //Iteration through whole tree
     std::vector<TransitStop*> getAllTransitStops();
     std::vector<TransitStop*> getAllTransitStopsInRange(double range);
     std::vector<TransitStop*> getTransitStopsOfTypeInRange(double range);
     void clearIterator();
-    TransitStop& getNextOfType(std::string type);
-    TransitStop& getNext();
+    TransitStop getNextOfType(std::string type);
+    TransitStop getNext();
 
     bool transitStopIncluded(TransitStop transitStop);
     void addTransitStop();
@@ -42,4 +38,4 @@ public:
 };
 
 
-#endif //AED_1_AIRPORT_H
+#endif

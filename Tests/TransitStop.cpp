@@ -44,3 +44,7 @@ TransitStop::TransitStop() {
     name = "";
     transportType = "";
 }
+
+bool TransitStop::operator<(const TransitStop &right) const {
+    //TO DO
+}

@@ -25,6 +25,8 @@ public:
     void addSchedule(Schedule& schedule);
     void appendSchedule(Schedule& schedule);
 
+    bool operator<(const TransitStop& right) const;
+
     class InvalidTransitStop {
     private:
         std::string msg;
