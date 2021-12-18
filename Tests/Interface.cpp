@@ -83,9 +83,9 @@ void Interface::displayMenu() {
 
     cout << "Airline Information Management" << endl;
     cout << "------------------------------------" << endl << endl;
-    cout << "1 - Create a Plane" << endl;
+    cout << "1 - Simulate" << endl;
     cout << "2 - Run Tests" << endl;
-    cout << "3 - Debug" << endl;
+    cout << "3 - Demo" << endl;
     cout << "4 - Exit" << endl;
     cout << "------------------------------------" << endl;
     cout << "Option: " << flush;
@@ -160,7 +160,277 @@ int Interface::menu(int argc, char* argv[]) {
         }
 
         if (option == 1) {
-            //
+            bool hasPlanes = false, hasFlights = false, hasPassengers = false, hasLuggages = false;
+
+            int n;
+            list<Plane> planes;
+
+            cout << "Planes to be created: " << flush;
+
+            cin >> n;
+
+            for (int i = 1; i <= n; i++) {
+                hasPlanes = true;
+                string licenseP, type;
+                int capacity;
+                cout << "Plane " << i << endl;
+                cout << "License Plate: " << flush;
+
+                cin >> licenseP;
+
+                cout << "Type: " << flush;
+
+                cin >> type;
+
+                cout << "capacity: " << flush;
+
+                cin >> capacity;
+
+                planes.push_back(Plane(licenseP, type, capacity));
+
+                cout << "Plane added!" << endl << endl;
+            }
+
+            for (auto it = planes.begin(); it != planes.end(); it++) {
+                cout << "Flights to be assigned to the plane (" << (*it).getLicensePlate() << "): " << flush;
+
+                cin >> n;
+
+                for (int i = 1; i <= n; i++) {
+                    hasFlights = true;
+                    cout << "Flight " << i << endl;
+
+                    int num;
+
+                    cout << "Flight number: " << flush;
+
+                    cin >> num;
+
+                    int day, month, year;
+                    char op;
+                    cout << "Date (DD/MM/YYYY): " << flush;
+
+                    cin >> day >> op >> month >> op >> year;
+
+                    Date* da = new Date(day, month, year);
+
+                    int hours, mins, secs;
+                    cout << "Duration (HH:MM:SS): " << flush;
+
+                    cin >> hours >> op >> mins >> op >> secs;
+
+                    Duration* du = new Duration(hours, mins, secs);
+
+                    string origin, destination;
+                    cout << "Origin: " << flush;
+
+                    cin >> origin;
+
+                    cout << "Destination: " << flush;
+
+                    cin >> destination;
+                    Flight f(num, da, du, origin, destination);
+                    (*it).addFlight(f, (*it).getCapacity());
+
+                    cout << "Flight added!" << endl << endl;
+                }
+
+                cout << "Services to be assigned to the plane (" << (*it).getLicensePlate() << "): " << flush;
+
+                cin >> n;
+
+                for (int i = 1; i <= n; i++) {
+
+                    cout << "Service " << i << endl;
+
+                    string type;
+
+                    cout << "Type: " << flush;
+
+                    cin >> type;
+
+                    int day, month, year;
+                    char op;
+                    cout << "Date (DD/MM/YYYY): " << flush;
+
+                    cin >> day >> op >> month >> op >> year;
+
+                    Date* da = new Date(day, month, year);
+
+                    string name;
+                    char sex;
+                    int age;
+
+                    cout << "Worker's name: " << flush;
+
+                    cin >> name;
+
+                    cout << "Worker's age: " << flush;
+
+                    cin >> age;
+
+                    cout << "Worker's sex: " << flush;
+
+                    cin >> sex;
+
+                    Worker w(name, age, sex);
+
+                    (*it).addService(Service(type, da, w));
+
+                    cout << "Service added!" << endl << endl;
+                }
+
+            }
+
+            list<Passenger> passengers;
+
+            cout << "Number of tickets to be bought: " << flush;
+
+            cin >> n;
+
+            for (int i = 1; i <= n; i++) {
+                hasPassengers = true;
+                cout << "Passenger " << i << endl;
+
+                string name;
+                char sex;
+                int age;
+
+                cout << "Passenger's name: " << flush;
+
+                cin >> name;
+
+                cout << "Passenger's age: " << flush;
+
+                cin >> age;
+
+                cout << "Passenger's sex: " << flush;
+
+                cin >> sex;
+
+                passengers.push_back(Passenger(name, age, sex));
+
+                cout << "Passenger added!" << endl << endl;
+            }
+
+            for (auto it = passengers.begin(); it != passengers.end(); it++) {
+                cout << "Luggages to be assigned to the passager named " << (*it).getName() <<": " << flush;
+
+                cin >> n;
+
+                for (int i = 1; i <= n; i++) {
+
+                    hasLuggages = true;
+
+                    double width, height, weight;
+
+                    cout << "Luggage's width: " << flush;
+
+                    cin >> width;
+
+                    cout << "Luggage's height: " << flush;
+
+                    cin >> height;
+
+                    cout << "Luggage's weight: " << flush;
+
+                    cin >> weight;
+
+                    Luggage* l = new Luggage(width, height, weight);
+
+                    (*it).addLuggage(l);
+                }
+            }
+
+            if (hasPassengers && hasFlights && hasPlanes) {
+                cout << "Flight Number the group will get aboard\nAvailable" << endl;
+                for (auto plane : planes) {
+                    for (auto flight : plane.getFlights()) {
+                        cout << flight.getNum() << " (" << flight.getOrigin() << " - " << flight.getDestination() << ")" << endl;
+                    }
+                }
+                int num;
+                cout << "Option: " << flush;
+                cin >> num;
+                int count = 0;
+
+                for (auto plane : planes) {
+                    for (auto flight : plane.getFlights()) {
+                        if (flight.getNum() == num) {
+                            count++;
+                            break;
+                        }
+
+                    }
+                }
+
+                if (count == 0) {
+                    cout << "Invalid Flight Number. Ending simulation" << endl;
+                    break;
+                }
+
+                cout << "Plane's license plate that has the given flight\nAvailable" << endl;
+
+                for (auto plane : planes) {
+                    for (auto flight : plane.getFlights()) {
+                        if (flight.getNum() == num) {
+                            cout << "Plane (" << plane.getLicensePlate() << ")" << endl;
+                            break;
+                        }
+
+                    }
+                }
+                cout << "Option: " << flush;
+                string lp;
+                cin >> lp;
+
+                Plane* planeF;
+
+                bool found = false;
+
+                for (auto& plane : planes) {
+                    if (plane.getLicensePlate() == lp) {
+                        for (auto& flight : plane.getFlights()) {
+                            if (flight.getNum() == num) {
+                                found = true;
+                                if (passengers.front().acquireTicket(num, plane, hasLuggages, passengers.size())) {
+                                    cout << "Tickets successfully bought!" << endl;
+                                    cout << "Plane: " << lp << endl;
+                                    cout << "Flight nmr: " << num << endl;
+                                    cout << "Tickets bought: " << passengers.size() << endl;
+
+                                    for (auto newFlight : plane.getFlights()) {
+                                        if (newFlight.getNum() == num)
+                                            cout << "Current available seats: " << newFlight.getAvailableSeats() << endl;
+                                    }
+
+
+
+                                    //TO DO
+                                }
+                                break;
+                            }
+
+                        }
+                    }
+
+                }
+
+                if (!found) {
+                    cout << "Invalid plane for the given flight. Ending simulation" << endl;
+                    break;
+                }
+
+
+
+            }
+
+
+
+
+
+
+
         } else if (option == 2) {
             testing::InitGoogleTest(&argc, argv);
             return RUN_ALL_TESTS();

@@ -24,10 +24,10 @@ public:
      * @param licensePlate Plane's license plate (constant)
      * @param type Plane's type (constant)
      * @param capacity Plane's passenger capacity (constant)
-     * @param flights Plane's flights
+     * @param flights Plane's flights (doesn't need to be provided, its default values is an empty list)
      * @param services Services to do in a plane (doesn't need to be provided, its default value is an empty queue)
      */
-    Plane(std::string licensePlate, std::string type, int capacity, std::list<Flight> flights, std::queue<Service> services = std::queue<Service>());
+    Plane(std::string licensePlate, std::string type, int capacity, std::list<Flight> flights = std::list<Flight>(), std::queue<Service> services = std::queue<Service>());
 
     /** Returns the plane's license plate
      *
@@ -70,7 +70,7 @@ public:
      */
      void setFlights(std::list<Flight> flights);
 
-     void addFlight(Flight flight);
+     void addFlight(Flight &flight, int c);
 
 
     /**Adds to the file queue (still not completed) a new service

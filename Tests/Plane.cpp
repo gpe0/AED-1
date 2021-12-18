@@ -51,12 +51,13 @@ queue<Service> Plane::getFinishedServices() const {
 
 void Plane::setFlights(list<Flight> flights) {
     this->flights.clear();
-    for (Flight f : flights) {
-        addFlight(f);
+    for (Flight &f : flights) {
+        addFlight(f, f.getAvailableSeats());
     }
 }
 
-void Plane::addFlight(Flight flight) {
+void Plane::addFlight(Flight &flight, int c) {
+    flight.setAvailableSeats(c);
     flights.push_back(flight);
 }
 
