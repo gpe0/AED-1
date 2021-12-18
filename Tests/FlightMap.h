@@ -1,19 +1,25 @@
-#ifndef AED_1_MAP_H
-#define AED_1_MAP_H
+//
+// Created by guilh on 12/18/2021.
+//
+
+#ifndef AED_1_FLIGHTMAP_H
+#define AED_1_FLIGHTMAP_H
+
+#include "Airport.h"
+#include "Location.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 class Map {
 private:
+    std::string html;
 public:
-    string addingmarker(string html, double latitude, double longitude, string name);
-    string addingroute(string html, double latitude, double longitude, double latitude2, double longitude2);
+    void addMarker(Location& location, Airport& airport);
+    void addRoute(Location& location1, Location& location2);
+    std::string getHTML();
 };
-#endif //AED_1_MAP_H
 
 /*
 ifstream inFile("mapBase.html");
@@ -35,3 +41,4 @@ out << html;
 myfile.close();
 out.close();
 */
+#endif //AED_1_FLIGHTMAP_H

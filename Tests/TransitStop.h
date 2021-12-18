@@ -20,6 +20,7 @@ public:
 
     std::pair<Date*, Date*> getRangeScheduled();
     std::string getTransportType();
+    std::string getName();
 
     void resetSchedule();
     void addSchedule(Schedule& schedule);
