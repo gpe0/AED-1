@@ -1,9 +1,5 @@
-//
-// Created by guilh on 12/18/2021.
-//
-
-#ifndef AED_1_FLIGHTMAP_H
-#define AED_1_FLIGHTMAP_H
+#ifndef FLIGHTMAP_H
+#define FLIGHTMAP_H
 
 #include "Airport.h"
 #include "Location.h"
@@ -41,4 +37,4 @@ out << html;
 myfile.close();
 out.close();
 */
-#endif //AED_1_FLIGHTMAP_H
+#endif

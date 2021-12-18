@@ -46,7 +46,7 @@ TransitStop::TransitStop() {
 }
 
 bool TransitStop::operator<(const TransitStop &right) const {
-    //TO DO
+    return true;//TO DO
 }
 
 std::string TransitStop::getName() {
