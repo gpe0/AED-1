@@ -9,7 +9,7 @@
 
 class Passenger : public Person {
 private:
-    std::list<Luggage*> luggages;
+    std::list<Luggage*> luggage;
 
 
 public:
@@ -30,6 +30,12 @@ public:
      * @return true - if it succeed ; false - if it don't
      */
      bool acquireTicket(int flightNum, Plane& plane, bool hasLuggage, int tickets = 1);
+
+     /**Returns the passenger's luggage
+      *
+      * @return luggage
+      */
+     std::list<Luggage*> getLuggage();
 
      /**Adds a luggage to the list of luggages of the passenger
       *

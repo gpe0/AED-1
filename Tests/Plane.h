@@ -79,6 +79,12 @@ public:
      */
     void addService(Service service);
 
+    /**Finishes the next service in the queue and adds it to the finished services queue
+     *
+     * @return true - it was possible to finish the service ; false - it wasn't
+     */
+    bool finishNextService();
+
     class InvalidPlane {
     private:
         std::string msg;

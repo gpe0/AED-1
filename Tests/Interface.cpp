@@ -27,7 +27,7 @@ void Interface::readFlights(string file, list<Flight> &flights) {
             stringstream s(line);
             stringstream aux;
 
-            getline(s, w, ';'); //flight num
+            getline(s, w, ','); //flight num
 
             aux.clear();
             aux.str(w);
@@ -36,7 +36,7 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
             aux >> fNum;
 
-            getline(s, w, ';'); //date
+            getline(s, w, ','); //date
 
             aux.clear();
             aux.str(w);
@@ -48,7 +48,7 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
             Date* date = new Date(day, month, year);
 
-            getline(s, w, ';'); //duration
+            getline(s, w, ','); //duration
 
             aux.clear();
             aux.str(w);
@@ -65,11 +65,11 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
             Duration *duration = new Duration(hour, min, secs);
 
-            getline(s, w, ';'); //origin
+            getline(s, w, ','); //origin
 
             string origin = w;
 
-            getline(s, w, ';'); //destination
+            getline(s, w, ','); //destination
 
             string destination = w;
 
@@ -104,15 +104,15 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
             stringstream s(line);
             stringstream aux;
 
-            getline(s, w, ';'); //license Plate
+            getline(s, w, ','); //license Plate
 
             string licensePlate = w;
 
-            getline(s, w, ';'); //type
+            getline(s, w, ','); //type
 
             string type = w;
 
-            getline(s, w, ';'); //capacity
+            getline(s, w, ','); //capacity
 
             aux.clear();
             aux.str(w);
@@ -130,6 +130,80 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
 
         }
     }
+}
+
+void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::list<Passenger> &passengers) {
+
+    string fileNamePlanes = "../files/output/" + fileName + "_planes.csv";
+
+    string fileNameFlights = "../files/output/" + fileName + "_flights.csv";
+
+    string fileNameServices = "../files/output/" + fileName + "_services.csv";
+
+    string fileNamePassengers = "../files/output/" + fileName + "_passengers.csv";
+
+    string fileNameLuggage = "../files/output/" + fileName + "_luggage.csv";
+
+    ofstream f(fileNamePlanes);
+    if (f.is_open()) {
+        f << "License Plate, Type, Capacity" << endl;
+        for (auto plane : planes) {
+            f << plane.getLicensePlate() << ", " << plane.getType() << ", " << plane.getCapacity() << endl;
+        }
+    }
+    f.close();
+    f.open(fileNameFlights);
+    if (f.is_open()) {
+        f << "Corresponding Plane (License Plate), Flight Number, Date, Duration, Origin, Destination, Available Seats" << endl;
+        for (auto plane : planes) {
+            for (auto flight : plane.getFlights()) {
+
+                stringstream date;
+                stringstream duration;
+
+                date << flight.getDate().getDay() << "/" << flight.getDate().getMonth() << "/" << flight.getDate().getYear();
+                duration << flight.getDuration().getHours() << ":" << flight.getDuration().getMin() << ":" << flight.getDuration().getSecs();
+
+                f << plane.getLicensePlate() << ", " << flight.getNum() << ", " << date.str() << ", " << duration.str() << ", " << flight.getOrigin() << ", " << flight.getDestination() << ", " << flight.getAvailableSeats() << endl;
+            }
+        }
+    }
+    f.close();
+
+    f.open(fileNameServices);
+    if (f.is_open()) {
+        f << "Type, Date, Worker's Name" << endl;
+        for (auto plane : planes) {
+            while (!plane.getServices().empty()) {
+                Service service = plane.getServices().front();
+                stringstream date;
+                date << service.getDate().getDay() << "/" << service.getDate().getMonth() << "/" << service.getDate().getYear();
+
+                f << service.getType() << ", " << date.str() << ", " << service.getWorker().getName();
+                plane.finishNextService();
+            }
+        }
+    }
+    f.close();
+
+    f.open(fileNamePassengers);
+    if (f.is_open()) {
+        f << "Name, Age, Sex" << endl;
+        for (auto passenger : passengers) {
+            f << passenger.getName() << ", " << passenger.getAge() << ", " << passenger.getSex() << endl;
+        }
+    }
+    f.close();
+
+    f.open(fileNameLuggage);
+    if (f.is_open()) {
+        f << "Luggage Passenger's Name, Luggage ID, Width, Height, Weight" << endl;
+        for (auto passenger : passengers) {
+            for (auto luggage: passenger.getLuggage())
+            f << passenger.getName() << ", " << luggage->getID() << ", " << luggage->getWidth() << ", " << luggage->getHeight() << ", " << luggage->getWeight() << endl;
+        }
+    }
+    f.close();
 }
 
 int Interface::menu(int argc, char* argv[]) {
@@ -160,7 +234,7 @@ int Interface::menu(int argc, char* argv[]) {
         }
 
         if (option == 1) {
-            bool hasPlanes = false, hasFlights = false, hasPassengers = false, hasLuggages = false;
+            bool hasPlanes = false, hasFlights = false, hasPassengers = false, hasLuggage = false;
 
             int n;
             list<Plane> planes;
@@ -314,13 +388,13 @@ int Interface::menu(int argc, char* argv[]) {
             }
 
             for (auto it = passengers.begin(); it != passengers.end(); it++) {
-                cout << "Luggages to be assigned to the passager named " << (*it).getName() <<": " << flush;
+                cout << "Luggage to be assigned to the passager named " << (*it).getName() <<": " << flush;
 
                 cin >> n;
 
                 for (int i = 1; i <= n; i++) {
 
-                    hasLuggages = true;
+                    hasLuggage = true;
 
                     double width, height, weight;
 
@@ -393,7 +467,7 @@ int Interface::menu(int argc, char* argv[]) {
                         for (auto& flight : plane.getFlights()) {
                             if (flight.getNum() == num) {
                                 found = true;
-                                if (passengers.front().acquireTicket(num, plane, hasLuggages, passengers.size())) {
+                                if (passengers.front().acquireTicket(num, plane, hasLuggage, passengers.size())) {
                                     cout << "Tickets successfully bought!" << endl;
                                     cout << "Plane: " << lp << endl;
                                     cout << "Flight nmr: " << num << endl;
@@ -404,9 +478,15 @@ int Interface::menu(int argc, char* argv[]) {
                                             cout << "Current available seats: " << newFlight.getAvailableSeats() << endl;
                                     }
 
-
-
-                                    //TO DO
+                                    char op;
+                                    cout << "Export data? [Y/N]: " << flush;
+                                    cin >> op;
+                                    if (op == 'y' || op == 'Y') {
+                                        string fileName;
+                                        cout << "File Name (without .csv): " << flush;
+                                        cin >> fileName;
+                                        exportCsv(fileName, planes, passengers);
+                                    }
                                 }
                                 break;
                             }
@@ -415,22 +495,11 @@ int Interface::menu(int argc, char* argv[]) {
                     }
 
                 }
-
                 if (!found) {
                     cout << "Invalid plane for the given flight. Ending simulation" << endl;
                     break;
                 }
-
-
-
             }
-
-
-
-
-
-
-
         } else if (option == 2) {
             testing::InitGoogleTest(&argc, argv);
             return RUN_ALL_TESTS();

@@ -22,14 +22,18 @@ bool Passenger::acquireTicket(int flightNum, Plane& plane, bool hasLuggage,  int
     return hasTicket;
 }
 
+std::list<Luggage *> Passenger::getLuggage() {
+    return luggage;
+}
+
 void Passenger::addLuggage(Luggage* l) {
-    luggages.push_back(l);
+    luggage.push_back(l);
 }
 
 bool Passenger::removeLuggage(Luggage* l) {
-    for (auto it = luggages.begin(); it != luggages.end(); it++) {
+    for (auto it = luggage.begin(); it != luggage.end(); it++) {
         if (*l == *(*it)) {
-            luggages.erase(it);
+            luggage.erase(it);
             return true;
         }
     }

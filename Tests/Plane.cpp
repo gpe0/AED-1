@@ -65,3 +65,10 @@ void Plane::addFlight(Flight &flight, int c) {
 void Plane::addService(Service service) {
     services.push(service);
 }
+
+bool Plane::finishNextService() {
+    if (services.empty()) return false;
+    finishedServices.push(services.front());
+    services.pop();
+    return true;
+}

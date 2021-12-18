@@ -5,6 +5,7 @@
 #include <list>
 #include "Flight.h"
 #include "Plane.h"
+#include "Passenger.h"
 
 class Interface {
 private:
@@ -19,6 +20,14 @@ private:
      *
      */
     static void displayMenu();
+
+    /**Export the data to a csv file
+     *
+     * @param fileName file name
+     * @param planes list of planes
+     * @param passengers list of passengers
+     */
+    static void exportCsv(std::string fileName, std::list<Plane>& planes, std::list<Passenger>& passengers);
 
 public:
 
