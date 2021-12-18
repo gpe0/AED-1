@@ -21,7 +21,7 @@ public:
      * @param location2 location to be compared with
      * @return distance (Km)
      */
-    float getDistanceToLoc(Location& location2);
+    double getDistanceToLoc(Location& location2);
 
     /**Returns the location's latitude
      *

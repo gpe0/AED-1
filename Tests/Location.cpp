@@ -11,7 +11,7 @@ Location::Location(double latitude, double longitude) {
     this->longitude = longitude;
 }
 
-float Location::getDistanceToLoc(Location &location2) {
+double Location::getDistanceToLoc(Location &location2) {
     double earthR = 6371;
     double lat1 = latitude * M_PI / 180;
     double lat2 = location2.latitude * M_PI / 180;

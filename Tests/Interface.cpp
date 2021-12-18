@@ -134,7 +134,7 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
     }
 }
 
-void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::list<Passenger> &passengers) {
+void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::list<Passenger> &passengers, Airport aO, Airport aD) {
 
     string fileNamePlanes = "../files/output/" + fileName + "_planes.csv";
 
@@ -145,6 +145,10 @@ void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::l
     string fileNamePassengers = "../files/output/" + fileName + "_passengers.csv";
 
     string fileNameLuggage = "../files/output/" + fileName + "_luggage.csv";
+
+    string fileNameAirports = "../files/output/" + fileName + "_airports.csv";
+
+    string fileNameTransitStops = "../files/output/" + fileName + "_transitstops.csv";
 
     ofstream f(fileNamePlanes);
     if (f.is_open()) {
@@ -203,6 +207,30 @@ void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::l
         for (auto passenger : passengers) {
             for (auto luggage: passenger.getLuggage())
             f << passenger.getName() << ", " << luggage->getID() << ", " << luggage->getWidth() << ", " << luggage->getHeight() << ", " << luggage->getWeight() << endl;
+        }
+    }
+    f.close();
+
+    f.open(fileNameAirports);
+    if (f.is_open()){
+        f << "Airport name, Latitude, Longitude" << endl;
+        f << aO.getName() << ", " << aO.getLocation()->getLatitude() << ", " << aO.getLocation()->getLongitude() << endl;
+        f << aD.getName() << ", " << aD.getLocation()->getLatitude() << ", " << aD.getLocation()->getLongitude() << endl;
+    }
+    f.close();
+
+    f.open(fileNameTransitStops);
+    if (f.is_open()) {
+        f << "Corresponding Airport's Name,Transit Stop Name, Transport Type, Latitude, Longitude" << endl;
+        vector<TransitStop> v;
+        aO.getAllTransitStops(v);
+        for (auto tStop : v) {
+            f << ", " << aO.getName() << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
+        }
+        v.clear();
+        aD.getAllTransitStops(v);
+        for (auto tStop : v) {
+            f << ", " << aD.getName() << ", " << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
         }
     }
     f.close();
@@ -415,6 +443,8 @@ int Interface::menu(int argc, char* argv[]) {
                     Luggage* l = new Luggage(width, height, weight);
 
                     (*it).addLuggage(l);
+
+                    cout << "Luggage added!" << endl << endl;
                 }
             }
 
@@ -470,14 +500,107 @@ int Interface::menu(int argc, char* argv[]) {
                             if (flight.getNum() == num) {
                                 found = true;
                                 if (passengers.front().acquireTicket(num, plane, hasLuggage, passengers.size())) {
-                                    cout << "Tickets successfully bought!" << endl;
+                                    cout << "\n---------------------\nTickets successfully bought!" << endl;
                                     cout << "Plane: " << lp << endl;
                                     cout << "Flight nmr: " << num << endl;
                                     cout << "Tickets bought: " << passengers.size() << endl;
 
+                                    string origin, destination;
                                     for (auto newFlight : plane.getFlights()) {
-                                        if (newFlight.getNum() == num)
+                                        if (newFlight.getNum() == num){
                                             cout << "Current available seats: " << newFlight.getAvailableSeats() << endl;
+                                            origin = newFlight.getOrigin();
+                                            destination = newFlight.getDestination();
+                                        }
+
+                                    }
+                                    cout << "---------------------" << endl;
+
+                                    string airportOName, airportDName;
+                                    double latO, latD, lonO, lonD;
+
+                                    cout << origin <<"'s airport name: " << flush;
+                                    cin >> airportOName;
+
+                                    cout << origin <<"'s airport latitude: " << flush;
+                                    cin >> latO;
+
+                                    cout << origin <<"'s airport longitude: " << flush;
+                                    cin >> lonO;
+
+                                    Location * locO = new Location(latO, lonO);
+
+                                    Airport aO(airportOName, locO);
+
+                                    cout << "Number of transit stops to add to " << airportOName << " airport: " << flush;
+
+                                    cin >> n;
+
+                                    for (int i = 1; i <= n; i++) {
+                                        cout << "Transit Stop " << i << endl;
+
+                                        string name, type;
+                                        cout << "Transit stop's name: " << flush;
+
+                                        cin >> name;
+
+                                        cout << "Transit stop's transport type: " << flush;
+
+                                        cin >> type;
+                                        double lat, lon;
+
+                                        cout << "Transit stop's airport latitude: " << flush;
+                                        cin >> lat;
+
+                                        cout << "Transit stop's airport longitude: " << flush;
+                                        cin >> lon;
+
+                                        Location* location = new Location(lat, lon);
+                                        aO.addTransitStop(TransitStop(name, type, location));
+
+                                        cout << "Transit stop added!" << endl << endl;
+                                    }
+
+                                    cout << destination <<"'s airport name: " << flush;
+                                    cin >> airportDName;
+
+                                    cout << destination <<"'s airport latitude: " << flush;
+                                    cin >> latD;
+
+                                    cout << destination <<"'s airport longitude: " << flush;
+                                    cin >> lonD;
+
+                                    Location * locD = new Location(latD, lonD);
+
+                                    Airport aD(airportDName, locD);
+
+                                    cout << "Number of transit stops to add to " << airportDName << " airport: " << flush;
+
+                                    cin >> n;
+
+                                    for (int i = 1; i <= n; i++) {
+                                        cout << "Transit Stop " << i << endl;
+
+                                        string name, type;
+                                        cout << "Transit stop's name: " << flush;
+
+                                        cin >> name;
+
+                                        cout << "Transit stop's transport type: " << flush;
+
+                                        cin >> type;
+                                        double lat, lon;
+
+                                        cout << "Transit stop's airport latitude: " << flush;
+                                        cin >> lat;
+
+                                        cout << "Transit stop's airport longitude: " << flush;
+                                        cin >> lon;
+
+                                        Location* location = new Location(lat, lon);
+                                        aD.addTransitStop(TransitStop(name, type, location));
+
+                                        cout << "Transit stop added!" << endl << endl;
                                     }
 
                                     char op;
@@ -487,7 +610,7 @@ int Interface::menu(int argc, char* argv[]) {
                                         string fileName;
                                         cout << "File Name (without .csv): " << flush;
                                         cin >> fileName;
-                                        exportCsv(fileName, planes, passengers);
+                                        exportCsv(fileName, planes, passengers, aO, aD);
                                     }
                                 }
                                 break;
