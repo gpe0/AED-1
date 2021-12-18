@@ -9,6 +9,8 @@
 #include "Worker.h"
 #include "Passenger.h"
 #include "Duration.h"
+#include "Airport.h"
+#include "TransitStop.h"
 #include "Interface.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
@@ -505,14 +507,8 @@ int Interface::menu(int argc, char* argv[]) {
             return RUN_ALL_TESTS();
         } else if (option == 3) {
 
-            list<Plane> planes;
 
-            Interface::readPlanes("planes.csv", planes, "flights.csv");
 
-            for (const auto & ele : planes) {
-                cout << ele.getLicensePlate() << endl;
-                cout << ele.getType() << endl;
-            }
         }
     }
     return 0;

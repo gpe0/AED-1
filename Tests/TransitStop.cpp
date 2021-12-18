@@ -39,6 +39,10 @@ std::string TransitStop::getTransportType() {
     return transportType;
 }
 
+void TransitStop::setAirport(TransitStop *airport) {
+   this->airport = airport;
+}
+
 TransitStop::TransitStop() {
     location = new Location(0, 0);
     name = "";
@@ -46,9 +50,13 @@ TransitStop::TransitStop() {
 }
 
 bool TransitStop::operator<(const TransitStop &right) const {
-    return true;//TO DO
+    return location->getDistanceToLoc(*(airport->location)) < right.location->getDistanceToLoc(*(airport->location));
 }
 
 std::string TransitStop::getName() {
     return name;
+}
+
+Location* TransitStop::getLocation() {
+    return location;
 }

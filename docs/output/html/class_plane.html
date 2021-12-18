@@ -79,8 +79,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a512ad1c449034dc4a66d2386aa827037"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a512ad1c449034dc4a66d2386aa827037">Plane</a> (std::string licensePlate, std::string type, int capacity, std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; flights, std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt; services=std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;())</td></tr>
-<tr class="separator:a512ad1c449034dc4a66d2386aa827037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85615ad1df838a4ebde5545e361165f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#ac85615ad1df838a4ebde5545e361165f">Plane</a> (std::string licensePlate, std::string type, int capacity, std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; flights=std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt;(), std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt; services=std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;())</td></tr>
+<tr class="separator:ac85615ad1df838a4ebde5545e361165f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5316809c9c45f5a50a41bd7f449fb5e9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a5316809c9c45f5a50a41bd7f449fb5e9">getLicensePlate</a> () const</td></tr>
 <tr class="separator:a5316809c9c45f5a50a41bd7f449fb5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a000717003dd3e714311f16adde626b81"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a000717003dd3e714311f16adde626b81">getType</a> () const</td></tr>
@@ -95,11 +95,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a39aa540d1d103b7a94ece8094ec5bbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d17985852ea57c61a1cd4330ef11ec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a6d17985852ea57c61a1cd4330ef11ec7">setFlights</a> (std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; flights)</td></tr>
 <tr class="separator:a6d17985852ea57c61a1cd4330ef11ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07f273afd6ded69f626ec4f7f1173441"><td class="memItemLeft" align="right" valign="top"><a id="a07f273afd6ded69f626ec4f7f1173441" name="a07f273afd6ded69f626ec4f7f1173441"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addFlight</b> (<a class="el" href="class_flight.html">Flight</a> flight)</td></tr>
-<tr class="separator:a07f273afd6ded69f626ec4f7f1173441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b335cb9b312df47e19402599cb24d9c"><td class="memItemLeft" align="right" valign="top"><a id="a8b335cb9b312df47e19402599cb24d9c" name="a8b335cb9b312df47e19402599cb24d9c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addFlight</b> (<a class="el" href="class_flight.html">Flight</a> &amp;flight, int c)</td></tr>
+<tr class="separator:a8b335cb9b312df47e19402599cb24d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba03f491a6964683ed4c4bbc6fa7bf9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#aba03f491a6964683ed4c4bbc6fa7bf9d">addService</a> (<a class="el" href="class_service.html">Service</a> service)</td></tr>
 <tr class="separator:aba03f491a6964683ed4c4bbc6fa7bf9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e432de9ebd43e5556132013ef8070a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_plane.html#a73e432de9ebd43e5556132013ef8070a">finishNextService</a> ()</td></tr>
+<tr class="separator:a73e432de9ebd43e5556132013ef8070a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -123,8 +125,8 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
 <tr class="separator:a978074db2efd49ee0d28941f0c0659c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a512ad1c449034dc4a66d2386aa827037" name="a512ad1c449034dc4a66d2386aa827037"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a512ad1c449034dc4a66d2386aa827037">&#9670;&nbsp;</a></span>Plane()</h2>
+<a id="ac85615ad1df838a4ebde5545e361165f" name="ac85615ad1df838a4ebde5545e361165f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac85615ad1df838a4ebde5545e361165f">&#9670;&nbsp;</a></span>Plane()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +153,7 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt;&#160;</td>
-          <td class="paramname"><em>flights</em>, </td>
+          <td class="paramname"><em>flights</em> = <code>std::list&lt;<a class="el" href="class_flight.html">Flight</a>&gt;()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -172,7 +174,7 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
     <tr><td class="paramname">licensePlate</td><td><a class="el" href="class_plane.html">Plane</a>'s license plate (constant) </td></tr>
     <tr><td class="paramname">type</td><td><a class="el" href="class_plane.html">Plane</a>'s type (constant) </td></tr>
     <tr><td class="paramname">capacity</td><td><a class="el" href="class_plane.html">Plane</a>'s passenger capacity (constant) </td></tr>
-    <tr><td class="paramname">flights</td><td><a class="el" href="class_plane.html">Plane</a>'s flights </td></tr>
+    <tr><td class="paramname">flights</td><td><a class="el" href="class_plane.html">Plane</a>'s flights (doesn't need to be provided, its default values is an empty list) </td></tr>
     <tr><td class="paramname">services</td><td>Services to do in a plane (doesn't need to be provided, its default value is an empty queue) </td></tr>
   </table>
   </dd>
@@ -203,6 +205,25 @@ std::queue&lt; <a class="el" href="class_service.html">Service</a> &gt;&#160;</t
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a73e432de9ebd43e5556132013ef8070a" name="a73e432de9ebd43e5556132013ef8070a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e432de9ebd43e5556132013ef8070a">&#9670;&nbsp;</a></span>finishNextService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Plane::finishNextService </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Finishes the next service in the queue and adds it to the finished services queue</p>
+<dl class="section return"><dt>Returns</dt><dd>true - it was possible to finish the service ; false - it wasn't </dd></dl>
 
 </div>
 </div>

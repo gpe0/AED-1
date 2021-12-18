@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['getage_0',['getAge',['../class_person.html#a4b66dbee570398920b8fb6aacddd2559',1,'Person']]],
-  ['getavailableseats_1',['getAvailableSeats',['../class_flight.html#a5ba1886b38c034794d788e7268183236',1,'Flight']]],
-  ['getcapacity_2',['getCapacity',['../class_plane.html#a728dcd76ef4c8f4a2baebdbb6b521549',1,'Plane']]],
-  ['getdate_3',['getDate',['../class_flight.html#ac7d86ffa7e0b4d151d874d64b336df76',1,'Flight']]],
-  ['getdestination_4',['getDestination',['../class_flight.html#a796784349325e703d6989344d7ad025b',1,'Flight']]],
-  ['getduration_5',['getDuration',['../class_flight.html#a86312d2882adab277c57411e0dc3bdaa',1,'Flight']]],
-  ['getfinishedservices_6',['getFinishedServices',['../class_plane.html#a39aa540d1d103b7a94ece8094ec5bbd3',1,'Plane']]],
-  ['getflights_7',['getFlights',['../class_plane.html#a069a0c36bb470b3c66d5d19029f5ad5a',1,'Plane']]],
-  ['getlicenseplate_8',['getLicensePlate',['../class_plane.html#a5316809c9c45f5a50a41bd7f449fb5e9',1,'Plane']]],
-  ['getluggages_9',['getLuggages',['../class_carriage.html#ab984dc7df270f24bf3df31d1db046931',1,'Carriage']]],
-  ['getmaxstacknumber_10',['getMaxStackNumber',['../class_carriage.html#ae9b27dbd8e45bb265e17baaaa653856c',1,'Carriage']]],
-  ['getmaxstacksize_11',['getMaxSTackSize',['../class_carriage.html#a7adf4da444be14ad592b249ed11d4a2f',1,'Carriage']]],
-  ['getname_12',['getName',['../class_person.html#a9db2e2ccfc6cfa0d7979613ec2aaa922',1,'Person']]],
-  ['getnum_13',['getNum',['../class_flight.html#a8e3cb40aea69652fe8d6b35f09ce18bb',1,'Flight']]],
-  ['getorigin_14',['getOrigin',['../class_flight.html#a3eb00d3e3efdf09c433636c5c75e8c63',1,'Flight']]],
-  ['getservices_15',['getServices',['../class_plane.html#a27b8e9951b9d20e875ccc67f0db4d5a5',1,'Plane']]],
-  ['getsex_16',['getSex',['../class_person.html#a0cb92dfb78e6f780829188e6b38a42bf',1,'Person']]],
-  ['gettype_17',['getType',['../class_plane.html#a000717003dd3e714311f16adde626b81',1,'Plane']]]
+  ['finishnextservice_0',['finishNextService',['../class_plane.html#a73e432de9ebd43e5556132013ef8070a',1,'Plane']]],
+  ['flight_1',['Flight',['../class_flight.html',1,'Flight'],['../class_flight.html#ae4c28f715e574e20219e9ff433031bcf',1,'Flight::Flight()']]],
+  ['funluggageproblem_2',['FunLuggageProblem',['../class_fun_luggage_problem.html',1,'']]]
 ];

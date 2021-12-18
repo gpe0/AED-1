@@ -1,8 +1,6 @@
-//
-// Created by guilh on 12/15/2021.
-//
-
+#include <cmath>
 #include "Location.h"
+
 
 using namespace std;
 Location::Location(double latitude, double longitude) {
@@ -13,16 +11,16 @@ Location::Location(double latitude, double longitude) {
     this->longitude = longitude;
 }
 
-float Location::getDistanceToInKM(Location &location2) {
-    double lat1Rad = latitude * 6371;
-    double long1Rad = longitude * 6371;
-    double lat2Rad = location2.latitude * 6371;
-    double long2Rad = location2.longitude * 6371;
-    double result = pow(sin((lat2Rad - lat1Rad) / 2), 2) +
-                      cos(lat1Rad) * cos(lat2Rad) *
-                      pow(sin((long2Rad - long1Rad) / 2), 2);
-    return 2*asin(sqrt(result));
-
+float Location::getDistanceToLoc(Location &location2) {
+    double earthR = 6371;
+    double lat1 = latitude * M_PI / 180;
+    double lat2 = location2.latitude * M_PI / 180;
+    double difLat = (latitude - location2.latitude) * M_PI / 180;
+    double difLon = (longitude - location2.longitude) * M_PI / 180;
+    double a = sin(difLat / 2) * sin(difLat / 2) + cos(lat1) * cos(lat2) * sin(difLon / 2) * sin(difLon / 2);
+    double c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    double d = earthR * c;
+    return d;
 }
 
 double Location::getLatitude() {

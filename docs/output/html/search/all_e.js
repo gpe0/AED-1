@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['naggymock_0',['NaggyMock',['../classtesting_1_1_naggy_mock.html',1,'testing']]],
-  ['naggymockimpl_1',['NaggyMockImpl',['../classtesting_1_1internal_1_1_naggy_mock_impl.html',1,'testing::internal']]],
-  ['naggymockimpl_3c_20mockclass_20_3e_2',['NaggyMockImpl&lt; MockClass &gt;',['../classtesting_1_1internal_1_1_naggy_mock_impl.html',1,'testing::internal']]],
-  ['namegeneratorselector_3',['NameGeneratorSelector',['../structtesting_1_1internal_1_1_name_generator_selector.html',1,'testing::internal']]],
-  ['namingtest_4',['NamingTest',['../class_naming_test.html',1,'']]],
-  ['nativearray_5',['NativeArray',['../classtesting_1_1internal_1_1_native_array.html',1,'testing::internal']]],
-  ['nicemock_6',['NiceMock',['../classtesting_1_1_nice_mock.html',1,'testing']]],
-  ['nicemockimpl_7',['NiceMockImpl',['../classtesting_1_1internal_1_1_nice_mock_impl.html',1,'testing::internal']]],
-  ['nicemockimpl_3c_20mockclass_20_3e_8',['NiceMockImpl&lt; MockClass &gt;',['../classtesting_1_1internal_1_1_nice_mock_impl.html',1,'testing::internal']]],
-  ['nodefaultcontructor_9',['NoDefaultContructor',['../classtesting_1_1internal_1_1_no_default_contructor.html',1,'testing::internal']]],
-  ['noncontainer_10',['NonContainer',['../class_non_container.html',1,'']]],
-  ['nondefaultconstructassignstring_11',['NonDefaultConstructAssignString',['../class_non_default_construct_assign_string.html',1,'']]],
-  ['none_12',['None',['../structtesting_1_1internal_1_1_none.html',1,'testing::internal']]],
-  ['nonfatalfailureinfixtureconstructortest_13',['NonFatalFailureInFixtureConstructorTest',['../class_non_fatal_failure_in_fixture_constructor_test.html',1,'']]],
-  ['nonfatalfailureinsetuptest_14',['NonFatalFailureInSetUpTest',['../class_non_fatal_failure_in_set_up_test.html',1,'']]],
-  ['nonparameterizedbasetest_15',['NonParameterizedBaseTest',['../class_non_parameterized_base_test.html',1,'']]],
-  ['normalizexml_16',['NormalizeXml',['../classgtest__xml__test__utils_1_1_g_test_x_m_l_test_case.html#ac4823e96c3b5327b25a340a3605447d9',1,'gtest_xml_test_utils::GTestXMLTestCase']]],
-  ['notconstdebugstringmethod_17',['NotConstDebugStringMethod',['../struct_not_const_debug_string_method.html',1,'']]],
-  ['notdefaultconstructible_18',['NotDefaultConstructible',['../classtesting_1_1gmock__nice__strict__test_1_1_not_default_constructible.html',1,'testing::gmock_nice_strict_test']]],
-  ['notinstantiatedtest_19',['NotInstantiatedTest',['../classworks__here_1_1_not_instantiated_test.html',1,'works_here']]],
-  ['notinstantiatedtypetest_20',['NotInstantiatedTypeTest',['../classworks__here_1_1_not_instantiated_type_test.html',1,'works_here']]],
-  ['notreallyahashtable_21',['NotReallyAHashTable',['../struct_not_really_a_hash_table.html',1,'']]],
-  ['notusedtest_22',['NotUsedTest',['../classworks__here_1_1_not_used_test.html',1,'works_here']]],
-  ['notusedtypetest_23',['NotUsedTypeTest',['../classworks__here_1_1_not_used_type_test.html',1,'works_here']]],
-  ['numerictest_24',['NumericTest',['../classlibrary1_1_1_numeric_test.html',1,'library1::NumericTest&lt; T &gt;'],['../classlibrary2_1_1_numeric_test.html',1,'library2::NumericTest&lt; T &gt;']]]
+  ['worker_0',['Worker',['../class_worker.html',1,'Worker'],['../class_worker.html#a0120a2a2ef75ccbfe4612d146e8fcf12',1,'Worker::Worker()']]]
 ];

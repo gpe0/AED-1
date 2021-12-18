@@ -12,6 +12,9 @@
 #include "Worker.h"
 #include "Carriage.h"
 #include "Car.h"
+#include "Location.h"
+#include "TransitStop.h"
+#include "Airport.h"
 
 using testing::Eq;
 using namespace std;
@@ -255,4 +258,33 @@ TEST(test2, Car) {
 
     EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 1);
 
+}
+
+TEST(test3, Airport) {
+    Location* l1 = new Location(0, 0);
+    Location* l2 = new Location(20, 20);
+    Location* l3 = new Location(30, 30);
+    Location* l4 = new Location(40, 40);
+    vector<TransitStop> v1;
+    Airport a("Porto", l1);
+
+    a.getAllTransitStops(v1);
+
+    EXPECT_TRUE(v1.size() == 0);
+
+    a.addTransitStop(TransitStop("S Joao", "Autocarro", l4));
+    a.addTransitStop(TransitStop("S Maria", "Comboio", l2));
+    a.addTransitStop(TransitStop("Combatentes", "Metro", l3));
+
+    a.getAllTransitStops(v1);
+
+    EXPECT_TRUE(v1.size() == 3);
+    EXPECT_TRUE(v1.front().getName() == "S Maria");
+
+
+    vector<TransitStop> v2;
+    a.getAllTransitStopsInRange(4700, v2);
+
+    EXPECT_TRUE(v2.size() == 2);
+    EXPECT_TRUE(v2.back().getName() == "Combatentes");
 }

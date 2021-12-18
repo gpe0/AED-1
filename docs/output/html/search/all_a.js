@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['readflights_0',['readFlights',['../class_interface.html#a745b6fc9a98bb1b9b7af6ae2debdd07a',1,'Interface']]],
-  ['readplanes_1',['readPlanes',['../class_interface.html#acbb1ca17a7fff0269f6498059af95795',1,'Interface']]],
-  ['removeluggage_2',['removeLuggage',['../class_passenger.html#a7dbb126f79938529795b73e4c137a0c2',1,'Passenger']]],
-  ['removenextluggage_3',['removeNextLuggage',['../class_carriage.html#a23a4aa132b81110c9f04909dfdb7bc63',1,'Carriage']]]
+  ['passenger_0',['Passenger',['../class_passenger.html',1,'Passenger'],['../class_passenger.html#ab5c74148a854548a0809f6aef55cd3d0',1,'Passenger::Passenger()']]],
+  ['person_1',['Person',['../class_person.html',1,'Person'],['../class_person.html#a0397c6f89fafc12e738923f612bc41a3',1,'Person::Person()'],['../class_person.html#a31113fb0a49d119ce5333eddcf9c10e9',1,'Person::Person(std::string name, int age, char sex)']]],
+  ['plane_2',['Plane',['../class_plane.html',1,'Plane'],['../class_plane.html#ac85615ad1df838a4ebde5545e361165f',1,'Plane::Plane()']]]
 ];
