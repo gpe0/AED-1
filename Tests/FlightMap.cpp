@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void Map::addMarker(Location& location, Airport& airport) {
+void FlightMap::addMarker(Location& location, Airport& airport) {
     html = html.substr(0, html.size() - 9);
     html += "            var marker_e0c37810ae724441860d1be45319756d = L.marker(\n"
           "                [" + to_string(location.getLatitude()) + ", " + to_string(location.getLongitude()) + "],\n"
@@ -19,7 +19,7 @@ void Map::addMarker(Location& location, Airport& airport) {
           "</script>";
 }
 
-void Map::addRoute(Location& location1, Location& location2) {
+void FlightMap::addRoute(Location& location1, Location& location2) {
     html = html.substr(0, html.size() - 9);
     html += "   var poly_line_244a7d418bd1460fbcf5aad1bf6757c9 = L.polyline(\n"
           "       [[" + to_string(location1.getLatitude()) + ", " + to_string(location1.getLongitude()) + "], [" + to_string(location2.getLatitude()) + ", " + to_string(location2.getLongitude()) + "]],\n"
@@ -28,11 +28,11 @@ void Map::addRoute(Location& location1, Location& location2) {
           "</script>";
 }
 
-std::string Map::getHTML() {
+std::string FlightMap::getHTML() {
     return html;
 }
 
-void Map::airportsurroundMap(Location &location, string name, string type) {
+void FlightMap::airportSurroundMap(Location &location, string name, string type) {
     html = html.substr(0, html.size() - 9);
     if (type == "Airport") {
 
@@ -58,7 +58,7 @@ void Map::airportsurroundMap(Location &location, string name, string type) {
             "            );\n"
             "            marker_e0c37810ae724441860d1be45319756d.setIcon(icon_338382f8ccf9444a81c0d91703249644);\n"
             "        var popup_ddd224e1958240acbb614d6051d567b0 = L.popup({\"maxWidth\": \"100%\"});"
-            "            var html_c7f4658d577c40f5b2e4c0c28d68cb3a = $(`<div id=\"html_c7f4658d577c40f5b2e4c0c28d68cb3a\" style=\"width: 100.0%; height: 100.0%;\">" + airport.getName() + "</div>`)[0];\n""            popup_ddd224e1958240acbb614d6051d567b0.setContent(html_c7f4658d577c40f5b2e4c0c28d68cb3a)\n;"
+           // "            var html_c7f4658d577c40f5b2e4c0c28d68cb3a = $(`<div id=\"html_c7f4658d577c40f5b2e4c0c28d68cb3a\" style=\"width: 100.0%; height: 100.0%;\">" + airport.getName() + "</div>`)[0];\n""            popup_ddd224e1958240acbb614d6051d567b0.setContent(html_c7f4658d577c40f5b2e4c0c28d68cb3a)\n;"
             "        marker_e0c37810ae724441860d1be45319756d.bindPopup(popup_ddd224e1958240acbb614d6051d567b0)\n"
             "        ;\n"
             "</script>";

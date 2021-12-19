@@ -8,13 +8,13 @@
 #include <fstream>
 #include <string>
 
-class Map {
+class FlightMap {
 private:
     std::string html;
 public:
     void addMarker(Location& location, Airport& airport);
     void addRoute(Location& location1, Location& location2);
-    void airportsurroundMap(Location& location, string name, string type);
+    void airportSurroundMap(Location& location, string name, string type);
     std::string getHTML();
 };
 

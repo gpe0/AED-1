@@ -10,7 +10,7 @@ class Carriage {
 private:
     const int STACKNUMBER;
     const int STACKSIZE;
-    stack<stack<Luggage*>> luggages;
+    stack<stack<Luggage*>> luggage;
 
 public:
 
@@ -50,7 +50,7 @@ public:
      *
      * @return luggages
      */
-    stack<stack<Luggage*>> getLuggages();
+    stack<stack<Luggage*>> getLuggage();
 };
 
 

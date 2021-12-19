@@ -222,21 +222,37 @@ TEST(test1, Person) {
 
 }
 
+TEST(test1, Passenger) {
+    Passenger passenger("Rui", 25, 'M');
+    Luggage * l1 = new Luggage(1.5, 5.5, 5);
+    Luggage * l2 = new Luggage(2.5, 6.2, 12);
+    Luggage * l3 = new Luggage(1.6, 1.1, 3);
+    Luggage * l4 = new Luggage(3.1, 23.8, 25);
+
+    passenger.addLuggage(l1);
+    passenger.addLuggage(l2);
+    passenger.addLuggage(l3);
+    passenger.addLuggage(l4);
+
+    EXPECT_EQ(passenger.findLuggageWithId(l3->getID())->getHeight(), l3->getHeight());
+    EXPECT_NEAR(passenger.findLuggageWithId(80)->getHeight(), -1, 0.01);
+}
+
 TEST(test2, Carriage) {
     Carriage carriage(3, 4);
     Luggage l1(3.2, 1.6, 8);
     Luggage l2(4.4, 3.3, 10);
 
-    EXPECT_TRUE(carriage.getLuggages().empty());
-    EXPECT_EQ(l1.getID(), 1);
-    EXPECT_EQ(l2.getID(), 2);
+    EXPECT_TRUE(carriage.getLuggage().empty());
+    EXPECT_EQ(l1.getID(), 6);
+    EXPECT_EQ(l2.getID(), 7);
 
     carriage.addLuggage(&l1);
     carriage.addLuggage(&l2);
 
-    EXPECT_EQ(carriage.getLuggages().size(), 1);
-    EXPECT_EQ(carriage.getLuggages().top().size(), 2);
-    EXPECT_EQ(*carriage.getLuggages().top().top(), l2);
+    EXPECT_EQ(carriage.getLuggage().size(), 1);
+    EXPECT_EQ(carriage.getLuggage().top().size(), 2);
+    EXPECT_EQ(*carriage.getLuggage().top().top(), l2);
 
     EXPECT_FALSE(carriage.addLuggage(&l1));
 
@@ -256,7 +272,7 @@ TEST(test2, Car) {
 
     car.addLuggage(&l1);
 
-    EXPECT_EQ(car.getCarriages().front().getLuggages().size(), 1);
+    EXPECT_EQ(car.getCarriages().front().getLuggage().size(), 1);
 
 }
 

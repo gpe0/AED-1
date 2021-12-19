@@ -1,7 +1,7 @@
 #ifndef PASSENGER_H
 #define PASSENGER_H
 
-#include <list>
+#include <vector>
 #include "Person.h"
 #include "Flight.h"
 #include "Plane.h"
@@ -9,7 +9,7 @@
 
 class Passenger : public Person {
 private:
-    std::list<Luggage*> luggage;
+    std::vector<Luggage*> luggage;
 
 
 public:
@@ -35,7 +35,7 @@ public:
       *
       * @return luggage
       */
-     std::list<Luggage*> getLuggage();
+     std::vector<Luggage*> getLuggage();
 
      /**Adds a luggage to the list of luggages of the passenger
       *
@@ -49,6 +49,13 @@ public:
       * @return true - if it removed ; false - if it didn't remove
       */
      bool removeLuggage(Luggage* l);
+
+     /**Tries to find the luggage with the given ID
+      *
+      * @param id ID
+      * @return luggage found (if not found, is returned an invalid luggage (negatives values))
+      */
+     Luggage * findLuggageWithId(int id);
 
 };
 

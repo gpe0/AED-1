@@ -73,7 +73,7 @@ $(function() {
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PASSENGER_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PASSENGER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Person.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Flight.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Plane.h&quot;</span></div>
@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_passenger.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_passenger.html">Passenger</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_person.html">Person</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::list&lt;Luggage*&gt; luggage;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    std::vector&lt;Luggage*&gt; luggage;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
@@ -89,21 +89,24 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>     <span class="keywordtype">bool</span> <a class="code hl_function" href="class_passenger.html#ad608e32d9686f0e2e99f39c7badb143e">acquireTicket</a>(<span class="keywordtype">int</span> flightNum, <a class="code hl_class" href="class_plane.html">Plane</a>&amp; plane, <span class="keywordtype">bool</span> hasLuggage, <span class="keywordtype">int</span> tickets = 1);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>     std::list&lt;Luggage*&gt; <a class="code hl_function" href="class_passenger.html#a4a2cf17ba78523639ae2e74a156a6e09">getLuggage</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>     std::vector&lt;Luggage*&gt; <a class="code hl_function" href="class_passenger.html#acba881d0722b779bd7d8536416673297">getLuggage</a>();</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>     <span class="keywordtype">void</span> <a class="code hl_function" href="class_passenger.html#a9e82869aefcb968257e59c429bb8ab49">addLuggage</a>(<a class="code hl_class" href="class_luggage.html">Luggage</a>* l);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>     <span class="keywordtype">bool</span> <a class="code hl_function" href="class_passenger.html#af138caf69e50a85d0feab5afb7c75626">removeLuggage</a>(<a class="code hl_class" href="class_luggage.html">Luggage</a>* l);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>     <a class="code hl_class" href="class_luggage.html">Luggage</a> * <a class="code hl_function" href="class_passenger.html#a773f17bc52c448d0e2701f13e07a6af0">findLuggageWithId</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_luggage_html"><div class="ttname"><a href="class_luggage.html">Luggage</a></div><div class="ttdef"><b>Definition:</b> Luggage.h:5</div></div>
 <div class="ttc" id="aclass_passenger_html"><div class="ttname"><a href="class_passenger.html">Passenger</a></div><div class="ttdef"><b>Definition:</b> Passenger.h:10</div></div>
-<div class="ttc" id="aclass_passenger_html_a4a2cf17ba78523639ae2e74a156a6e09"><div class="ttname"><a href="class_passenger.html#a4a2cf17ba78523639ae2e74a156a6e09">Passenger::getLuggage</a></div><div class="ttdeci">std::list&lt; Luggage * &gt; getLuggage()</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:25</div></div>
+<div class="ttc" id="aclass_passenger_html_a773f17bc52c448d0e2701f13e07a6af0"><div class="ttname"><a href="class_passenger.html#a773f17bc52c448d0e2701f13e07a6af0">Passenger::findLuggageWithId</a></div><div class="ttdeci">Luggage * findLuggageWithId(int id)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:43</div></div>
 <div class="ttc" id="aclass_passenger_html_a9e82869aefcb968257e59c429bb8ab49"><div class="ttname"><a href="class_passenger.html#a9e82869aefcb968257e59c429bb8ab49">Passenger::addLuggage</a></div><div class="ttdeci">void addLuggage(Luggage *l)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:29</div></div>
 <div class="ttc" id="aclass_passenger_html_ab5c74148a854548a0809f6aef55cd3d0"><div class="ttname"><a href="class_passenger.html#ab5c74148a854548a0809f6aef55cd3d0">Passenger::Passenger</a></div><div class="ttdeci">Passenger(std::string name, int age, char sex)</div><div class="ttdef"><b>Definition:</b> Passenger.h:23</div></div>
+<div class="ttc" id="aclass_passenger_html_acba881d0722b779bd7d8536416673297"><div class="ttname"><a href="class_passenger.html#acba881d0722b779bd7d8536416673297">Passenger::getLuggage</a></div><div class="ttdeci">std::vector&lt; Luggage * &gt; getLuggage()</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:25</div></div>
 <div class="ttc" id="aclass_passenger_html_ad608e32d9686f0e2e99f39c7badb143e"><div class="ttname"><a href="class_passenger.html#ad608e32d9686f0e2e99f39c7badb143e">Passenger::acquireTicket</a></div><div class="ttdeci">bool acquireTicket(int flightNum, Plane &amp;plane, bool hasLuggage, int tickets=1)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:6</div></div>
 <div class="ttc" id="aclass_passenger_html_af138caf69e50a85d0feab5afb7c75626"><div class="ttname"><a href="class_passenger.html#af138caf69e50a85d0feab5afb7c75626">Passenger::removeLuggage</a></div><div class="ttdeci">bool removeLuggage(Luggage *l)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:33</div></div>
 <div class="ttc" id="aclass_person_html"><div class="ttname"><a href="class_person.html">Person</a></div><div class="ttdef"><b>Definition:</b> Person.h:6</div></div>

@@ -19,17 +19,17 @@ bool Carriage::addLuggage(Luggage* l) {
 
     if (l->isInCar()) return false;
 
-    if (!luggages.empty() && luggages.top().size() < STACKSIZE) {
+    if (!luggage.empty() && luggage.top().size() < STACKSIZE) {
         l->move(true);
-        luggages.top().push(l);
+        luggage.top().push(l);
         return true;
     }
 
-    if (luggages.size() < STACKNUMBER) {
+    if (luggage.size() < STACKNUMBER) {
         l->move(true);
         stack<Luggage*> s;
         s.push(l);
-        luggages.push(s);
+        luggage.push(s);
         return true;
     }
 
@@ -38,18 +38,18 @@ bool Carriage::addLuggage(Luggage* l) {
 }
 
 bool Carriage::removeNextLuggage() {
-    if (luggages.empty()) return false;
+    if (luggage.empty()) return false;
 
-    luggages.top().top()->move(false);
-    luggages.top().pop();
+    luggage.top().top()->move(false);
+    luggage.top().pop();
 
-    if (luggages.top().empty()) {
-        luggages.pop();
+    if (luggage.top().empty()) {
+        luggage.pop();
     }
 
     return true;
 }
 
-stack<stack<Luggage*>> Carriage::getLuggages() {
-    return luggages;
+stack<stack<Luggage*>> Carriage::getLuggage() {
+    return luggage;
 }

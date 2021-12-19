@@ -22,7 +22,7 @@ bool Passenger::acquireTicket(int flightNum, Plane& plane, bool hasLuggage,  int
     return hasTicket;
 }
 
-std::list<Luggage *> Passenger::getLuggage() {
+std::vector<Luggage *> Passenger::getLuggage() {
     return luggage;
 }
 
@@ -38,4 +38,16 @@ bool Passenger::removeLuggage(Luggage* l) {
         }
     }
     return false;
+}
+
+Luggage *Passenger::findLuggageWithId(int id) {
+    int left = 0, right = luggage.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (luggage[mid]->getID() < id) left = mid + 1;
+        else if (id < luggage[mid]->getID()) right = mid - 1;
+        else return luggage[mid];
+    }
+    Luggage * notFound = new Luggage(-1, -1, -1);
+    return notFound;
 }
