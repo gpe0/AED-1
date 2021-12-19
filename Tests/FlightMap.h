@@ -12,30 +12,17 @@ class FlightMap {
 private:
     std::string html;
 public:
-    void addMarker(Location& location, Airport& airport);
+    FlightMap();
+    void addMainAirport(Airport& airport);
     void addRoute(Location& location1, Location& location2);
-    void airportSurroundMap(Location& location, string name, string type);
+    void addTransitStop(TransitStop& transitStop);
     std::string getHTML();
+    class InvalidMap {
+    private:
+        std::string msg;
+    public:
+        InvalidMap(std::string msg) {this->msg = msg;};
+        std::string what() const {return msg;};
+    };
 };
-
-/*
-ifstream inFile("mapBase.html");
-string line, html = "";
-fstream myfile;
-myfile.open("mapBase.html", ios::in);
-if (!myfile)
-cout << "file cannot open!";
-
-while (getline(myfile, line))
-{
-html += line;
-}
-
-html = addingmarker(html, 4.0, 10.0, "Airport_test");
-html = addingroute(html, 40.0, 27.0, 13.0, 8.0);
-ofstream out("output_.html");
-out << html;
-myfile.close();
-out.close();
-*/
 #endif

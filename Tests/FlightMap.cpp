@@ -2,10 +2,10 @@
 
 using namespace std;
 
-void FlightMap::addMarker(Location& location, Airport& airport) {
+void FlightMap::addMainAirport(Airport &airport) {
     html = html.substr(0, html.size() - 9);
     html += "            var marker_e0c37810ae724441860d1be45319756d = L.marker(\n"
-          "                [" + to_string(location.getLatitude()) + ", " + to_string(location.getLongitude()) + "],\n"
+          "                [" + to_string((*airport.getLocation()).getLatitude()) + ", " + to_string((*airport.getLocation()).getLongitude()) + "],\n"
           "                {}\n"
           "            ).addTo(map_5c9a6b2e6ab4426ab58e897091b2188b);"
           "            var icon_338382f8ccf9444a81c0d91703249644 = L.AwesomeMarkers.icon(\n"
@@ -32,26 +32,26 @@ std::string FlightMap::getHTML() {
     return html;
 }
 
-void FlightMap::airportSurroundMap(Location &location, string name, string type) {
+void FlightMap::addTransitStop(TransitStop &transitStop) {
     html = html.substr(0, html.size() - 9);
     string temp;
-    if (type == "Airport") {
+    if (transitStop.getTransportType() == "Airport") {
         temp = "plane";
     }
-    else if (type == "Bus") {
+    else if (transitStop.getTransportType() == "Bus") {
         temp = "bus";
     }
-    else if (type == "Subway") {
+    else if (transitStop.getTransportType() == "Subway") {
         temp = "subway";
     }
-    else if (type == "Train") {
+    else if (transitStop.getTransportType() == "Train") {
         temp = "train";
     }
     else {
-        throw ("Invalid Duration"); /* fix this exception */
+        throw (InvalidMap("Unsupported transport type"));
     }
     html += "            var marker_e0c37810ae724441860d1be45319756d = L.marker(\n"
-            "                [" + to_string(location.getLatitude()) + ", " + to_string(location.getLongitude()) + "],\n"
+            "                [" + to_string((*transitStop.getLocation()).getLatitude()) + ", " + to_string((*transitStop.getLocation()).getLongitude()) + "],\n"
             "                {}\n"
             "            ).addTo(map_5c9a6b2e6ab4426ab58e897091b2188b);"
             "            var icon_338382f8ccf9444a81c0d91703249644 = L.AwesomeMarkers.icon(\n"
@@ -63,4 +63,16 @@ void FlightMap::airportSurroundMap(Location &location, string name, string type)
             "        marker_e0c37810ae724441860d1be45319756d.bindPopup(popup_ddd224e1958240acbb614d6051d567b0)\n"
             "        ;\n"
             "</script>";
+}
+
+FlightMap::FlightMap() {
+    string line;
+    fstream myfile;
+    myfile.open("mapBase.html", ios::in);
+    if (!myfile)
+        throw (InvalidMap("Didn't find mapBase"));
+    while (getline(myfile, line)) {
+        html += line;
+    }
+    myfile.close();
 }
