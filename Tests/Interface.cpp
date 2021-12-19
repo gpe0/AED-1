@@ -14,6 +14,7 @@
 #include "Carriage.h"
 #include "TransitStop.h"
 #include "Interface.h"
+#include "FlightMap.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
@@ -83,13 +84,49 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 
 }
 
+void Interface::readTransitStops(std::string file, std::list<TransitStop> &transitStops) {
+    file = "../files/input/" + file;
+
+    ifstream f(file);
+    string line, w;
+
+    getline(f, line);
+    if (f.is_open()) {
+        while (getline(f, line)) {
+            stringstream s(line);
+            stringstream aux;
+
+            getline(s, w, ','); //name
+
+            string name = w;
+
+            getline(s, w, ','); //type
+
+            string type = w;
+
+            getline(s, w, ','); //latitude
+            double lat, lon;
+            aux.clear();
+            aux.str(w);
+            aux >> lat;
+            getline(s, w, ','); //longitude
+            aux.clear();
+            aux.str(w);
+            aux >> lon;
+            Location * location = new Location(lat, lon);
+            transitStops.push_back(TransitStop(name, type, location));
+        }
+    }
+    f.close();
+}
+
 void Interface::displayMenu() {
 
     cout << "Airline Information Management" << endl;
     cout << "------------------------------------" << endl << endl;
     cout << "1 - Simulate" << endl;
     cout << "2 - Run Tests" << endl;
-    cout << "3 - Demo" << endl;
+    cout << "3 - Demo (read csv files)" << endl;
     cout << "4 - Exit" << endl;
     cout << "------------------------------------" << endl;
     cout << "Option: " << flush;
@@ -132,6 +169,43 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
 
             planes.push_back(Plane(licensePlate, type, capacity, flightsL));
 
+        }
+    }
+}
+
+void Interface::readAirports(std::string file, std::list<Airport> &airports, std::string transitStops) {
+    file = "../files/input/" + file;
+
+    ifstream f(file);
+    string line, w;
+
+    getline(f, line);
+    if (f.is_open()) {
+        while (getline(f, line)) {
+            stringstream s(line);
+            stringstream aux;
+
+            getline(s, w, ','); //name
+            string name = w;
+
+            getline(s, w, ','); //latitude
+            double lat, lon;
+            aux.clear();
+            aux.str(w);
+            aux >> lat;
+            getline(s, w, ','); //longitude
+            aux.clear();
+            aux.str(w);
+            aux >> lon;
+            Location * location = new Location(lat, lon);
+
+            Airport a(name, location);
+            list<TransitStop> v;
+            readTransitStops(transitStops, v);
+            for (auto it = v.begin(); it != v.end(); it++)
+                a.addTransitStop(*it);
+
+            airports.push_back(a);
         }
     }
 }
@@ -236,6 +310,11 @@ void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::l
         }
     }
     f.close();
+}
+
+void Interface::exportMap(std::string html) {
+    ofstream f("../files/output/simulationMap.html");
+    f << html << endl;
 }
 
 int Interface::menu(int argc, char* argv[]) {
@@ -543,6 +622,7 @@ int Interface::menu(int argc, char* argv[]) {
                                     }
                                     cout << "---------------------" << endl;
 
+                                    FlightMap map;
                                     string airportOName, airportDName;
                                     double latO, latD, lonO, lonD;
 
@@ -558,6 +638,8 @@ int Interface::menu(int argc, char* argv[]) {
                                     Location * locO = new Location(latO, lonO);
 
                                     Airport aO(airportOName, locO);
+
+                                    map.addMainAirport(aO);
 
                                     cout << "Number of transit stops to add to " << airportOName << " airport: " << flush;
 
@@ -583,7 +665,9 @@ int Interface::menu(int argc, char* argv[]) {
                                         cin >> lon;
 
                                         Location* location = new Location(lat, lon);
-                                        aO.addTransitStop(TransitStop(name, type, location));
+                                        TransitStop* tP = new TransitStop(name, type, location);
+                                        aO.addTransitStop(*tP);
+                                        map.addTransitStop(*tP);
 
                                         cout << "Transit stop added!" << endl << endl;
                                     }
@@ -600,6 +684,9 @@ int Interface::menu(int argc, char* argv[]) {
                                     Location * locD = new Location(latD, lonD);
 
                                     Airport aD(airportDName, locD);
+
+                                    map.addMainAirport( aD);
+                                    map.addRoute(*aO.getLocation(), *aD.getLocation());
 
                                     cout << "Number of transit stops to add to " << airportDName << " airport: " << flush;
 
@@ -625,8 +712,9 @@ int Interface::menu(int argc, char* argv[]) {
                                         cin >> lon;
 
                                         Location* location = new Location(lat, lon);
-                                        aD.addTransitStop(TransitStop(name, type, location));
-
+                                        TransitStop* tP = new TransitStop(name, type, location);
+                                        aD.addTransitStop(*tP);
+                                        map.addTransitStop(*tP);
                                         cout << "Transit stop added!" << endl << endl;
                                     }
 
@@ -638,6 +726,8 @@ int Interface::menu(int argc, char* argv[]) {
                                         cout << "File Name (without .csv): " << flush;
                                         cin >> fileName;
                                         exportCsv(fileName, planes, passengers, aO, aD);
+
+                                        exportMap(map.getHTML());
                                     }
                                 }
                                 break;
@@ -657,8 +747,43 @@ int Interface::menu(int argc, char* argv[]) {
             return RUN_ALL_TESTS();
         } else if (option == 3) {
 
+            string option;
+            list<Airport> airports;
+            readAirports("airportsOPorto.csv", airports, "transitStopsOPorto.csv");
+            readAirports("airportsMadrid.csv", airports, "transitStopsMadrid.csv");
 
+            cout << "Type de airport's name you want to visualize: " << endl;
+            for (auto &airport: airports) {
+                cout << airport.getName() << endl;
+            }
+            cout << "Option: " << flush;
+            cin.ignore(); // clear buffer
+            getline(cin, option);
+            bool found = false;
+            FlightMap map;
 
+            while (!found) {
+                for (auto &airport: airports) {
+                    if (airport.getName() == option) {
+                        map.addMainAirport(airport);
+                        vector<TransitStop> v;
+                        airport.getAllTransitStops(v);
+                        for (auto transitStop: v)
+                            map.addTransitStop(transitStop);
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    cout << "Wrong Option\nOption: " << flush;
+                    getline(cin, option);
+                }
+            }
+            ofstream f("../files/output/demoMap.html");
+            if (f.is_open()) {
+                f << map.getHTML() << endl;
+            }
+            f.close();
+            cout << "Demo Map Created! (exported to ./files/output/demoMap.html)" << endl;
         }
     }
     return 0;
