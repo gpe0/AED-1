@@ -39,6 +39,3 @@ void Luggage::move(bool inCar) {
 bool Luggage::operator==(const Luggage &right) const {
     return luggageID == right.luggageID;
 }
-
-
-

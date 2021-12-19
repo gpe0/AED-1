@@ -3,15 +3,13 @@
 
 #include <stack>
 #include "Luggage.h"
-
+#include <list>
 using namespace std;
 
 class Carriage {
 private:
-    const int STACKNUMBER;
-    const int STACKSIZE;
-    stack<stack<Luggage*>> luggage;
-
+    std::list<stack<Luggage*>> luggages;
+    double capacity, availableCapacity, width, heigth, availableHeigth;
 public:
 
     /**Initializes the carriage with the max number of stacks and stack size
@@ -19,38 +17,30 @@ public:
      * @param stackNumber max stack number
      * @param stackSize max stack size
      */
-    Carriage(int stackNumber, int stackSize);
+    Carriage(double capacity, double width, double heigth);
 
     /**Returns the max stack number
      *
      * @return max stack number
      */
-    int getMaxStackNumber();
+    int getStackLength();
 
-    /**Returns the max stack size
-     *
-     * @return max stack size
-     */
-    int getMaxSTackSize();
+    std::stack<Luggage*> getStackNum(int index);
 
-    /**Tries to add a luggage to the carriage
-     *
-     * @param l luggage
-     * @return whether it passed or failed
-     */
-    bool addLuggage(Luggage* l);
+    void addLugToStackNum(int index, Luggage* luggage);
 
-    /**Tries to remove the next luggage from the carriage
-     *
-     * @return whether it passed or failed
-     */
-    bool removeNextLuggage();
+    void addNewStack(Luggage* luggage);
 
-    /**Return's all the luggages in the carriage
-     *
-     * @return luggages
-     */
-    stack<stack<Luggage*>> getLuggage();
+    list<stack<Luggage *>> getLuggages();
+
+    double getEfficiency();
+
+    Carriage& operator=(const Carriage& right);
+
+    double getAvailableCapacity();
+    double getWidth();
+    double getHeigth();
+    double getCapacity();
 };
 
 
