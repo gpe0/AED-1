@@ -10,6 +10,8 @@
 #include "Passenger.h"
 #include "Duration.h"
 #include "Airport.h"
+#include "Car.h"
+#include "Carriage.h"
 #include "TransitStop.h"
 #include "Interface.h"
 #include "gtest/gtest.h"
@@ -225,12 +227,12 @@ void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::l
         vector<TransitStop> v;
         aO.getAllTransitStops(v);
         for (auto tStop : v) {
-            f << ", " << aO.getName() << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
+            f << aO.getName() << ", " << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
         }
         v.clear();
         aD.getAllTransitStops(v);
         for (auto tStop : v) {
-            f << ", " << aD.getName() << ", " << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
+            f << aD.getName() << ", " << tStop.getName() << ", " << tStop.getTransportType() << ", " << tStop.getLocation()->getLatitude() << ", " << tStop.getLocation()->getLongitude() << endl;
         }
     }
     f.close();
@@ -446,6 +448,31 @@ int Interface::menu(int argc, char* argv[]) {
 
                     cout << "Luggage added!" << endl << endl;
                 }
+            }
+            char opt;
+            cout << "Automatic Check-In? [Y/N]: " << flush;
+            cin >> opt;
+
+            if (opt == 'y' || opt == 'Y') {
+                bool added = true;
+                int carriages, stackNumber, stackSize;
+                cout << "Number of carriages (car): " << flush;
+                cin >> carriages;
+                cout << "Number of stacks (carriage): " << flush;
+                cin >> stackNumber;
+                cout << "Stack size (carriage): " << flush;
+                cin >> stackSize;
+                Car car(carriages, stackNumber, stackSize);
+                for (auto passenger : passengers)
+                    for (auto lug : passenger.getLuggage())
+                        if (!car.addLuggage(lug)) {
+                            added = false;
+                            break;
+                        }
+                if (!added)
+                    cout << "Couldn't Process every luggage, you have to check in manually." << endl;
+                else
+                    cout << "You are now checked in!" << endl;
             }
 
             if (hasPassengers && hasFlights && hasPlanes) {

@@ -19,6 +19,8 @@ bool Carriage::addLuggage(Luggage* l) {
 
     if (l->isInCar()) return false;
 
+    if (STACKSIZE == 0) return false;
+
     if (!luggage.empty() && luggage.top().size() < STACKSIZE) {
         l->move(true);
         luggage.top().push(l);
