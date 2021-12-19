@@ -85,21 +85,35 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_date.html">Date</a>&amp; date;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    std::vector&lt; std::pair&lt;Duration*, std::string&gt; &gt; entries;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_schedule.html">Schedule</a>(<a class="code hl_class" href="class_date.html">Date</a>&amp; date);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> addEntry(<a class="code hl_class" href="class_duration.html">Duration</a>* time, std::string event);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> removeEntry(<a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeBegin, <a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeEnd);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> removeEntry(std::string event);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;std::pair&lt;Duration*, std::string&gt;&gt; getEntries(std::string event);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::vector&lt;std::pair&lt;Duration*, std::string&gt;&gt; getEntries(<a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeBegin, <a class="code hl_class" href="class_duration.html">Duration</a>&amp; timeEnd);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_date.html">Date</a>&amp; getDate();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::vector&lt; std::pair&lt;Duration*, std::string&gt; &gt; getAllEntries();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_schedule.html#a092aab99ffc5627046d2fd9f4be0ded7">Schedule</a>(<a class="code hl_class" href="class_date.html">Date</a>&amp; date);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_schedule.html#a46fa083146b4bfa70a363ecb04b1c094">addEntry</a>(<a class="code hl_class" href="class_duration.html">Duration</a>* time, std::string event);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_schedule.html#a5c4798a343283ceb02825bdc409b1883">removeEntry</a>(<a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeBegin, <a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeEnd);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_schedule.html#a5c4798a343283ceb02825bdc409b1883">removeEntry</a>(std::string event);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::vector&lt;std::pair&lt;Duration*, std::string&gt;&gt; <a class="code hl_function" href="class_schedule.html#a27827c35e05ced82e1653e92dfde8733">getEntries</a>(std::string event);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::vector&lt;std::pair&lt;Duration*, std::string&gt;&gt; <a class="code hl_function" href="class_schedule.html#a27827c35e05ced82e1653e92dfde8733">getEntries</a>(<a class="code hl_class" href="class_duration.html">Duration</a> &amp;timeBegin, <a class="code hl_class" href="class_duration.html">Duration</a>&amp; timeEnd);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="class_date.html">Date</a>&amp; <a class="code hl_function" href="class_schedule.html#adc56e48a11337651d308c23c530b7476">getDate</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::vector&lt; std::pair&lt;Duration*, std::string&gt; &gt; <a class="code hl_function" href="class_schedule.html#a75a8cd2f18bbc9668e43866cb3b95bcb">getAllEntries</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:8</div></div>
 <div class="ttc" id="aclass_duration_html"><div class="ttname"><a href="class_duration.html">Duration</a></div><div class="ttdef"><b>Definition:</b> Duration.h:7</div></div>
 <div class="ttc" id="aclass_schedule_html"><div class="ttname"><a href="class_schedule.html">Schedule</a></div><div class="ttdef"><b>Definition:</b> Schedule.h:10</div></div>
+<div class="ttc" id="aclass_schedule_html_a092aab99ffc5627046d2fd9f4be0ded7"><div class="ttname"><a href="class_schedule.html#a092aab99ffc5627046d2fd9f4be0ded7">Schedule::Schedule</a></div><div class="ttdeci">Schedule(Date &amp;date)</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:4</div></div>
+<div class="ttc" id="aclass_schedule_html_a27827c35e05ced82e1653e92dfde8733"><div class="ttname"><a href="class_schedule.html#a27827c35e05ced82e1653e92dfde8733">Schedule::getEntries</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Duration *, std::string &gt; &gt; getEntries(std::string event)</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:37</div></div>
+<div class="ttc" id="aclass_schedule_html_a46fa083146b4bfa70a363ecb04b1c094"><div class="ttname"><a href="class_schedule.html#a46fa083146b4bfa70a363ecb04b1c094">Schedule::addEntry</a></div><div class="ttdeci">void addEntry(Duration *time, std::string event)</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:6</div></div>
+<div class="ttc" id="aclass_schedule_html_a5c4798a343283ceb02825bdc409b1883"><div class="ttname"><a href="class_schedule.html#a5c4798a343283ceb02825bdc409b1883">Schedule::removeEntry</a></div><div class="ttdeci">void removeEntry(Duration &amp;timeBegin, Duration &amp;timeEnd)</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:19</div></div>
+<div class="ttc" id="aclass_schedule_html_a75a8cd2f18bbc9668e43866cb3b95bcb"><div class="ttname"><a href="class_schedule.html#a75a8cd2f18bbc9668e43866cb3b95bcb">Schedule::getAllEntries</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Duration *, std::string &gt; &gt; getAllEntries()</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:57</div></div>
+<div class="ttc" id="aclass_schedule_html_adc56e48a11337651d308c23c530b7476"><div class="ttname"><a href="class_schedule.html#adc56e48a11337651d308c23c530b7476">Schedule::getDate</a></div><div class="ttdeci">Date &amp; getDate()</div><div class="ttdef"><b>Definition:</b> Schedule.cpp:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

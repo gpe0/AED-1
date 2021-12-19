@@ -59,7 +59,7 @@ void FlightMap::addTransitStop(TransitStop &transitStop) {
             "            );\n"
             "            marker_e0c37810ae724441860d1be45319756d.setIcon(icon_338382f8ccf9444a81c0d91703249644);\n"
             "        var popup_ddd224e1958240acbb614d6051d567b0 = L.popup({\"maxWidth\": \"100%\"});"
-            "            var html_c7f4658d577c40f5b2e4c0c28d68cb3a = $(`<div id=\"html_c7f4658d577c40f5b2e4c0c28d68cb3a\" style=\"width: 100.0%; height: 100.0%;\">" + name + "</div>`)[0];\n""            popup_ddd224e1958240acbb614d6051d567b0.setContent(html_c7f4658d577c40f5b2e4c0c28d68cb3a)\n;"
+            "            var html_c7f4658d577c40f5b2e4c0c28d68cb3a = $(`<div id=\"html_c7f4658d577c40f5b2e4c0c28d68cb3a\" style=\"width: 100.0%; height: 100.0%;\">" + transitStop.getName() + "</div>`)[0];\n""            popup_ddd224e1958240acbb614d6051d567b0.setContent(html_c7f4658d577c40f5b2e4c0c28d68cb3a)\n;"
             "        marker_e0c37810ae724441860d1be45319756d.bindPopup(popup_ddd224e1958240acbb614d6051d567b0)\n"
             "        ;\n"
             "</script>";
@@ -68,7 +68,7 @@ void FlightMap::addTransitStop(TransitStop &transitStop) {
 FlightMap::FlightMap() {
     string line;
     fstream myfile;
-    myfile.open("mapBase.html", ios::in);
+    myfile.open("../mapBase.html", ios::in);
     if (!myfile)
         throw (InvalidMap("Didn't find mapBase"));
     while (getline(myfile, line)) {
