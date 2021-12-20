@@ -43,3 +43,32 @@ std::string Authentication::getName() {
 std::string Authentication::getStatus() {
     return status;
 }
+
+void Authentication::addLog(std::string text) {
+    string file = "../files/Authentication/" + status + name + "Logs.txt", line;
+    //Complete
+}
+
+void Authentication::resetLogs() {
+    string file = "../files/Authentication/" + status + name + "Logs.txt";
+    const char* pointerToFile = file.c_str();
+    remove(pointerToFile);
+}
+
+void Authentication::outputLogs(string name) {
+    if (status != "Admin"){
+        throw(AuthenticationError("User doesn't have permission to read logs"));
+    }
+    string fileSource = "../files/Authentication/Employee" + name + "Logs.txt";
+    addLog("Admin " + name + " read logs from this user"); //HERE
+    string fileDestination = "../files/Output/Employee" + name + "Logs.txt";
+    std::ifstream  source(fileSource, ios::binary);
+    std::ofstream  destination(fileDestination, ios::binary);
+    destination << source.rdbuf();
+}
+
+void Authentication::outputAllLogs() {
+    vector<pair<string, string>> employeeList = getAllUsersOfType("Employee");
+    for(size_t i = 0; i < employeeList.size(); i++)
+        outputLogs(employeeList[i].first);
+}

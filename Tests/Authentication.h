@@ -16,6 +16,11 @@ public:
     std::string getName();
     std::string getStatus();
 
+    void addLog(std::string text);
+    void resetLogs();
+    void outputLogs(std::string name);
+    void outputAllLogs();
+
     class AuthenticationError {
     private:
         std::string msg;
