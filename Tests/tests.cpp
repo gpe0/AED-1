@@ -122,7 +122,7 @@ TEST(test1, Duration){
     // Tests if the day is correct
     ASSERT_EQ(10, d1.getMin());
     // Tests if the month is correct
-    ASSERT_EQ(1990, d1.getSecs());
+    ASSERT_EQ(19, d1.getSecs());
     // Tests if the year is correct
     ASSERT_EQ(true, d1.isValid());
     ASSERT_EQ(false, d2.isValid());
@@ -281,9 +281,9 @@ TEST(test1, Airport){
     EXPECT_EQ(a1.getTransportType(), "Airport");
 
 }
-/*
+
 TEST(test2, Carriage) {
-    Carriage carriage(3, 4);
+    Carriage carriage(3, 4, 20);
     Luggage l1(3.2, 1.6, 8);
     Luggage l2(4.4, 3.3, 10);
 
@@ -295,8 +295,8 @@ TEST(test2, Carriage) {
     carriage.addLuggage(&l2);
 
     EXPECT_EQ(carriage.getLuggage().size(), 1);
-    EXPECT_EQ(carriage.getLuggage().top().size(), 2);
-    EXPECT_EQ(*carriage.getLuggage().top().top(), l2);
+    EXPECT_EQ(carriage.getLuggage().back().size(), 2);
+    EXPECT_EQ(*carriage.getLuggage().back().top(), l2);
 
     EXPECT_FALSE(carriage.addLuggage(&l1));
 
@@ -307,19 +307,20 @@ TEST(test2, Carriage) {
 }
 
 TEST(test2, Car) {
-    Car car(3, 3, 4);
+    Car car(3);
 
     Luggage l1(3.2, 1.6, 8);
-    Luggage l2(4.4, 3.3, 10);
 
-    EXPECT_TRUE(car.getCarriages().size() == 3);
+    EXPECT_TRUE(car.getCarriages().size() == 0);
 
-    car.addLuggage(&l1);
+    EXPECT_FALSE(car.addLuggage(&l1));
 
-    EXPECT_EQ(car.getCarriages().front().getLuggage().size(), 1);
+    car.addCarriage(Carriage(2, 2, 10));
+    EXPECT_TRUE(car.addLuggage(&l1));
+    EXPECT_FALSE(car.addLuggage(&l1));
 
 }
-*/
+
 TEST(test3, Airport) {
     Location* l1 = new Location(0, 0);
     Location* l2 = new Location(20, 20);

@@ -53,9 +53,14 @@ public:
      /**Tries to find the luggage with the given ID
       *
       * @param id ID
-      * @return luggage found (if not found, is returned an invalid luggage (negatives values))
+      * @return luggage found (if not found, is created an invalid luggage (negatives values))
       */
      Luggage * findLuggageWithId(int id);
+
+     /**Frees the memory allocated to the passenger's luggage
+      *
+      */
+    ~Passenger();
 
 };
 

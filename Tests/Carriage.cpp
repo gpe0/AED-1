@@ -43,6 +43,8 @@ bool Carriage::addLuggage(Luggage* l) {
 bool Carriage::removeNextLuggage() {
     if (luggage.empty()) return false;
 
+    availableCapacity += luggage.back().top()->getWeight();
+
     luggage.back().pop();
 
     if (luggage.back().empty()) {

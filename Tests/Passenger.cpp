@@ -51,3 +51,9 @@ Luggage *Passenger::findLuggageWithId(int id) {
     Luggage * notFound = new Luggage(-1, -1, -1);
     return notFound;
 }
+
+Passenger::~Passenger() {
+    for (auto & lug : luggage) {
+        delete lug;
+    }
+}
