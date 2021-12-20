@@ -84,10 +84,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a015df1b3a794b403d97cfe85e4a7e3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284cb8ac65f3b82540a77135b36d6ea8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_luggage.html#a284cb8ac65f3b82540a77135b36d6ea8">getWeight</a> () const</td></tr>
 <tr class="separator:a284cb8ac65f3b82540a77135b36d6ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab27635a914d7b95b9e5c595bb2c168df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_luggage.html#ab27635a914d7b95b9e5c595bb2c168df">isInCar</a> () const</td></tr>
-<tr class="separator:ab27635a914d7b95b9e5c595bb2c168df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd4aa51237b404934f9d50ce9fab096c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_luggage.html#acd4aa51237b404934f9d50ce9fab096c">move</a> (bool inCar)</td></tr>
-<tr class="separator:acd4aa51237b404934f9d50ce9fab096c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace4026e5194c5f202175fe6a3964f4c3"><td class="memItemLeft" align="right" valign="top"><a id="ace4026e5194c5f202175fe6a3964f4c3" name="ace4026e5194c5f202175fe6a3964f4c3"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_luggage.html">Luggage</a> &amp;right) const</td></tr>
 <tr class="separator:ace4026e5194c5f202175fe6a3964f4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,9 +102,6 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr
 <tr class="memitem:a44df64b4fcd09c633d75f69e3c69f623"><td class="memItemLeft" align="right" valign="top"><a id="a44df64b4fcd09c633d75f69e3c69f623" name="a44df64b4fcd09c633d75f69e3c69f623"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>weight</b></td></tr>
 <tr class="separator:a44df64b4fcd09c633d75f69e3c69f623"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab07d09c42b142a12dbf66f3f341d5f5d"><td class="memItemLeft" align="right" valign="top"><a id="ab07d09c42b142a12dbf66f3f341d5f5d" name="ab07d09c42b142a12dbf66f3f341d5f5d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>inCar</b></td></tr>
-<tr class="separator:ab07d09c42b142a12dbf66f3f341d5f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -234,50 +227,6 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b> = 1</td>
 </div><div class="memdoc">
 <p >Returns luggage's width</p>
 <dl class="section return"><dt>Returns</dt><dd>width </dd></dl>
-
-</div>
-</div>
-<a id="ab27635a914d7b95b9e5c595bb2c168df" name="ab27635a914d7b95b9e5c595bb2c168df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab27635a914d7b95b9e5c595bb2c168df">&#9670;&nbsp;</a></span>isInCar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Luggage::isInCar </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Returns if the luggage is in the transport car or not</p>
-<dl class="section return"><dt>Returns</dt><dd>true - it is in the car ; false - it isn't in the car </dd></dl>
-
-</div>
-</div>
-<a id="acd4aa51237b404934f9d50ce9fab096c" name="acd4aa51237b404934f9d50ce9fab096c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd4aa51237b404934f9d50ce9fab096c">&#9670;&nbsp;</a></span>move()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Luggage::move </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>inCar</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Moves the luggage to the transport car or to the passenger</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">inCar</td><td>true - it is in the car ; false - it is with the passenger </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

@@ -2,22 +2,32 @@
 
 using namespace std;
 
-Car::Car(int maxStackSize) : maxStackSize(maxStackSize) {}
-
-int Car::getNumberCarriages() {
-    return carriages.size();
+Car::Car(int maxCarriageNumber) : CARRIAGESNUMBER(maxCarriageNumber){
 }
 
-void Car::addCarriage(Carriage carriage) {
-    carriages.push(carriage);
+int Car::getMaxNumberCarriages() {
+    return CARRIAGESNUMBER;
 }
 
-Carriage Car::popCarriage() {
-    Carriage result = carriages.top();
+bool Car::addCarriage(Carriage carriage) {
+    if (carriages.size() < CARRIAGESNUMBER){
+        carriages.push(carriage);
+        return true;
+    }
+    return false;
+}
+
+bool Car::popCarriage() {
+    if (carriages.empty()) return false;
     carriages.pop();
-    return result;
+    return true;
 }
 
 stack<Carriage> Car::getCarriages() {
     return carriages;
+}
+
+bool Car::addLuggage(Luggage* l) {
+    if (carriages.empty() || !carriages.top().addLuggage(l)) return false;
+    return true;
 }

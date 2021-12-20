@@ -537,11 +537,7 @@ int Interface::menu(int argc, char* argv[]) {
                 int carriages, stackNumber, stackSize;
                 cout << "Number of carriages (car): " << flush;
                 cin >> carriages;
-                cout << "Number of stacks (carriage): " << flush;
-                cin >> stackNumber;
-                cout << "Stack size (carriage): " << flush;
-                cin >> stackSize;
-                Car car(carriages, stackNumber, stackSize);
+                Car car(carriages);
                 for (auto passenger : passengers)
                     for (auto lug : passenger.getLuggage())
                         if (!car.addLuggage(lug)) {

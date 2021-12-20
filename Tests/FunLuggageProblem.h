@@ -11,12 +11,22 @@ class FunLuggageProblem {
 private:
     std::vector<Luggage*> luggageList;
     std::vector<Carriage> carriageList;
-    int maxStackSize;
+    int maxCarriageNumber;
 
-    Carriage recursiveSolution(Carriage carriage, int maxIndex);
 public:
-    FunLuggageProblem(vector<Luggage*> &luggageList, std::vector<Carriage> carriageList, int maxStackSize);
-    Car& run();
+    /**Initializes the problem solver with a luggage list, carriage list and the max numbers of carriages
+     *
+     * @param luggageList luggage list
+     * @param carriageList carriage list
+     * @param maxCarriageNumber car's max number of carriages
+     */
+    FunLuggageProblem(vector<Luggage*> luggageList, std::vector<Carriage> carriageList, int maxCarriageNumber);
+
+    /**Run the algorithm to find the best organized and the most efficient car
+     *
+     * @return car
+     */
+    Car run();
     static std::vector<Luggage*> insertionSort(vector<Luggage*> luggageList);
 };
 

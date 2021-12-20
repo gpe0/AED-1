@@ -2,71 +2,80 @@
 
 using namespace std;
 
-Carriage::Carriage(double capacity, double width, double heigth) {
+Carriage::Carriage(int stackNumber, int stackSize, double capacity) {
+    this->stackNumber = stackNumber;
+    this->stackSize = stackSize;
     this->capacity = capacity;
     this->availableCapacity = capacity;
-    this->width = width;
-    this->heigth = heigth;
-    this->availableHeigth = heigth;
 }
 
-int Carriage::getStackLength() {
-    return luggages.size();
+int Carriage::getMaxStackNumber() {
+    return stackNumber;
 }
 
-std::stack<Luggage*> Carriage::getStackNum(int index) {
-    list<stack<Luggage*>>::iterator it = luggages.begin();
-    for (int i = index; i > 0; i--){
-        it++;
+int Carriage::getMaxSTackSize() {
+    return stackSize;
+}
+
+bool Carriage::addLuggage(Luggage* l) {
+
+    if (stackSize == 0 || availableCapacity < l->getWeight()) return false;
+
+    if (!luggage.empty() && luggage.back().size() < stackSize) {
+        luggage.back().push(l);
+        availableCapacity -= l->getWeight();
+        return true;
     }
-    return *it;
-}
 
-Carriage& Carriage::operator=(const Carriage &right) {
-    availableCapacity = right.availableCapacity;
-    capacity = right.capacity;
-    heigth = right.heigth;
-    width = right.width;
-    return *this;
-}
+    if (luggage.size() < stackNumber) {
 
-list<stack<Luggage *>> Carriage::getLuggages() {
-    return luggages;
-}
-
-void Carriage::addLugToStackNum(int index, Luggage* luggage) {
-    availableCapacity -= (*luggage).getWeight();
-    list<stack<Luggage*>>::iterator it = luggages.begin();
-    for (int i = index; i > 0; i--){
-        it++;
+        stack<Luggage *> s;
+        s.push(l);
+        luggage.push_back(s);
+        availableCapacity -= l->getWeight();
+        return true;
     }
-    (*it).push(luggage);
+
+    return false;
+
 }
+
+bool Carriage::removeNextLuggage() {
+    if (luggage.empty()) return false;
+
+    luggage.back().pop();
+
+    if (luggage.back().empty()) {
+        luggage.pop_back();
+    }
+
+    return true;
+}
+
+
+list<stack<Luggage *>> Carriage::getLuggage() {
+    return luggage;
+}
+
 
 double Carriage::getAvailableCapacity() {
     return availableCapacity;
 }
 
-double Carriage::getWidth() {
-    return width;
-}
 
 double Carriage::getCapacity() {
     return capacity;
 }
 
-double Carriage::getHeigth() {
-    return heigth;
-}
-
-void Carriage::addNewStack(Luggage *luggage) {
-    availableHeigth -= (*luggage).getHeight();
-    availableCapacity -=(*luggage).getWeight();
-    stack<Luggage*> newStack;
-    newStack.push(luggage);
-    luggages.push_back(newStack);
-}
-
 double Carriage::getEfficiency() {
     return (capacity-availableCapacity)/capacity;
+}
+
+Carriage& Carriage::operator=(const Carriage &right) {
+    availableCapacity = right.availableCapacity;
+    capacity = right.capacity;
+    stackNumber = right.stackNumber;
+    stackSize = right.stackSize;
+    luggage = right.luggage;
+    return *this;
 }

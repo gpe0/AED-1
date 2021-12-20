@@ -8,39 +8,70 @@ using namespace std;
 
 class Carriage {
 private:
-    std::list<stack<Luggage*>> luggages;
-    double capacity, availableCapacity, width, heigth, availableHeigth;
+    int stackNumber;
+    int stackSize;
+    std::list<stack<Luggage*>> luggage;
+    double capacity, availableCapacity;
 public:
 
     /**Initializes the carriage with the max number of stacks and stack size
      *
      * @param stackNumber max stack number
      * @param stackSize max stack size
+     * @param capacity carriage's capacity
      */
-    Carriage(double capacity, double width, double heigth);
+    Carriage(int stackNumber, int stackSize, double capacity);
 
     /**Returns the max stack number
+    *
+    * @return max stack number
+    */
+    int getMaxStackNumber();
+
+    /**Returns the max stack size
      *
-     * @return max stack number
+     * @return max stack size
      */
-    int getStackLength();
+    int getMaxSTackSize();
 
-    std::stack<Luggage*> getStackNum(int index);
+    /**Tries to add a luggage to the carriage
+     *
+     * @param l luggage
+     * @return whether it passed or failed
+     */
+    bool addLuggage(Luggage * l);
 
-    void addLugToStackNum(int index, Luggage* luggage);
+    /**Tries to remove the next luggage from the carriage
+     *
+     * @return whether it passed or failed
+     */
+    bool removeNextLuggage();
 
-    void addNewStack(Luggage* luggage);
+    /**Return's all the luggages in the carriage
+     *
+     * @return luggages
+     */
+    list<stack<Luggage *>> getLuggage();
 
-    list<stack<Luggage *>> getLuggages();
-
+    /**Returns the carriage's efficiency (based on available capacity and total capacity)
+     *
+     * @return efficiency
+     */
     double getEfficiency();
 
-    Carriage& operator=(const Carriage& right);
-
+    /**Returns the carriage's available capacity
+     *
+     * @return available capacity
+     */
     double getAvailableCapacity();
-    double getWidth();
-    double getHeigth();
+
+    /**Returns the carriage's capacity
+     *
+     * @return capacity
+     */
     double getCapacity();
+
+    Carriage& operator=(const Carriage &right);
 };
 
 

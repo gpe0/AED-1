@@ -7,7 +7,6 @@ private:
     static int id;
     int luggageID;
     double width, height, weight;
-    bool inCar;
 
 public:
 
@@ -43,17 +42,6 @@ public:
      */
     double getWeight() const;
 
-    /**Returns if the luggage is in the transport car or not
-     *
-     * @return true - it is in the car ; false - it isn't in the car
-     */
-    bool isInCar() const;
-
-    /**Moves the luggage to the transport car or to the passenger
-     *
-     * @param inCar true - it is in the car ; false - it is with the passenger
-     */
-    void move(bool inCar);
 
     bool operator ==(const Luggage& right) const;
 };

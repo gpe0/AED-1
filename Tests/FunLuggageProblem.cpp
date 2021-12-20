@@ -1,84 +1,73 @@
 #include "FunLuggageProblem.h"
 
-FunLuggageProblem::FunLuggageProblem(vector<Luggage*> &luggageList, std::vector<Carriage> carriageList, int maxStackSize)
-: luggageList(insertionSort(luggageList)) {
-    this->maxStackSize= maxStackSize;
+FunLuggageProblem::FunLuggageProblem(vector<Luggage*> luggageList, vector<Carriage> carriageList, int maxCarriageNumber) {
+    this->maxCarriageNumber= maxCarriageNumber;
     this->carriageList = carriageList;
+    this->luggageList = insertionSort(luggageList);
 }
 
 vector<Luggage*> FunLuggageProblem::insertionSort(vector<Luggage*> luggageList) {
     for(size_t i = 1; i < luggageList.size(); i++){
-        Luggage anchor = *luggageList[i];
+        Luggage* anchor = luggageList[i];
         size_t t;
-        for(t = i; t > 0 and anchor.getWeight() < (*luggageList[t-1]).getWeight(); t--){
+        for(t = i; t > 0 and anchor->getWeight() > (*luggageList[t-1]).getWeight(); t--){
             luggageList[t] = luggageList[t-1];
         }
-        luggageList[t] = &anchor;
+        luggageList[t] = anchor;
     }
     return luggageList;
 }
 
-Car& FunLuggageProblem::run(){
-    Car car(maxStackSize);
-    Carriage bestPossibleCarriage(0,0,0);
-    while (luggageList.size() != 0){
-        for (size_t i = 0; i < carriageList.size(); i++){
-            Carriage possibleCarriage(0,0,0);
-            possibleCarriage = recursiveSolution(possibleCarriage, luggageList.size());
-            if(possibleCarriage.getAvailableCapacity() > bestPossibleCarriage.getAvailableCapacity()){
-                bestPossibleCarriage = possibleCarriage;
+Car FunLuggageProblem::run() {
+    Car car(maxCarriageNumber);
+
+    while (!luggageList.empty()) {
+        double bestEfficiency = 0;
+        Carriage bCarriage(0, 0, 0);
+        for (int i = 0; i < luggageList.size(); i++) {
+            for (auto carriage: carriageList) {
+                auto begin = luggageList.begin() + i;
+                auto end = luggageList.end();
+                vector<Luggage *> auxLuggage(begin, end);
+                for (auto l: auxLuggage) {
+                    carriage.addLuggage(l);
+                }
+                if (carriage.getEfficiency() > bestEfficiency) {
+                    bestEfficiency = carriage.getEfficiency();
+                    bCarriage = carriage;
+                }
             }
         }
-        list<stack<Luggage*>> lugaggesFilled = bestPossibleCarriage.getLuggages();
-        list<stack<Luggage*>>::iterator it = lugaggesFilled.begin();
-        for (size_t i = 0; i < lugaggesFilled.size(); i++) {
-            while(!((*it).empty())){
-                for (size_t t = 0; t < luggageList.size(); t++){
-                    if(((*it).top()->getID() == luggageList[i]->getID())) {
-                        luggageList.erase(luggageList.begin() + t);
+        car.addCarriage(bCarriage);
+
+        for (auto it = luggageList.begin(); it != luggageList.end(); it++) {
+            if (luggageList.size() == 1) {
+                bool found = false;
+            }
+            bool found = false;
+            for (auto row : bCarriage.getLuggage()) {
+                vector<Luggage> aux;
+                while (!row.empty()){
+                    aux.push_back(*row.top());
+                    row.pop();
+                }
+                for (auto & l : aux){
+                    if (l == *(*it)) {
+                        it = luggageList.erase(it);
+                        it--;
+                        found = true;
                         break;
                     }
-                    }
+                }
+                if (found) break;
             }
-            for (size_t t = 0; t < luggageList.size(); t++){
-                luggageList.erase(luggageList.begin() + t);
-                break;
-            }
-            it++;
         }
-        car.addCarriage(bestPossibleCarriage);
+
     }
+
     return car;
+
 }
 
 
-Carriage FunLuggageProblem::recursiveSolution(Carriage carriage, int maxIndex) {
-    Carriage currentBestCarriage = carriage;
-    for(int i = maxIndex; i>= 0; i--){
-        if(luggageList[i]->getWeight() > carriage.getCapacity())
-            maxIndex--;
-        else if(luggageList[i]->getWidth() < carriage.getWidth() and luggageList[i]->getHeight() < carriage.getHeigth()){
-            Carriage tempCarriage = carriage;
-            tempCarriage.addNewStack(luggageList[i]);
-            tempCarriage = recursiveSolution(tempCarriage, maxIndex);
-            if (tempCarriage.getEfficiency() > currentBestCarriage.getEfficiency()){
-                currentBestCarriage = tempCarriage;
-            }
-        }
-    }
-    if (maxIndex == 0){
-        return carriage;
-    }
 
-    for(int i = 0; i < carriage.getStackLength(); i++) {//Stack in carriage
-        Luggage* topElement = carriage.getStackNum(i).top();//stack.top()-> unordenered_map
-        for (size_t i = 0; i < luggageList.size() and i < maxIndex; i++){
-            Carriage tempCarriage = carriage;
-            tempCarriage.addLugToStackNum(i,luggageList[i]);
-            tempCarriage = recursiveSolution(tempCarriage, maxIndex);
-            if (tempCarriage.getEfficiency() > currentBestCarriage.getEfficiency()){
-                currentBestCarriage = tempCarriage;
-            }
-        }
-    }
-}

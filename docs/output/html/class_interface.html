@@ -75,6 +75,8 @@ $(function() {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acbb1ca17a7fff0269f6498059af95795"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#acbb1ca17a7fff0269f6498059af95795">readPlanes</a> (std::string file, std::list&lt; <a class="el" href="class_plane.html">Plane</a> &gt; &amp;planes, std::string flights)</td></tr>
 <tr class="separator:acbb1ca17a7fff0269f6498059af95795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4781ccaadeb918f458d32ec230a8eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a3d4781ccaadeb918f458d32ec230a8eb">readAirports</a> (std::string file, std::list&lt; <a class="el" href="class_airport.html">Airport</a> &gt; &amp;airports, std::string transitStops)</td></tr>
+<tr class="separator:a3d4781ccaadeb918f458d32ec230a8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a496065e2cf20c5681a87a7ecf0810b4d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a496065e2cf20c5681a87a7ecf0810b4d">menu</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a496065e2cf20c5681a87a7ecf0810b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -82,6 +84,8 @@ Static Public Member Functions</h2></td></tr>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a745b6fc9a98bb1b9b7af6ae2debdd07a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a745b6fc9a98bb1b9b7af6ae2debdd07a">readFlights</a> (std::string file, std::list&lt; <a class="el" href="class_flight.html">Flight</a> &gt; &amp;flights)</td></tr>
 <tr class="separator:a745b6fc9a98bb1b9b7af6ae2debdd07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d65d54e8d391e1979cce0f441f9c3c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#ac8d65d54e8d391e1979cce0f441f9c3c">readTransitStops</a> (std::string file, std::list&lt; <a class="el" href="class_transit_stop.html">TransitStop</a> &gt; &amp;transitStops)</td></tr>
+<tr class="separator:ac8d65d54e8d391e1979cce0f441f9c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d6e9abe255b2452021041e37fa7bee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a06d6e9abe255b2452021041e37fa7bee">displayMenu</a> ()</td></tr>
 <tr class="separator:a06d6e9abe255b2452021041e37fa7bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3666d8220c60d2a8d80ceda97412f3eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a3666d8220c60d2a8d80ceda97412f3eb">exportCsv</a> (std::string fileName, std::list&lt; <a class="el" href="class_plane.html">Plane</a> &gt; &amp;planes, std::list&lt; <a class="el" href="class_passenger.html">Passenger</a> &gt; &amp;passengers, <a class="el" href="class_airport.html">Airport</a> aO, <a class="el" href="class_airport.html">Airport</a> aD)</td></tr>
@@ -245,7 +249,58 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Simple menu to interact with the user </p>
+<p >Creates a menu to interact with the user </p>
+
+</div>
+</div>
+<a id="a3d4781ccaadeb918f458d32ec230a8eb" name="a3d4781ccaadeb918f458d32ec230a8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4781ccaadeb918f458d32ec230a8eb">&#9670;&nbsp;</a></span>readAirports()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::readAirports </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_airport.html">Airport</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>airports</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>transitStops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reads a csv file and instantiate a list of Airports with the transitStops nearby from the a given csv</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>name of the airports' file (must end with .csv) </td></tr>
+    <tr><td class="paramname">airports</td><td>passed by reference airport's list </td></tr>
+    <tr><td class="paramname">transitStops</td><td>name of the transit stops' file (must end with .csv) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -338,6 +393,50 @@ Static Private Member Functions</h2></td></tr>
     <tr><td class="paramname">file</td><td>name of the planes' file (must end with .csv) </td></tr>
     <tr><td class="paramname">planes</td><td>passed by reference plane's list </td></tr>
     <tr><td class="paramname">flights</td><td>name of the flights' file (must end with .csv) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac8d65d54e8d391e1979cce0f441f9c3c" name="ac8d65d54e8d391e1979cce0f441f9c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d65d54e8d391e1979cce0f441f9c3c">&#9670;&nbsp;</a></span>readTransitStops()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface::readTransitStops </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_transit_stop.html">TransitStop</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transitStops</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Reads a csv file and instantiate a list of transitStops</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>name of the file (must end with .csv) </td></tr>
+    <tr><td class="paramname">transitStops</td><td>passed by reference transit Stops's list </td></tr>
   </table>
   </dd>
 </dl>

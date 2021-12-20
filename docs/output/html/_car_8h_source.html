@@ -78,31 +78,35 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_car.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_car.html">Car</a> {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> CARRIAGES;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    list&lt;Carriage&gt; carriages;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    std::stack&lt;Carriage&gt; carriages;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> CARRIAGESNUMBER;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="class_car.html#a9de146094e3d649f10061ba0ce532234">Car</a>(<span class="keywordtype">int</span> carriages, <span class="keywordtype">int</span> stackNumber, <span class="keywordtype">int</span> stackSize);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_car.html#a63348ebd72c5ada2357c5318452d33b8">getMaxCarriages</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_car.html#a2d7c7bca28de625a01f8fdbdc1413165">addLuggage</a>(<a class="code hl_class" href="class_luggage.html">Luggage</a>* l);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_car.html#a85018212e8706cc7180882adc73340dd">removeNextLuggage</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    list&lt;Carriage&gt; <a class="code hl_function" href="class_car.html#a6653fe67f6b9cfcd229b4b1546b58f16">getCarriages</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="class_car.html#a1d98891d5f9ee7542a21d0fcb1fd3de6">Car</a>(<span class="keywordtype">int</span> maxCarriageNumber);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_car.html#aa5491337e5d6212bdd5eaee62ed8b416">getMaxNumberCarriages</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_car.html#af565fc258c7b07dc58677fde53d2dbcf">addCarriage</a>(<a class="code hl_class" href="class_carriage.html">Carriage</a> carriage);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_car.html#a5a8b0cf653804884226dc1057dfbb3e1">popCarriage</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::stack&lt;Carriage&gt; <a class="code hl_function" href="class_car.html#a48ef034d55a178942a22a150e36f4d7a">getCarriages</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_car.html#a2d7c7bca28de625a01f8fdbdc1413165">addLuggage</a>(<a class="code hl_class" href="class_luggage.html">Luggage</a>* l);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_car_html"><div class="ttname"><a href="class_car.html">Car</a></div><div class="ttdef"><b>Definition:</b> Car.h:7</div></div>
-<div class="ttc" id="aclass_car_html_a2d7c7bca28de625a01f8fdbdc1413165"><div class="ttname"><a href="class_car.html#a2d7c7bca28de625a01f8fdbdc1413165">Car::addLuggage</a></div><div class="ttdeci">bool addLuggage(Luggage *l)</div><div class="ttdef"><b>Definition:</b> Car.cpp:15</div></div>
-<div class="ttc" id="aclass_car_html_a63348ebd72c5ada2357c5318452d33b8"><div class="ttname"><a href="class_car.html#a63348ebd72c5ada2357c5318452d33b8">Car::getMaxCarriages</a></div><div class="ttdeci">int getMaxCarriages()</div><div class="ttdef"><b>Definition:</b> Car.cpp:11</div></div>
-<div class="ttc" id="aclass_car_html_a6653fe67f6b9cfcd229b4b1546b58f16"><div class="ttname"><a href="class_car.html#a6653fe67f6b9cfcd229b4b1546b58f16">Car::getCarriages</a></div><div class="ttdeci">list&lt; Carriage &gt; getCarriages()</div><div class="ttdef"><b>Definition:</b> Car.cpp:33</div></div>
-<div class="ttc" id="aclass_car_html_a85018212e8706cc7180882adc73340dd"><div class="ttname"><a href="class_car.html#a85018212e8706cc7180882adc73340dd">Car::removeNextLuggage</a></div><div class="ttdeci">bool removeNextLuggage()</div><div class="ttdef"><b>Definition:</b> Car.cpp:24</div></div>
-<div class="ttc" id="aclass_car_html_a9de146094e3d649f10061ba0ce532234"><div class="ttname"><a href="class_car.html#a9de146094e3d649f10061ba0ce532234">Car::Car</a></div><div class="ttdeci">Car(int carriages, int stackNumber, int stackSize)</div><div class="ttdef"><b>Definition:</b> Car.cpp:5</div></div>
+<div class="ttc" id="aclass_car_html_a1d98891d5f9ee7542a21d0fcb1fd3de6"><div class="ttname"><a href="class_car.html#a1d98891d5f9ee7542a21d0fcb1fd3de6">Car::Car</a></div><div class="ttdeci">Car(int maxCarriageNumber)</div><div class="ttdef"><b>Definition:</b> Car.cpp:5</div></div>
+<div class="ttc" id="aclass_car_html_a2d7c7bca28de625a01f8fdbdc1413165"><div class="ttname"><a href="class_car.html#a2d7c7bca28de625a01f8fdbdc1413165">Car::addLuggage</a></div><div class="ttdeci">bool addLuggage(Luggage *l)</div><div class="ttdef"><b>Definition:</b> Car.cpp:30</div></div>
+<div class="ttc" id="aclass_car_html_a48ef034d55a178942a22a150e36f4d7a"><div class="ttname"><a href="class_car.html#a48ef034d55a178942a22a150e36f4d7a">Car::getCarriages</a></div><div class="ttdeci">std::stack&lt; Carriage &gt; getCarriages()</div><div class="ttdef"><b>Definition:</b> Car.cpp:26</div></div>
+<div class="ttc" id="aclass_car_html_a5a8b0cf653804884226dc1057dfbb3e1"><div class="ttname"><a href="class_car.html#a5a8b0cf653804884226dc1057dfbb3e1">Car::popCarriage</a></div><div class="ttdeci">bool popCarriage()</div><div class="ttdef"><b>Definition:</b> Car.cpp:20</div></div>
+<div class="ttc" id="aclass_car_html_aa5491337e5d6212bdd5eaee62ed8b416"><div class="ttname"><a href="class_car.html#aa5491337e5d6212bdd5eaee62ed8b416">Car::getMaxNumberCarriages</a></div><div class="ttdeci">int getMaxNumberCarriages()</div><div class="ttdef"><b>Definition:</b> Car.cpp:8</div></div>
+<div class="ttc" id="aclass_car_html_af565fc258c7b07dc58677fde53d2dbcf"><div class="ttname"><a href="class_car.html#af565fc258c7b07dc58677fde53d2dbcf">Car::addCarriage</a></div><div class="ttdeci">bool addCarriage(Carriage carriage)</div><div class="ttdef"><b>Definition:</b> Car.cpp:12</div></div>
+<div class="ttc" id="aclass_carriage_html"><div class="ttname"><a href="class_carriage.html">Carriage</a></div><div class="ttdef"><b>Definition:</b> Carriage.h:9</div></div>
 <div class="ttc" id="aclass_luggage_html"><div class="ttname"><a href="class_luggage.html">Luggage</a></div><div class="ttdef"><b>Definition:</b> Luggage.h:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

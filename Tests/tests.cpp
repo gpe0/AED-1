@@ -15,6 +15,7 @@
 #include "Location.h"
 #include "TransitStop.h"
 #include "Airport.h"
+#include "FunLuggageProblem.h"
 
 using testing::Eq;
 using namespace std;
@@ -237,7 +238,7 @@ TEST(test1, Passenger) {
     EXPECT_EQ(passenger.findLuggageWithId(l3->getID())->getHeight(), l3->getHeight());
     EXPECT_NEAR(passenger.findLuggageWithId(80)->getHeight(), -1, 0.01);
 }
-
+/*
 TEST(test2, Carriage) {
     Carriage carriage(3, 4);
     Luggage l1(3.2, 1.6, 8);
@@ -275,7 +276,7 @@ TEST(test2, Car) {
     EXPECT_EQ(car.getCarriages().front().getLuggage().size(), 1);
 
 }
-
+*/
 TEST(test3, Airport) {
     Location* l1 = new Location(0, 0);
     Location* l2 = new Location(20, 20);
@@ -303,4 +304,26 @@ TEST(test3, Airport) {
 
     EXPECT_TRUE(v2.size() == 2);
     EXPECT_TRUE(v2.back().getName() == "Combatentes");
+}
+
+TEST(test4, FunLuggageProblem) {
+    Luggage * l1 = new Luggage(1, 2, 4);
+    Luggage * l2 = new Luggage(2, 1, 5);
+    Luggage * l3 = new Luggage(1, 1, 2);
+    Luggage * l4 = new Luggage(4, 3, 10);
+
+    vector<Luggage*> vL;
+    vL.push_back(l1);
+    vL.push_back(l2);
+    vL.push_back(l3);
+    vL.push_back(l4);
+    vector<Carriage> vC;
+    vC.push_back(Carriage(2, 3, 20));
+    vC.push_back(Carriage(3, 3, 21));
+
+    FunLuggageProblem f(vL, vC, 3);
+    Car c = f.run();
+
+    EXPECT_TRUE(c.getCarriages().size() == 1);
+
 }
