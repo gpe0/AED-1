@@ -38,12 +38,17 @@ Car FunLuggageProblem::run() {
                 }
             }
         }
+
+        if (bestEfficiency == 0) return Car(0);
         car.addCarriage(bCarriage);
+        for (auto it = carriageList.begin(); it != carriageList.end(); it++) {
+            if ((*it) == bCarriage){
+                carriageList.erase(it);
+                break;
+            }
+        }
 
         for (auto it = luggageList.begin(); it != luggageList.end(); it++) {
-            if (luggageList.size() == 1) {
-                bool found = false;
-            }
             bool found = false;
             for (auto row : bCarriage.getLuggage()) {
                 vector<Luggage> aux;

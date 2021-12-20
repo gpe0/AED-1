@@ -32,7 +32,7 @@ public:
      *
      * @return max stack size
      */
-    int getMaxSTackSize();
+    int getMaxStackSize();
 
     /**Tries to add a luggage to the carriage
      *
@@ -72,6 +72,8 @@ public:
     double getCapacity();
 
     Carriage& operator=(const Carriage &right);
+
+    bool operator==(const Carriage & right);
 };
 
 

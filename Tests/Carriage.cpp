@@ -13,7 +13,7 @@ int Carriage::getMaxStackNumber() {
     return stackNumber;
 }
 
-int Carriage::getMaxSTackSize() {
+int Carriage::getMaxStackSize() {
     return stackSize;
 }
 
@@ -78,4 +78,8 @@ Carriage& Carriage::operator=(const Carriage &right) {
     stackSize = right.stackSize;
     luggage = right.luggage;
     return *this;
+}
+
+bool Carriage::operator==(const Carriage &right) {
+    return (stackNumber == right.stackNumber && stackSize == right.stackSize && capacity == right.capacity);
 }

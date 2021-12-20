@@ -17,6 +17,7 @@
 #include "FlightMap.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+#include "FunLuggageProblem.h"
 
 using namespace std;
 
@@ -534,17 +535,31 @@ int Interface::menu(int argc, char* argv[]) {
 
             if (opt == 'y' || opt == 'Y') {
                 bool added = true;
-                int carriages, stackNumber, stackSize;
+                int carriageNumber, stackNumber, stackSize;
                 cout << "Number of carriages (car): " << flush;
-                cin >> carriages;
-                Car car(carriages);
+                cin >> carriageNumber;
+                vector<Luggage *> luggage;
+                vector<Carriage> carriages;
                 for (auto passenger : passengers)
                     for (auto lug : passenger.getLuggage())
-                        if (!car.addLuggage(lug)) {
-                            added = false;
-                            break;
-                        }
-                if (!added)
+                        luggage.push_back(lug);
+
+                for (int i = 1; i <= carriageNumber; i++) {
+                    cout << "Carriage " << i << endl;
+                    int stackNumber, stackSize, capacity;
+                    cout << "Max stack number: " << flush;
+                    cin >> stackNumber;
+                    cout << "Max stack size: " << flush;
+                    cin >> stackSize;
+                    cout << "capacity: " << flush;
+                    cin >> capacity;
+                    carriages.push_back(Carriage(stackNumber, stackSize, capacity));
+                }
+
+                FunLuggageProblem fLP(luggage, carriages, carriageNumber);
+                Car c = fLP.run();
+
+                if (c.getMaxNumberCarriages() == 0)
                     cout << "Couldn't Process every luggage, you have to check in manually." << endl;
                 else
                     cout << "You are now checked in!" << endl;

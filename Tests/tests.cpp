@@ -319,11 +319,10 @@ TEST(test4, FunLuggageProblem) {
     vL.push_back(l4);
     vector<Carriage> vC;
     vC.push_back(Carriage(2, 3, 20));
-    vC.push_back(Carriage(3, 3, 21));
 
     FunLuggageProblem f(vL, vC, 3);
     Car c = f.run();
 
-    EXPECT_TRUE(c.getCarriages().size() == 1);
+    EXPECT_TRUE(c.getCarriages().size() == 0);
 
 }
