@@ -44,3 +44,7 @@ Duration Duration::operator+(Duration const &right) const {
     return duration;
 }
 
+bool Duration::isValid() const {
+    return validTime;
+}
+

@@ -8,7 +8,7 @@
 class Date : public ConstTimeGen {
 public:
 
-    /** Initializes the current date (testing not implemented yet)
+    /** Initializes the current date
      *
      */
     Date();
@@ -24,25 +24,25 @@ public:
 
     /**Returns if date is valid or not
      *
-     * @return validation
+     * @return validTime
      */
     bool isValid() const;
 
     /**Returns date's day
      *
-     * @return day
+     * @return LEFT
      */
     int getDay() const;
 
     /**Returns date's month
      *
-     * @return month
+     * @return MID
      */
     int getMonth() const;
 
     /**Returns date's year
      *
-     * @return year
+     * @return RIGHT
      */
     int getYear() const;
 
@@ -50,7 +50,7 @@ public:
 
     /**Returns the current date
      *
-     * @return vector with day, month and year
+     * @return vector with LEFT, MID and RIGHT
      */
     static std::vector<int> getCurrentDate();
 

@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
+#include <sstream>
 
 #include "Date.h"
 #include "Duration.h"
@@ -39,7 +40,10 @@ TEST(test1, ConstTimeGen){
     ASSERT_EQ(true, t2 < t5);   //Tests normal, mixed cases
     ASSERT_EQ(false, t1 < t1);  //Tests a possible exception
 
-    //Tests <<
+    stringstream testStream;
+    testStream << t1;
+    string solution = "0/0/0";
+    ASSERT_EQ(testStream.str(), solution);
 
     t1.setInvalid(); //Makes validTime false
 
@@ -75,7 +79,15 @@ TEST(test1, ConstTimeGen){
         FAIL() << "Invalid Time";
     }
 
-    //Testing <<
+    try {
+        testStream << t1;
+    }
+    catch(ConstTimeGen::InvalidTime const & err) {
+        EXPECT_EQ(err.what(), "Invalid Time");
+    }
+    catch(...) {
+        FAIL() << "Invalid Time";
+    }
 
 }
 TEST(test1, Date){
@@ -102,8 +114,21 @@ TEST(test1, Date){
 
 
 TEST(test1, Duration){
-    Duration d1(10, 12, 14);
-    // TODO
+    Duration d1(4, 10, 19);
+    Duration d2(32, 12, -19);
+    Duration d3(28, -1, 1900);
+    Duration d4(26, 12, 3);
+    ASSERT_EQ(4, d1.getHours());
+    // Tests if the day is correct
+    ASSERT_EQ(10, d1.getMin());
+    // Tests if the month is correct
+    ASSERT_EQ(1990, d1.getSecs());
+    // Tests if the year is correct
+    ASSERT_EQ(true, d1.isValid());
+    ASSERT_EQ(false, d2.isValid());
+    ASSERT_EQ(false, d3.isValid());
+    ASSERT_EQ(true, d4.isValid());
+    // Tests if function isValid is working properly
 }
 
 TEST(test1, Flight){
@@ -190,7 +215,6 @@ TEST(test1, Person) {
     }
     catch(...) {
         FAIL() << "Invalid Person";
-
     }
 
     //Testing getAge()
@@ -237,6 +261,25 @@ TEST(test1, Passenger) {
 
     EXPECT_EQ(passenger.findLuggageWithId(l3->getID())->getHeight(), l3->getHeight());
     EXPECT_NEAR(passenger.findLuggageWithId(80)->getHeight(), -1, 0.01);
+}
+
+TEST(test1, TransitStop){
+    TransitStop t1;
+    EXPECT_EQ(t1.getName(), "");
+    EXPECT_EQ(t1.getTransportType(), "");
+    Location l2(0,0);
+    TransitStop t2("name", "type", &l2);
+    Location l3(0,0);
+    TransitStop t3("name", "type", &l3);
+
+}
+
+TEST(test1, Airport){
+    Location l1(0,0);
+    Airport a1("Sá Carneiro", &l1);
+    EXPECT_EQ(a1.getName(), "Sá Carneiro");
+    EXPECT_EQ(a1.getTransportType(), "Airport");
+
 }
 /*
 TEST(test2, Carriage) {

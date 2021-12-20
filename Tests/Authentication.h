@@ -29,6 +29,4 @@ public:
         std::string what() const {return msg;};
     };
 };
-
-
 #endif

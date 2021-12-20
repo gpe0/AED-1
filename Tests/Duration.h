@@ -17,21 +17,27 @@ public:
 
     /**Returns duration's hours
      *
-     * @return hours
+     * @return RIGHT
      */
     int getHours();
 
     /**Returns duration's minutes
      *
-     * @return minutes
+     * @return MID
      */
     int getMin();
 
     /**Returns duration's seconds
      *
-     * @return seconds
+     * @return LEFT
      */
     int getSecs();
+
+    /**Returns if duration is valid or not
+     *
+     * @return validTime
+     */
+    bool isValid() const;
 
     Duration operator+(Duration const &right) const;
 };
