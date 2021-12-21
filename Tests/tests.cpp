@@ -256,6 +256,11 @@ TEST(test1, Passenger) {
 
     EXPECT_EQ(passenger.findLuggageWithId(l3->getID())->getHeight(), l3->getHeight());
     EXPECT_NEAR(passenger.findLuggageWithId(80)->getHeight(), -1, 0.01);
+
+    delete l1;
+    delete l2;
+    delete l3;
+    delete l4;
 }
 
 TEST(test1, Worker) {
@@ -303,6 +308,7 @@ TEST(test2, Schedule) {
 
     EXPECT_TRUE(schedule.removeEntry("worker1Schedule"));
     EXPECT_TRUE(schedule.getAllEntries().empty());
+    delete du;
 }
 
 TEST(test2, Carriage) {
@@ -371,6 +377,11 @@ TEST(test3, Airport) {
 
     EXPECT_TRUE(v2.size() == 2);
     EXPECT_TRUE(v2.back().getName() == "Combatentes");
+
+    delete l1;
+    delete l2;
+    delete l3;
+    delete l4;
 }
 
 TEST(test3, Plane) {
@@ -409,6 +420,12 @@ TEST(test3, Plane) {
     EXPECT_EQ(plane.getServices().front().getWorker().getName(), "Maria");
     EXPECT_EQ(plane.getServices().front().getDate().getYear(), 2021);
 
+    delete du1;
+    delete du2;
+    delete du3;
+    delete d1;
+    delete d2;
+    delete d3;
 }
 
 TEST(test4, FunLuggageProblem) {
@@ -430,4 +447,8 @@ TEST(test4, FunLuggageProblem) {
 
     EXPECT_TRUE(c.getCarriages().size() == 0);
 
+    delete l1;
+    delete l2;
+    delete l3;
+    delete l4;
 }

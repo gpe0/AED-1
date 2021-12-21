@@ -127,7 +127,7 @@ void Interface::displayMenu() {
     cout << "------------------------------------" << endl << endl;
     cout << "1 - Simulate" << endl;
     cout << "2 - Run Tests" << endl;
-    cout << "3 - Demo (read csv files)" << endl;
+    cout << "3 - Read csv files" << endl;
     cout << "4 - Exit" << endl;
     cout << "------------------------------------" << endl;
     cout << "Option: " << flush;
@@ -763,7 +763,7 @@ int Interface::menu(int argc, char* argv[]) {
             readAirports("airportsOPorto.csv", airports, "transitStopsOPorto.csv");
             readAirports("airportsMadrid.csv", airports, "transitStopsMadrid.csv");
 
-            cout << "Type de airport's name you want to visualize: " << endl;
+            cout << "Type the airport's name you want to visualize: " << endl;
             for (auto &airport: airports) {
                 cout << airport.getName() << endl;
             }

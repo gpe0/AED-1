@@ -57,11 +57,6 @@ public:
       */
      Luggage * findLuggageWithId(int id);
 
-     /**Frees the memory allocated to the passenger's luggage
-      *
-      */
-    ~Passenger();
-
 };
 
 

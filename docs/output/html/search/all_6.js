@@ -1,7 +1,7 @@
 var searchData=
 [
   ['getage_0',['getAge',['../class_person.html#a4b66dbee570398920b8fb6aacddd2559',1,'Person']]],
-  ['getallentries_1',['getAllEntries',['../class_schedule.html#a75a8cd2f18bbc9668e43866cb3b95bcb',1,'Schedule']]],
+  ['getallentries_1',['getAllEntries',['../class_schedule.html#a6e7f4c36dbfb8cc3b7d2322e738be64c',1,'Schedule']]],
   ['getalltransitstops_2',['getAllTransitStops',['../class_airport.html#aa695c5067aeb5e04c4652f7f0eeb24c5',1,'Airport']]],
   ['getalltransitstopsinrange_3',['getAllTransitStopsInRange',['../class_airport.html#a956d974598d625c25cbeba44c5f1069e',1,'Airport']]],
   ['getavailablecapacity_4',['getAvailableCapacity',['../class_carriage.html#a8da12ba12c6eac4111eace998629f41b',1,'Carriage']]],
@@ -18,7 +18,7 @@ var searchData=
   ['getdistancetoloc_15',['getDistanceToLoc',['../class_location.html#a63b07aba3ff43ad62a33850a99a0996f',1,'Location']]],
   ['getduration_16',['getDuration',['../class_flight.html#a86312d2882adab277c57411e0dc3bdaa',1,'Flight']]],
   ['getefficiency_17',['getEfficiency',['../class_carriage.html#ab4a4ab55b958d04a1fcedd0b827f28bb',1,'Carriage']]],
-  ['getentries_18',['getEntries',['../class_schedule.html#a27827c35e05ced82e1653e92dfde8733',1,'Schedule::getEntries(std::string event)'],['../class_schedule.html#a63392274e95dc29eb17d439fd9dfb1be',1,'Schedule::getEntries(Duration &amp;timeBegin, Duration &amp;timeEnd)']]],
+  ['getentries_18',['getEntries',['../class_schedule.html#a6326b4f7d14e87d24c646b5381c651c2',1,'Schedule::getEntries(std::string event)'],['../class_schedule.html#ae743caef4534b8b0850e0d1145035962',1,'Schedule::getEntries(Duration &amp;timeBegin, Duration &amp;timeEnd)']]],
   ['getfinishedservices_19',['getFinishedServices',['../class_plane.html#a39aa540d1d103b7a94ece8094ec5bbd3',1,'Plane']]],
   ['getflights_20',['getFlights',['../class_plane.html#a069a0c36bb470b3c66d5d19029f5ad5a',1,'Plane']]],
   ['getheight_21',['getHeight',['../class_luggage.html#a015df1b3a794b403d97cfe85e4a7e3ea',1,'Luggage']]],
@@ -31,7 +31,7 @@ var searchData=
   ['getluggage_28',['getLuggage',['../class_carriage.html#ae1b27d81744ceff4bc776e3bdb133814',1,'Carriage::getLuggage()'],['../class_passenger.html#acba881d0722b779bd7d8536416673297',1,'Passenger::getLuggage()']]],
   ['getmaxnumbercarriages_29',['getMaxNumberCarriages',['../class_car.html#aa5491337e5d6212bdd5eaee62ed8b416',1,'Car']]],
   ['getmaxstacknumber_30',['getMaxStackNumber',['../class_carriage.html#ae9b27dbd8e45bb265e17baaaa653856c',1,'Carriage']]],
-  ['getmaxstacksize_31',['getMaxSTackSize',['../class_carriage.html#a7adf4da444be14ad592b249ed11d4a2f',1,'Carriage']]],
+  ['getmaxstacksize_31',['getMaxStackSize',['../class_carriage.html#aa7e10d6755c865c5cba9be7c51669e27',1,'Carriage']]],
   ['getmin_32',['getMin',['../class_duration.html#ab832c7c90953ab572d7d0f14d1b9f699',1,'Duration']]],
   ['getmonth_33',['getMonth',['../class_date.html#a332f6e3a2f6a40d73742b6dab7be0f64',1,'Date']]],
   ['getname_34',['getName',['../class_person.html#a9db2e2ccfc6cfa0d7979613ec2aaa922',1,'Person::getName()'],['../class_transit_stop.html#aa5bfeb46d806c6567f965cb819070147',1,'TransitStop::getName()']]],

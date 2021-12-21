@@ -8,7 +8,5 @@ var searchData=
   ['addservice_5',['addService',['../class_plane.html#aba03f491a6964683ed4c4bbc6fa7bf9d',1,'Plane']]],
   ['addtransitstop_6',['addTransitStop',['../class_airport.html#a7db747a03ba5ca36e99ba3ea92437239',1,'Airport']]],
   ['airport_7',['Airport',['../class_airport.html',1,'Airport'],['../class_airport.html#a1b6ab5a2f7c3bb3cae3205e184a2be80',1,'Airport::Airport()']]],
-  ['appendschedule_8',['appendSchedule',['../class_transit_stop.html#ae12db0c7d9d0e23517a8c57c2b5b4a4b',1,'TransitStop']]],
-  ['authentication_9',['Authentication',['../class_authentication.html',1,'']]],
-  ['authenticationerror_10',['AuthenticationError',['../class_authentication_1_1_authentication_error.html',1,'Authentication']]]
+  ['appendschedule_8',['appendSchedule',['../class_transit_stop.html#ae12db0c7d9d0e23517a8c57c2b5b4a4b',1,'TransitStop']]]
 ];
