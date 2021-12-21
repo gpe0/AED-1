@@ -1,6 +1,5 @@
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
-#include <sstream>
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
 
 #include "Date.h"
 #include "Duration.h"
@@ -11,6 +10,7 @@
 #include "Service.h"
 #include "ConstTimeGen.h"
 #include "Worker.h"
+#include "Schedule.h"
 #include "Carriage.h"
 #include "Car.h"
 #include "Location.h"
@@ -166,11 +166,6 @@ TEST(test1, Flight){
     // Tests if functions getAvailableSeats and setAvailableSeats are working properly
 }
 
-TEST(test1, Plane) {
-
-}
-
-
 TEST(test1, Person) {
     Person p1("Pedro", 19, 'M');
     ASSERT_EQ("Pedro", p1.getName());
@@ -263,6 +258,14 @@ TEST(test1, Passenger) {
     EXPECT_NEAR(passenger.findLuggageWithId(80)->getHeight(), -1, 0.01);
 }
 
+TEST(test1, Worker) {
+    Worker w("Maria", 30, 'F');
+    EXPECT_EQ(w.getName(), "Maria");
+    EXPECT_EQ(w.getSex(), 'F');
+    EXPECT_EQ(w.getAge(), 30);
+    EXPECT_TRUE(w.isValid());
+}
+
 TEST(test1, TransitStop){
     TransitStop t1;
     EXPECT_EQ(t1.getName(), "");
@@ -280,6 +283,26 @@ TEST(test1, Airport){
     EXPECT_EQ(a1.getName(), "Sá Carneiro");
     EXPECT_EQ(a1.getTransportType(), "Airport");
 
+}
+
+TEST(test2, Schedule) {
+    Date d(19, 12, 2021);
+    Schedule schedule(d);
+
+    Duration * du = new Duration(1, 45, 10);
+
+    schedule.addEntry(du, "worker1Schedule");
+
+    EXPECT_EQ(schedule.getAllEntries()[0].event, "worker1Schedule");
+
+    Duration begin(1, 0, 0);
+    Duration end1(1, 10, 0);
+    Duration end2(1, 50, 0);
+    EXPECT_TRUE(schedule.getEntries(begin, end1).empty());
+    EXPECT_FALSE(schedule.getEntries(begin, end2).empty());
+
+    EXPECT_TRUE(schedule.removeEntry("worker1Schedule"));
+    EXPECT_TRUE(schedule.getAllEntries().empty());
 }
 
 TEST(test2, Carriage) {
@@ -348,6 +371,44 @@ TEST(test3, Airport) {
 
     EXPECT_TRUE(v2.size() == 2);
     EXPECT_TRUE(v2.back().getName() == "Combatentes");
+}
+
+TEST(test3, Plane) {
+
+    Duration *du1 = new Duration(1, 30, 0);
+    Duration *du2 = new Duration(0, 30, 0);
+    Duration *du3 = new Duration(3, 15, 0);
+
+    Date *d1 = new Date(10, 11, 2021);
+    Date *d2 = new Date(11, 11, 2021);
+    Date *d3 = new Date;
+
+    Flight f1(1, d1, du1, "Porto", "Madrid");
+    Flight f2(2, d2, du2, "Lisboa", "Madrid");
+    Flight f3(3, d3, du3, "Madrid", "Amesterdão");
+
+    Passenger p1("Pedro", 19, 'M');
+
+    list<Flight> flights;
+
+    flights.push_back(f1);
+    flights.push_back(f2);
+    flights.push_back(f3);
+
+    Plane plane("AA-990", "A101", 300, flights);
+
+    EXPECT_TRUE(p1.acquireTicket(1, plane, false));
+
+    EXPECT_EQ(plane.getFlights().front().getAvailableSeats(), 299);
+
+    Worker w("Maria", 30, 'F');
+    Service service("maintenance", d2, w);
+
+    plane.addService(service);
+
+    EXPECT_EQ(plane.getServices().front().getWorker().getName(), "Maria");
+    EXPECT_EQ(plane.getServices().front().getDate().getYear(), 2021);
+
 }
 
 TEST(test4, FunLuggageProblem) {

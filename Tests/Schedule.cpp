@@ -7,54 +7,60 @@ void Schedule::addEntry(Duration *time, std::string event) {
 
    auto it = entries.begin();
     for(it; it != entries.end(); it++) {
-        if ((*(*it).first) < *time) continue;
-        else break;
+        if (*time < (*(*it).duration)) break;
     }
-    pair<Duration*, string> entry(time, event);
+    Entry entry{time, event};
 
-    entries.insert(--it, entry);
+    if (entries.empty()) entries.insert(it, entry);
+    else entries.insert(--it, entry);
 
 }
 
-void Schedule::removeEntry(Duration &timeBegin, Duration &timeEnd) {
+bool Schedule::removeEntry(Duration &timeBegin, Duration &timeEnd) {
+    bool removed = false;
     for (auto it = entries.begin(); it != entries.end(); it++){
-        if (!((*(*it).first) < timeBegin) && (*(*it).first) < timeEnd) {
+        if (!((*(*it).duration) < timeBegin) && (*(*it).duration) < timeEnd) {
             it = entries.erase(it);
             it--;
+            removed = true;
         }
     }
+    return removed;
 }
 
-void Schedule::removeEntry(std::string event) {
+bool Schedule::removeEntry(std::string event) {
+    bool removed = false;
     for (auto it = entries.begin(); it != entries.end(); it++) {
-        if ((*it).second == event) {
+        if ((*it).event == event) {
             entries.erase(it);
             it--;
+            removed = true;
         }
     }
+    return removed;
 }
 
-std::vector<std::pair<Duration *, std::string>> Schedule::getEntries(std::string event) {
-    vector<pair<Duration *, string>> result;
+std::vector<Schedule::Entry> Schedule::getEntries(std::string event) {
+    vector<Entry> result;
     for (auto it = entries.begin(); it != entries.end(); it++) {
-        if ((*it).second == event) {
+        if ((*it).event == event) {
             result.push_back(*it);
         }
     }
     return result;
 }
 
-std::vector<std::pair<Duration *, std::string>> Schedule::getEntries(Duration &timeBegin, Duration &timeEnd) {
-    vector<pair<Duration *, string>> result;
+std::vector<Schedule::Entry> Schedule::getEntries(Duration &timeBegin, Duration &timeEnd) {
+    vector<Entry> result;
     for (auto it = entries.begin(); it != entries.end(); it++){
-        if (!((*(*it).first) < timeBegin) && (*(*it).first) < timeEnd) {
+        if (!((*(*it).duration) < timeBegin) && (*(*it).duration) < timeEnd) {
             result.push_back(*it);
         }
     }
     return result;
 }
 
-std::vector<std::pair<Duration *, std::string> > Schedule::getAllEntries() {
+std::vector<Schedule::Entry> Schedule::getAllEntries() {
     return entries;
 }
 

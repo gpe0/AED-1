@@ -23,7 +23,7 @@ using namespace std;
 
 void Interface::readFlights(string file, list<Flight> &flights) {
 
-    file = "../files/input/" + file;
+    file = "../Files/Input/" + file;
     ifstream f(file);
     string line, w;
 
@@ -86,7 +86,7 @@ void Interface::readFlights(string file, list<Flight> &flights) {
 }
 
 void Interface::readTransitStops(std::string file, std::list<TransitStop> &transitStops) {
-    file = "../files/input/" + file;
+    file = "../Files/Input/" + file;
 
     ifstream f(file);
     string line, w;
@@ -135,7 +135,7 @@ void Interface::displayMenu() {
 
 void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
 
-    file = "../files/input/" + file;
+    file = "../Files/Input/" + file;
 
     ifstream f(file);
     string line, w;
@@ -175,7 +175,7 @@ void Interface::readPlanes(string file, list<Plane>& planes, string flights) {
 }
 
 void Interface::readAirports(std::string file, std::list<Airport> &airports, std::string transitStops) {
-    file = "../files/input/" + file;
+    file = "../Files/Input/" + file;
 
     ifstream f(file);
     string line, w;
@@ -213,19 +213,19 @@ void Interface::readAirports(std::string file, std::list<Airport> &airports, std
 
 void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::list<Passenger> &passengers, Airport aO, Airport aD) {
 
-    string fileNamePlanes = "../files/output/" + fileName + "_planes.csv";
+    string fileNamePlanes = "../Files/Output/" + fileName + "_planes.csv";
 
-    string fileNameFlights = "../files/output/" + fileName + "_flights.csv";
+    string fileNameFlights = "../Files/Output/" + fileName + "_flights.csv";
 
-    string fileNameServices = "../files/output/" + fileName + "_services.csv";
+    string fileNameServices = "../Files/Output/" + fileName + "_services.csv";
 
-    string fileNamePassengers = "../files/output/" + fileName + "_passengers.csv";
+    string fileNamePassengers = "../Files/Output/" + fileName + "_passengers.csv";
 
-    string fileNameLuggage = "../files/output/" + fileName + "_luggage.csv";
+    string fileNameLuggage = "../Files/Output/" + fileName + "_luggage.csv";
 
-    string fileNameAirports = "../files/output/" + fileName + "_airports.csv";
+    string fileNameAirports = "../Files/Output/" + fileName + "_airports.csv";
 
-    string fileNameTransitStops = "../files/output/" + fileName + "_transitstops.csv";
+    string fileNameTransitStops = "../Files/Output/" + fileName + "_transitstops.csv";
 
     ofstream f(fileNamePlanes);
     if (f.is_open()) {
@@ -314,7 +314,7 @@ void Interface::exportCsv(std::string fileName, std::list<Plane> &planes, std::l
 }
 
 void Interface::exportMap(std::string html) {
-    ofstream f("../files/output/simulationMap.html");
+    ofstream f("../Files/Output/simulationMap.html");
     f << html << endl;
 }
 
@@ -789,12 +789,12 @@ int Interface::menu(int argc, char* argv[]) {
                     getline(cin, option);
                 }
             }
-            ofstream f("../files/output/demoMap.html");
+            ofstream f("../Files/Output/demoMap.html");
             if (f.is_open()) {
                 f << map.getHTML() << endl;
             }
             f.close();
-            cout << "Demo Map Created! (exported to ./files/output/demoMap.html)" << endl;
+            cout << "Demo Map Created! (exported to ./Files/Output/demoMap.html)" << endl;
         }
     }
     return 0;

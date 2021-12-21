@@ -13,7 +13,7 @@ public:
      */
     Date();
 
-    /** Initializes a specified date (validation and testing not implemented yet)
+    /** Initializes a specified date.
      * There is a possibility of building another construction with strings for months for convenience
      *
      * @param day specified day (must be 1 or higher and 31/30/29/28 or lower, depending on month and year)
